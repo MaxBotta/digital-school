@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+
+        <div class="container flex-column">
+
+            <h1>
+                <span id="minutes"> 00 </span>:
+                <span id="seconds"> 00 </span>:
+                <span id="millis"> 00 </span>
+            </h1>
+
+            <div class="flex">
+                <button id="start" onclick="start()"> START </button>
+                <button id="stop" onclick="stop()"> STOP </button>
+            </div>
+            <button id="reset" class="stop" onclick="reset()"> RESET </button>
+
+        </div>
+        <div class="container">
+            <h2>Time List</h2>
+            <ul id="time-list">
+            </ul>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

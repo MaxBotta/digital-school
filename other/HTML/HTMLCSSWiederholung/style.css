@@ -1,0 +1,30 @@
+h1 {
+    color: blue;
+    background-color: yellow;
+    margin: 0px;
+    padding: 20px;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: orange;
+    margin: 0px 0px;
+    border: 4px dotted blue;
+    padding: 20px;
+    color: rgb(39, 37, 37);
+}
+
+p.active {
+    background-color: cadetblue;
+}
+
+.bilderbox {
+    display: flex;
+}
+
+.bilderbox img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}

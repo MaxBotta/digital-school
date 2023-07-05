@@ -1,0 +1,15 @@
+{
+    "name": "Todo App",
+    "short_name": "Todo App",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "A todos App.",
+    "icons": [
+        {
+            "src": "logo.png",
+            "type": "image/png",
+            "sizes": "180x180"
+        }
+    ]
+}
