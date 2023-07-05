@@ -40,7 +40,7 @@ let wooshSound;
 let musicIsPlaying = false;
 let isFirstClick = true;
 
-let highscore = getHighscore();
+let highscore;
 
 //JS Objekt mit allen Eigenschaften des Spielers
 let player = {
@@ -262,6 +262,7 @@ function restartGame() {
 function setGameOver() {
     gameState = "gameOver";
     pipes = [];
+    saveHighscore();
     highscore = getHighscore();
 }
 
