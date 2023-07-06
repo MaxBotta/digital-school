@@ -49,6 +49,9 @@ let wooshSound;
 let musicIsPlaying = false;
 
 let player;
+let isFlying = false;
+let isFlayingOldTime = 0;
+let isFlyingCooldown = 500;
 
 
 function preload() {
@@ -68,8 +71,9 @@ function preload() {
     player.width = 32 * 1.2;
     player.height = 24 * 1.2;
     player.debug = true;
-    player.addAni('jump', 'assets/images/flappy-sheet.png', { frameSize: [32, 24], frames: 2 });
+    player.addAni('fly', 'assets/images/flappy-sheet.png', { frameSize: [32, 24], frames: 2 });
     player.addAni('idle', 'assets/images/flappy-sheet.png', { frameSize: [32, 24], frames: 1 });
+    player.ani = "idle";
 }
 
 function setup() {
@@ -98,6 +102,24 @@ function draw() {
 
     //Wenn Spiel läuft, dann berechne neue Position
     if (gameState === 'play') {
+
+        //Stelle isFlying wieder auf false, wenn Zeit abgelaufen ist
+        if (millis() > isFlayingOldTime + isFlyingCooldown) {
+            isFlying = false;
+        }
+
+        if(isFlying) {
+            player.ani = "fly";
+        } else {
+            player.ani = "idle";
+        }
+
+        //Ändere Drehung des Spielers
+        if(velocity > 0 ) {
+            player.rotation = velocity * 2;
+        } else {
+            player.rotation = velocity * 4;
+        }
 
         //Geschwindigkeit wird um Beschleunigung erhöht
         velocity = velocity + acceleration;
@@ -179,7 +201,6 @@ function draw() {
 
     //Zeichne Spieler an Position x,y
     //image(playerImg, x, y, w, h);
-    player.ani = "jump";
     player.x = x + player.width/2;
     player.y = y + player.height/2;
 
@@ -209,6 +230,8 @@ function mouseClicked() {
 
     if (gameState === 'play') {
         wooshSound.play();
+        isFlying = true;
+        isFlayingOldTime = millis();
     }
 
     //Änder Geschwindigkeit ins negative, damit Spieler nach oben fliegt
