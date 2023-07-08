@@ -94,8 +94,9 @@ function draw() {
     }
 
     //Zeichne den Spieler
-    image(playerImage, playerX, playerY, playerWidth, playerHeight);
-
+    //image(playerImage, playerX, playerY, playerWidth, playerHeight);
+    player.x = playerX;
+    player.y = playerY;
 }
 
 function mouseClicked() {
