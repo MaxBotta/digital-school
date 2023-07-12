@@ -47,7 +47,6 @@ function draw() {
         sprite.vel.x = 0;
     }
 
-    console.log(sprite.vel.y)
     if(kb.pressing("space") && (sprite.vel.y > -0.3 && sprite.vel.y < 0.3) ) {
         sprite.vel.y = -6;
     }
