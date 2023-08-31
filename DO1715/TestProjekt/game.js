@@ -1,17 +1,30 @@
 
 let player;
+let ground;
 
 function setup() {
   const canvas = new Canvas(1000, 600);
   canvas.parent("game");
 
+  world.gravity.y = 10;
+
+  ground = new Sprite();
+  ground.x = 500;
+  ground.y = 590;
+  ground.width = 1000;
+  ground.height = 20;
+  ground.color = "rgb(250, 200, 0)";
+  ground.collider = "static";
+
   player = new Sprite();
   player.x = 200;
   player.y = 200;
+  player.offset.y = 80;
   player.width = 40;
-  player.height = 40;
+  player.height = 50;
   player.color = "yellow";
   player.scale = 2;
+  player.debug = true;
   // player.addAni('idle', 'assets/PirateBomb/Sprites/1-Player-Bomb Guy/2-Run/1.png', 14);
   player.addAni('idle', 'assets/wind-hashashin/PNG/idle/idle_1.png', 8);
   player.addAni('run', 'assets/wind-hashashin/PNG/run/run_1.png', 8);
