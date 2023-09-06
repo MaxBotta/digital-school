@@ -21,9 +21,11 @@ function setup() {
   player.width = 22;
   player.height = 32;
   player.color = "yellow";
-  player.addAni("idle", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Idle_4.png", { frameSize: [32, 32], frameCount: 4 } );
-  player.addAni("walk", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Walk_6.png", { frameSize: [32, 32], frameCount: 6 } );
-  player.addAni("run", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Run_6.png",   { frameSize: [32, 32], frameCount: 6 } );
+  player.addAni("idle", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Idle_4.png", { frameSize: [32, 32], frameCount: 4 });
+  player.addAni("walk", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Walk_6.png", { frameSize: [32, 32], frameCount: 6 });
+  player.addAni("run", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Run_6.png", { frameSize: [32, 32], frameCount: 6 });
+  player.addAni("atk-2", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Attack2_6.png", { frameSize: [32, 32], frameCount: 6 });
+
   player.scale = 4;
   player.debug = true;
   player.changeAni("idle");
@@ -34,13 +36,35 @@ function setup() {
 function draw() {
   background(0, 150, 250);
 
-  if (kb.pressing('left')) {
-    player.velocity.x = -5;
-  } else if (kb.pressing('right')) {
-    player.velocity.x = 5;
-  } else {
-    player.velocity.x = 0;
+
+  //Spieler greift an
+  if (kb.presses('f')) {
+    player.changeAni(["atk-2", "idle"]);
   }
+
+  if (player.ani.name !== "atk-2") {
+    if (kb.pressing('shift') && kb.pressing('left')) {
+      player.velocity.x = -10;
+      player.changeAni("run");
+      player.mirror.x = true;
+    } else if (kb.pressing('left')) {
+      player.velocity.x = -5;
+      player.changeAni("walk");
+      player.mirror.x = true;
+    } else if (kb.pressing('shift') && kb.pressing('right')) {
+      player.velocity.x = 10;
+      player.changeAni("run");
+      player.mirror.x = false;
+    } else if (kb.pressing('right')) {
+      player.velocity.x = 5;
+      player.changeAni("walk");
+      player.mirror.x = false;
+    } else {
+      player.changeAni("idle");
+      player.velocity.x = 0;
+    }
+  }
+
 
 }
 
