@@ -24,6 +24,7 @@ function setup() {
   player.addAni("idle", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Idle_4.png", { frameSize: [32, 32], frameCount: 4 });
   player.addAni("walk", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Walk_6.png", { frameSize: [32, 32], frameCount: 6 });
   player.addAni("run", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Run_6.png", { frameSize: [32, 32], frameCount: 6 });
+  player.addAni("atk-1", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Attack1_4.png", { frameSize: [32, 32], frameCount: 4 });
   player.addAni("atk-2", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Attack2_6.png", { frameSize: [32, 32], frameCount: 6 });
 
   player.scale = 4;
@@ -39,10 +40,13 @@ function draw() {
 
   //Spieler greift an
   if (kb.presses('f')) {
+    player.changeAni(["atk-1", "idle"]);
+  } else if (kb.presses('g')) {
     player.changeAni(["atk-2", "idle"]);
   }
 
-  if (player.ani.name !== "atk-2") {
+  if (player.ani.name !== "atk-2" && player.ani.name !== "atk-1") {
+
     if (kb.pressing('shift') && kb.pressing('left')) {
       player.velocity.x = -10;
       player.changeAni("run");
@@ -63,6 +67,7 @@ function draw() {
       player.changeAni("idle");
       player.velocity.x = 0;
     }
+    
   }
 
 
