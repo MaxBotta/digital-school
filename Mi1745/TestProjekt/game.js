@@ -1,6 +1,6 @@
 
 let player;
-let platform1;
+let platforms = [];
 
 function setup() {
   const canvas = new Canvas(1000, 600);
@@ -10,7 +10,8 @@ function setup() {
 
   //Erstelle alle 10 Plattformen
   for(let i = 0; i < 10; i++) {
-    platform1 = new Platform(i * 100, 300, 100);
+    const newP = new Platform(i * 100, 300, 100);
+    platforms.push(newP);
   }
 
   const ground = new Sprite();

@@ -11,8 +11,8 @@ class Platform  {
         this.sprite.width = randInt(50, 300);
         this.sprite.height = 40;
         this.sprite.color = "green";
-        this.sprite.collider = "static";
-        this.sprite.velocity.x = randInt(-5, -1);
+        this.sprite.collider = "kinematic";
+        this.sprite.velocity.x = randInt(-10, -3);
     }
 
     move() {
