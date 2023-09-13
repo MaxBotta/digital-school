@@ -55,7 +55,7 @@ function draw() {
   }
 
   //Wenn der Spieler springt, dann setze isJumping auf wahr
-  if(kb.presses("up")) {
+  if(player.isJumping === false && kb.presses("up")) {
     player.isJumping = true;
     player.changeAni("jump");
 
@@ -68,7 +68,7 @@ function draw() {
     // player.ani.frame = 4;
   }
   //Wenn Spieler nicht mehr in der Luft, setze isJumping auf falsch und die Animation auf stehen
-  if(player.velocity.y === 0) {
+  if(player.isJumping && player.velocity.y === 0) {
     player.isJumping = false;
     player.changeAni("idle");
   }
@@ -102,4 +102,11 @@ function draw() {
   }
 
 
+}
+
+
+class Item extends Sprite {
+  constructor() {
+    
+  }
 }
