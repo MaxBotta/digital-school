@@ -48,6 +48,8 @@ function setup() {
 function draw() {
   background(0, 150, 250);
 
+  player.rotation = 0;
+
   //Wenn Spieler hoch Taste drückt, dann springt Spieler
   if (kb.presses('up')) {
     player.isJumping = true;

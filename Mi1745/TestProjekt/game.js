@@ -26,11 +26,20 @@ function setup() {
   player.addAni("run", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Run_6.png", { frameSize: [32, 32], frameCount: 6 });
   player.addAni("atk-1", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Attack1_4.png", { frameSize: [32, 32], frameCount: 4 });
   player.addAni("atk-2", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Attack2_6.png", { frameSize: [32, 32], frameCount: 6 });
+  player.addAni("jump", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Jump_8.png", { frameSize: [32, 32], frameCount: 8 });
 
-  player.scale = 4;
+  player.scale = 2;
   player.debug = true;
   player.changeAni("idle");
   player.ani.frameDelay = 6;
+
+  player.isRunning = false;
+  player.isJumping = false;
+
+  player.jump = function(velocity) {
+    player.velocity.y = velocity;
+    player.ani.frameDelay = velocity / 2;
+  }
 
 }
 
@@ -45,9 +54,29 @@ function draw() {
     player.changeAni(["atk-2", "idle"]);
   }
 
-  if (player.ani.name !== "atk-2" && player.ani.name !== "atk-1") {
+  //Wenn der Spieler springt, dann setze isJumping auf wahr
+  if(kb.presses("up")) {
+    player.isJumping = true;
+    player.changeAni("jump");
+
+    if(player.isRunning) {
+      player.jump(30);
+    } else {
+      player.jump(20);
+    }
+    // player.ani.stop();
+    // player.ani.frame = 4;
+  }
+  //Wenn Spieler nicht mehr in der Luft, setze isJumping auf falsch und die Animation auf stehen
+  if(player.velocity.y === 0) {
+    player.isJumping = false;
+    player.changeAni("idle");
+  }
+
+  if (player.ani.name !== "atk-2" && player.ani.name !== "atk-1" && player.ani.name !== "jump") {
 
     if (kb.pressing('shift') && kb.pressing('left')) {
+      player.isRunning = true;
       player.velocity.x = -10;
       player.changeAni("run");
       player.mirror.x = true;
@@ -56,6 +85,7 @@ function draw() {
       player.changeAni("walk");
       player.mirror.x = true;
     } else if (kb.pressing('shift') && kb.pressing('right')) {
+      player.isRunning = true;
       player.velocity.x = 10;
       player.changeAni("run");
       player.mirror.x = false;
@@ -64,6 +94,7 @@ function draw() {
       player.changeAni("walk");
       player.mirror.x = false;
     } else {
+      player.isRunning = false;
       player.changeAni("idle");
       player.velocity.x = 0;
     }
@@ -72,4 +103,3 @@ function draw() {
 
 
 }
-
