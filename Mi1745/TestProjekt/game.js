@@ -1,11 +1,17 @@
 
 let player;
+let platform1;
 
 function setup() {
   const canvas = new Canvas(1000, 600);
   canvas.parent("game");
 
   world.gravity.y = 10;
+
+  //Erstelle alle 10 Plattformen
+  for(let i = 0; i < 10; i++) {
+    platform1 = new Platform(i * 100, 300, 100);
+  }
 
   const ground = new Sprite();
   ground.x = 500;
@@ -46,6 +52,7 @@ function setup() {
 function draw() {
   background(0, 150, 250);
 
+  player.rotation = 0;
 
   //Spieler greift an
   if (kb.presses('f')) {
@@ -102,11 +109,4 @@ function draw() {
   }
 
 
-}
-
-
-class Item extends Sprite {
-  constructor() {
-    
-  }
 }
