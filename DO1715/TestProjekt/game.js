@@ -14,32 +14,12 @@ function setup() {
   ground.y = 590;
   ground.width = 1000;
   ground.height = 20;
-  ground.color = "rgb(250, 200, 0)";
+  ground.color = "rgb(0, 100, 250)";
   ground.collider = "static";
+  ground.friction = 0.01;
 
-  platform1 = new Sprite();
-  platform1.x = 800;
-  platform1.y = 400;
-  platform1.width = 200;
-  platform1.height = 20;
-  platform1.color = "rgb(250, 200, 0)";
-  platform1.collider = "static";
 
-  platform2 = new Sprite();
-  platform2.x = 200;
-  platform2.y = 200;
-  platform2.width = 100;
-  platform2.height = 20;
-  platform2.color = "rgb(250, 200, 0)";
-  platform2.collider = "static";
-
-  platform3 = new Sprite();
-  platform3.x = 400;
-  platform3.y = 500;
-  platform3.width = 300;
-  platform3.height = 20;
-  platform3.color = "rgb(250, 200, 0)";
-  platform3.collider = "static";
+  platform1 = new Platform(500, 300, 200, 40, "ice");
 
   player = new Sprite();
   player.x = 200;
@@ -73,10 +53,12 @@ function draw() {
 
   player.rotation = 0;
 
+  platform1.moveLeftAndRight();
+
   //Spieler attacke
   if(kb.presses("up")) {
     player.changeAni(["jump", "idle"])
-    player.vel.y = -10;
+		player.applyForce(0, -500);
     //player.ani.stop();
     //player.ani.frame = 5;
     player.ani.frameDelay = 9;
@@ -129,7 +111,7 @@ function draw() {
 
     } 
     else {
-      player.vel.x = 0;
+      // player.vel.x = 0;
 
       if(player.ani.name !== "jump") {
         player.changeAni("idle");
