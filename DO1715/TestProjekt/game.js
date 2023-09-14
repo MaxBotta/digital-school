@@ -18,8 +18,8 @@ function setup() {
   ground.collider = "static";
   ground.friction = 0.01;
 
-
-  platform1 = new Platform(500, 300, 200, 40, "ice");
+  platform1 = new Platform(500,400, 200, 40, "ice");
+  platform2 = new Platform(300, 200, 500, 40, "default");
 
   player = new Sprite();
   player.x = 200;
@@ -58,7 +58,8 @@ function draw() {
   //Spieler attacke
   if(kb.presses("up")) {
     player.changeAni(["jump", "idle"])
-		player.applyForce(0, -500);
+		// player.applyForce(0, -500);
+    player.velocity.y = -10;
     //player.ani.stop();
     //player.ani.frame = 5;
     player.ani.frameDelay = 9;

@@ -16,7 +16,7 @@ class Platform {
             this.sprite.friction = 1;
             this.sprite.color = "rgb(0, 250, 100)";
         } else if (type === "ice") {
-            this.sprite.friction = 0.1;
+            this.sprite.friction = 0.05;
             this.sprite.color = "rgb(0, 100, 250)";
         }
 
