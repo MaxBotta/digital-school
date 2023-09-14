@@ -7,7 +7,7 @@ function setup() {
   const canvas = new Canvas(1000, 600);
   canvas.parent("game");
 
-  world.gravity.y = 15;
+  world.gravity.y = 20;
 
   ground = new Sprite();
   ground.x = 500;
@@ -77,6 +77,9 @@ function draw() {
   if(kb.presses("up")) {
     player.changeAni(["jump", "idle"])
     player.vel.y = -10;
+    //player.ani.stop();
+    //player.ani.frame = 5;
+    player.ani.frameDelay = 9;
   }
   else if (kb.presses("f")) {
     player.changeAni(["atk-1", "idle"]);
@@ -86,32 +89,52 @@ function draw() {
   }
 
   //Wenn Spieler eine Attacke ausführt, dann kann keine Rennanimation abgespielt werden
-  if(player.ani.name !== "atk-1" && player.ani.name !== "atk-2" && player.ani.name !== "jump") {
+  if(player.ani.name !== "atk-1" && player.ani.name !== "atk-2") {
 
     //Spieler nach links und rechts bewegen
     if(kb.pressing("shift") && kb.pressing("left")) {
       player.mirror.x = true;
       player.vel.x = -10;
-      player.changeAni("run");
+
+      if(player.ani.name !== "jump") {
+        player.changeAni("run");
+      }
+
     }
     else if(kb.pressing("shift") && kb.pressing("right")) {
       player.mirror.x = false;
       player.vel.x = 10;
-      player.changeAni("run");
+      
+      if(player.ani.name !== "jump") {
+        player.changeAni("run");
+      }
+
     }
     else if (kb.pressing('left')) {
       player.mirror.x = true;
       player.vel.x = -5;
-      player.changeAni("walk");
+
+      if(player.ani.name !== "jump") {
+        player.changeAni("walk");
+      }
+
     } 
     else if (kb.pressing('right')) {
       player.mirror.x = false;
       player.vel.x = 5;
-      player.changeAni("walk");
+
+      if(player.ani.name !== "jump") {
+        player.changeAni("walk");
+      }
+
     } 
     else {
       player.vel.x = 0;
-      player.changeAni("idle");
+
+      if(player.ani.name !== "jump") {
+        player.changeAni("idle");
+      }
+
     }
 
   }

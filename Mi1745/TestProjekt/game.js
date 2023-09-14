@@ -6,7 +6,7 @@ function setup() {
   const canvas = new Canvas(1000, 600);
   canvas.parent("game");
 
-  world.gravity.y = 10;
+  world.gravity.y = 15;
 
   //Erstelle alle 10 Plattformen
   for(let i = 0; i < 10; i++) {
@@ -23,8 +23,8 @@ function setup() {
   ground.collider = "static";
 
   player = new Sprite();
-  player.x = 300;
-  player.y = 200;
+  player.x = 500;
+  player.y = 150;
   player.width = 22;
   player.height = 32;
   player.color = "yellow";
@@ -68,9 +68,9 @@ function draw() {
     player.changeAni("jump");
 
     if(player.isRunning) {
-      player.jump(30);
+      player.jump(60);
     } else {
-      player.jump(20);
+      player.jump(40);
     }
     // player.ani.stop();
     // player.ani.frame = 4;

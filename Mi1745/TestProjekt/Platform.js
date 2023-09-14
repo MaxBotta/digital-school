@@ -2,9 +2,9 @@
 
 class Platform  {
 
-    constructor(x, y, width) {
+    constructor(x, y) {
         this.sprite = new Sprite()
-        this.x = randInt(0, 1000);
+        this.x = x;
         this.y = randInt(0, 600);
         this.sprite.x = this.x;
         this.sprite.y = this.y;
