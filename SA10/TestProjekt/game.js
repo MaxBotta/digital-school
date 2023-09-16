@@ -18,13 +18,7 @@ function setup() {
   ground.color = "green";
   ground.collider = "static";
 
-  platform1 = new Sprite();
-  platform1.x = 600;
-  platform1.y = 400;
-  platform1.width = 200;
-  platform1.height = 40;
-  platform1.color = "green";
-  platform1.collider = "kinematic";
+  // platform1 = new Platform(600, 400, 200, 40, "ice");
 
   box = new Sprite();
   box.x = 600;
