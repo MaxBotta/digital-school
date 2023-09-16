@@ -1,7 +1,7 @@
 
 let player;
 let ground;
-let platform1;
+let platform1, box;
 
 
 function setup() {
@@ -24,7 +24,14 @@ function setup() {
   platform1.width = 200;
   platform1.height = 40;
   platform1.color = "green";
-  platform1.collider = "static";
+  platform1.collider = "kinematic";
+
+  box = new Sprite();
+  box.x = 600;
+  box.y = 500;
+  box.width = 40;
+  box.height = 40;
+  box.color = "yellow";
 
   player = new Sprite();
   player.x = 200;
@@ -34,6 +41,7 @@ function setup() {
   player.color = "yellow";
   player.scale = 2;
   player.debug = true;
+  player.collider = "dynamic";
   player.isJumping = false;
 
   player.addAni("run", "assets/tiny-hero-sprites/1 Pink_Monster/Pink_Monster_Run_6.png", { frameSize: [32, 32], frames: 6 })
@@ -81,9 +89,3 @@ function draw() {
 
 
 }
-
-
-
-
-
-

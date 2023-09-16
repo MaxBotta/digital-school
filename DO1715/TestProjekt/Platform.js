@@ -1,38 +1,37 @@
+const p5_ = new p5();
 
-class Platform {
+class Platform extends p5_.Sprite {
 
     constructor(x, y, width, height, type) {
-        this.sprite = new Sprite();
-        this.sprite.collider = "kinematic";
-        this.sprite.x = x;
-        this.sprite.y = y;
-        this.sprite.width = width;
-        this.sprite.height = height;
+        super(x, y);
+        this.collider = "kinematic";
+        this.width = width;
+        this.height = height;
         this.startX = x;
         this.type = type;
-        this.isMoving = false;
+        this.isMoving_ = false;
 
         if (type === "default") {
-            this.sprite.friction = 1;
-            this.sprite.color = "rgb(0, 250, 100)";
+            this.friction = 1;
+            this.color = "rgb(0, 250, 100)";
         } else if (type === "ice") {
-            this.sprite.friction = 0.05;
-            this.sprite.color = "rgb(0, 100, 250)";
+            this.friction = 0.05;
+            this.color = "rgb(0, 100, 250)";
         }
 
     }
 
     moveLeftAndRight() {
-        if(this.isMoving === false) {
-            this.sprite.velocity.x = 5;
-            this.isMoving = true;
+        if(this.isMoving_ === false) {
+            this.velocity.x = 5;
+            this.isMoving_ = true;
         }
 
-        if (this.isMoving) {
-            if (this.sprite.x > this.startX + 100) {
-                this.sprite.velocity.x = -5;
-            } else if (this.sprite.x < this.startX - 100) {
-                this.sprite.velocity.x = 5;
+        if (this.isMoving_) {
+            if (this.x > this.startX + 100) {
+                this.velocity.x = -5;
+            } else if (this.x < this.startX - 100) {
+                this.velocity.x = 5;
             }
         }
 
@@ -44,7 +43,7 @@ class Platform {
 
 
     stop() {
-        this.isMoving = false;
+        this.isMoving_ = false;
     }
 
 

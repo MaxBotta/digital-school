@@ -54,6 +54,7 @@ function draw() {
   player.rotation = 0;
 
   platform1.moveLeftAndRight();
+  platform2.moveLeftAndRight();
 
   //Spieler attacke
   if(kb.presses("up")) {
