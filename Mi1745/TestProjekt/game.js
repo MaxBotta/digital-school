@@ -1,5 +1,5 @@
 
-let player;
+let player, player2;
 let platforms = [];
 
 function setup() {
@@ -9,10 +9,10 @@ function setup() {
   world.gravity.y = 15;
 
   //Erstelle alle 10 Plattformen
-  for(let i = 0; i < 10; i++) {
-    const newP = new Platform(i * 100, 300, 100);
-    platforms.push(newP);
-  }
+  // for(let i = 0; i < 10; i++) {
+  //   const newP = new Platform(i * 100, 300, 100);
+  //   platforms.push(newP);
+  // }
 
   const ground = new Sprite();
   ground.x = 500;
@@ -22,31 +22,14 @@ function setup() {
   ground.color = "green";
   ground.collider = "static";
 
-  player = new Sprite();
-  player.x = 500;
-  player.y = 150;
-  player.width = 22;
-  player.height = 32;
-  player.color = "yellow";
-  player.addAni("idle", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Idle_4.png", { frameSize: [32, 32], frameCount: 4 });
-  player.addAni("walk", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Walk_6.png", { frameSize: [32, 32], frameCount: 6 });
-  player.addAni("run", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Run_6.png", { frameSize: [32, 32], frameCount: 6 });
-  player.addAni("atk-1", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Attack1_4.png", { frameSize: [32, 32], frameCount: 4 });
-  player.addAni("atk-2", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Attack2_6.png", { frameSize: [32, 32], frameCount: 6 });
-  player.addAni("jump", "assets/images/tiny-hero-sprites/Pink_Monster/Pink_Monster_Jump_8.png", { frameSize: [32, 32], frameCount: 8 });
+  player = new Player("Max", "Pink", 500, 150);
 
-  player.scale = 2;
-  player.debug = true;
-  player.changeAni("idle");
-  player.ani.frameDelay = 6;
+  player2 = new Player("Max", "Dde", 50, 500);
+  player2.changeAni("walk");
 
-  player.isRunning = false;
-  player.isJumping = false;
-
-  player.jump = function(velocity) {
-    player.velocity.y = velocity;
-    player.ani.frameDelay = velocity / 2;
-  }
+  // for(let i = 0; i < 20; i++) {
+  //   const newP = new Player("Max", "dude", i * 50, 150);
+  // }
 
 }
 
@@ -54,6 +37,9 @@ function draw() {
   background(0, 150, 250);
 
   player.rotation = 0;
+
+  // player2.velocity.x = 4;
+
 
   //Spieler greift an
   if (kb.presses('f')) {
