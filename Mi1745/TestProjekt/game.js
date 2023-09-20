@@ -1,5 +1,5 @@
 
-let player, player2;
+let player, player2, player3;
 let platforms = [];
 
 function setup() {
@@ -23,12 +23,12 @@ function setup() {
   ground.collider = "static";
 
   player = new Player("Max", "Pink", 500, 150);
+  player2 = new Player("Peter", "Dude", 300, 500);
+  player3 = new Player("Hans", "Owlet", 400, 500);
+  // player2.changeAni("walk");
 
-  player2 = new Player("Max", "Dde", 50, 500);
-  player2.changeAni("walk");
-
-  // for(let i = 0; i < 20; i++) {
-  //   const newP = new Player("Max", "dude", i * 50, 150);
+  // for(let i = 0; i < 100; i++) {
+  //   const newP = new Player("Max", "Dude", i * 10, i * 10);
   // }
 
 }
@@ -37,6 +37,8 @@ function draw() {
   background(0, 150, 250);
 
   player.rotation = 0;
+  player.showName();
+  player2.showName();
 
   // player2.velocity.x = 4;
 

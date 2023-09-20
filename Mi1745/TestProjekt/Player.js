@@ -22,7 +22,7 @@ class Player extends p5_.Sprite {
         this.isRunning = false;
         this.isJumping = false;
 
-        if (this.type === "Pink" || this.type === "Dude") {
+        if (this.type === "Pink" || this.type === "Dude" || this.type === "Owlet") {
             this.addAni("idle", `assets/images/tiny-hero-sprites/${type}_Monster/${type}_Monster_Idle_4.png`, { frameSize: [32, 32], frameCount: 4 });
             this.addAni("walk", `assets/images/tiny-hero-sprites/${type}_Monster/${type}_Monster_Walk_6.png`, { frameSize: [32, 32], frameCount: 6 });
             this.addAni("run", `assets/images/tiny-hero-sprites/${type}_Monster/${type}_Monster_Run_6.png`, { frameSize: [32, 32], frameCount: 6 });
@@ -36,6 +36,12 @@ class Player extends p5_.Sprite {
         this.changeAni("idle");
 
         this.ani.frameDelay = 6;
+    }
+
+    showName() {
+        fill(255,255,255);
+        const textW = textWidth(this.name);
+        text(this.name, this.x - textW / 2, this.y - 40);
     }
 
     attack() {
