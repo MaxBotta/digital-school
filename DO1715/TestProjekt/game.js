@@ -22,10 +22,12 @@ function setup() {
   // platform1 = new Platform(500,400, 200, 40, "ice");
   // platform2 = new Platform(300, 200, 500, 40, "default");
 
-  player = new Player("Max", "Dude", 300, 400);
-  player2 = new Player("Max", "Dude", 400, 400);
-  player2 = new Player("Max", "Dude", 500, 400);
+  player = new Player("Max", "Pink", 300, 400);
+  player2 = new Player("Bob", "Pink", 400, 400);
+  player3 = new Player("Hans", "Owlet", 500, 400);
 
+  const item = new Item("coin", 200, 500);
+  const item2 = new Item("book", 300, 500);
 
 }
 
@@ -33,6 +35,9 @@ function draw() {
   background(0, 150, 250);
 
   player.rotation = 0;
+  player.showName();
+  player2.showName();
+  player3.showName();
 
   // platform1.moveLeftAndRight();
   // platform2.moveLeftAndRight();
