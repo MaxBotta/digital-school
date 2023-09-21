@@ -1,7 +1,8 @@
 
-let player;
+let player, player2, player3;
 let ground;
 let platform1, platform2, platform3;
+
 
 function setup() {
   const canvas = new Canvas(1000, 600);
@@ -16,34 +17,14 @@ function setup() {
   ground.height = 20;
   ground.color = "rgb(0, 100, 250)";
   ground.collider = "static";
-  ground.friction = 0.01;
+  ground.friction = 0.1;
 
-  platform1 = new Platform(500,400, 200, 40, "ice");
-  platform2 = new Platform(300, 200, 500, 40, "default");
+  // platform1 = new Platform(500,400, 200, 40, "ice");
+  // platform2 = new Platform(300, 200, 500, 40, "default");
 
-  player = new Sprite();
-  player.x = 200;
-  player.y = 200;
-  // player.offset.y = 80;
-  player.width = 22;
-  player.height = 32;
-  player.color = "yellow";
-  player.scale = 2;
-  player.debug = true;
-  // player.addAni('idle', 'assets/PirateBomb/Sprites/1-Player-Bomb Guy/2-Run/1.png', 14);
-  // player.addAni('idle', 'assets/wind-hashashin/PNG/idle/idle_1.png', 8);
-  // player.addAni('run', 'assets/wind-hashashin/PNG/run/run_1.png', 8);
-  // player.addAni('atk-1', 'assets/wind-hashashin/PNG/1_atk/1_atk_1.png', 8);
-  // player.addAni('atk-2', 'assets/wind-hashashin/PNG/2_atk/2_atk_1.png', 18);
-
-  player.addAni('idle', 'assets/tiny-hero-sprites/Pink_Monster/Pink_Monster_Idle_4.png', { frameSize: [32, 32], frames: 4} );
-  player.addAni('walk', 'assets/tiny-hero-sprites/Pink_Monster/Pink_Monster_Walk_6.png', { frameSize: [32, 32], frames: 6})
-  player.addAni('run', 'assets/tiny-hero-sprites/Pink_Monster/Pink_Monster_Run_6.png', { frameSize: [32, 32], frames: 6})
-  player.addAni('atk-1', 'assets/tiny-hero-sprites/Pink_Monster/Pink_Monster_Attack1_4.png', { frameSize: [32, 32], frames: 4})
-  player.addAni('atk-2', 'assets/tiny-hero-sprites/Pink_Monster/Pink_Monster_Attack2_6.png', { frameSize: [32, 32], frames: 6})
-  player.addAni('jump', 'assets/tiny-hero-sprites/Pink_Monster/Pink_Monster_Jump_8.png', { frameSize: [32, 32], frames: 8})
-  player.ani = "idle";
-  player.ani.frameDelay = 8;
+  player = new Player("Max", "Dude", 300, 400);
+  player2 = new Player("Max", "Dude", 400, 400);
+  player2 = new Player("Max", "Dude", 500, 400);
 
 
 }
@@ -53,8 +34,8 @@ function draw() {
 
   player.rotation = 0;
 
-  platform1.moveLeftAndRight();
-  platform2.moveLeftAndRight();
+  // platform1.moveLeftAndRight();
+  // platform2.moveLeftAndRight();
 
   //Spieler attacke
   if(kb.presses("up")) {

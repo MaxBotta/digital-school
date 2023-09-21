@@ -46,16 +46,19 @@ function draw() {
   //Spieler greift an
   if (kb.presses('f')) {
     player.changeAni(["atk-1", "idle"]);
+    if (player.isNear(player2)) {
+      player.attack(player2);
+    }
   } else if (kb.presses('g')) {
     player.changeAni(["atk-2", "idle"]);
   }
 
   //Wenn der Spieler springt, dann setze isJumping auf wahr
-  if(player.isJumping === false && kb.presses("up")) {
+  if (player.isJumping === false && kb.presses("up")) {
     player.isJumping = true;
     player.changeAni("jump");
 
-    if(player.isRunning) {
+    if (player.isRunning) {
       player.jump(60);
     } else {
       player.jump(40);
@@ -64,7 +67,7 @@ function draw() {
     // player.ani.frame = 4;
   }
   //Wenn Spieler nicht mehr in der Luft, setze isJumping auf falsch und die Animation auf stehen
-  if(player.isJumping && player.velocity.y === 0) {
+  if (player.isJumping && player.velocity.y === 0) {
     player.isJumping = false;
     player.changeAni("idle");
   }
@@ -94,7 +97,7 @@ function draw() {
       player.changeAni("idle");
       player.velocity.x = 0;
     }
-    
+
   }
 
 

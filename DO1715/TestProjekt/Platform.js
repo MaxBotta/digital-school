@@ -1,4 +1,4 @@
-const p5_ = new p5();
+
 
 class Platform extends p5_.Sprite {
 
@@ -15,7 +15,7 @@ class Platform extends p5_.Sprite {
             this.friction = 1;
             this.color = "rgb(0, 250, 100)";
         } else if (type === "ice") {
-            this.friction = 0.05;
+            this.friction = 0.1;
             this.color = "rgb(0, 100, 250)";
         }
 
@@ -46,15 +46,6 @@ class Platform extends p5_.Sprite {
         this.isMoving_ = false;
     }
 
-
-
-}
-
-class Item {
-
-    constructor() {
-
-    }
 
 
 }
