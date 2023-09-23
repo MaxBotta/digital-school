@@ -1,7 +1,7 @@
 
 //extends p5play Sprite class
 
-class Platform extends Sprite {
+class Platform extends p5_.Sprite {
 
     constructor(x, y, width, height, type) {
         super();

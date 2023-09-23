@@ -1,5 +1,5 @@
 
-let player;
+let player, player2, player3;
 let ground;
 let platform1, box;
 
@@ -27,23 +27,10 @@ function setup() {
   box.height = 40;
   box.color = "yellow";
 
-  player = new Sprite();
-  player.x = 200;
-  player.y = 200;
-  player.width = 22;
-  player.height = 32;
-  player.color = "yellow";
-  player.scale = 2;
-  player.debug = true;
-  player.collider = "dynamic";
-  player.isJumping = false;
+  player = new Player("Max", "Dude", 300, 500);
+  player2 = new Player("Max", "Pink", 200, 500);
+  player3 = new Player("Max", "Owlet", 500, 500);
 
-  player.addAni("run", "assets/tiny-hero-sprites/1 Pink_Monster/Pink_Monster_Run_6.png", { frameSize: [32, 32], frames: 6 })
-  player.addAni("idle", "assets/tiny-hero-sprites/1 Pink_Monster/Pink_Monster_Idle_4.png", { frameSize: [32, 32], frames: 4 })
-  player.addAni("jump", "assets/tiny-hero-sprites/1 Pink_Monster/Pink_Monster_Jump_8.png", { frameSize: [32, 32], frames: 8 })
-
-  player.changeAni("idle");
-  player.ani.frameDelay = 8;
 
 }
 
