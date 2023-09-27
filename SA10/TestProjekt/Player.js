@@ -4,13 +4,17 @@ class Player extends p5_.Sprite {
 
     constructor(name, type, x, y) {
         super();
-        this.name = name;
-        this.type = type; //Pink, Owlet, Dude
+
         this.x = x;
         this.y = y;
         this.width = 22,
         this.height = 32;
         this.scale = 2;
+        this.debug = true;
+        this.collider = "dynamic";
+
+        this.name = name;
+        this.type = type; //Pink, Owlet, Dude
         this.lifePoints = 100;
         this.walkSpeed = 10;
         this.runSpeed = 20;
@@ -18,9 +22,6 @@ class Player extends p5_.Sprite {
         this.attackPower = 10;
         this.defensePower = 5;
         this.attackSpeed = 5;
-
-        this.debug = true;
-        this.collider = "dynamic";
         this.isJumping = false;
         this.isAlive = true;
 
