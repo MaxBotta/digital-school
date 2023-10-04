@@ -19,11 +19,14 @@ ul {
     gap: 40px;
     margin: 0;
     padding: 0;
+    flex-basis: 100%;
+    justify-content: start;
 }
 
 .logo {
     width: auto;
     height: 60px;
+    margin-right: 40px;
 }
 
 .search {
@@ -32,6 +35,24 @@ ul {
     outline: none;
     border: none;
     background-color: rgb(227, 227, 227);
+}
+
+nav button {
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: none;
+    background-color: rgb(56, 105, 160);
+}
+
+nav .container {
+    display: flex;
+    gap: 20px;
+    max-width: 300px;
+    justify-content: end;
 }
 
 .diashow {
