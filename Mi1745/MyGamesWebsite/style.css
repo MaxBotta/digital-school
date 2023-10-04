@@ -48,11 +48,9 @@ nav button {
     background-color: rgb(56, 105, 160);
 }
 
-nav .container {
+nav .input-container {
     display: flex;
-    gap: 20px;
-    max-width: 300px;
-    justify-content: end;
+    gap: 10px;
 }
 
 .diashow {
@@ -61,6 +59,7 @@ nav .container {
     /* overflow: hidden; */
     border: 4px solid red;
     position: relative;
+    padding: 20px;
 }
 
 .diashow img {
@@ -70,4 +69,22 @@ nav .container {
     position: absolute;
     top: 0px;
     left: 0px;
+    opacity: 0;
+    transition: 2s;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.flex {
+    display: flex;
 }
