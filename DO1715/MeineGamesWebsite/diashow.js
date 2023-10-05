@@ -3,7 +3,7 @@
 //Hole Referenz auf Diashow Element aus dem HTML
 const diashowElmt = document.getElementById("diashow-1");
 
-// animateDiashow(diashowElmt);
+animateDiashow(diashowElmt);
 
 
 function animateDiashow(diashowElmt) {
@@ -41,9 +41,13 @@ function animateDiashow(diashowElmt) {
 
 
 
-let counter = 0;
+// let counter = 0;
 
-setInterval(function() {
-    counter++;
-    console.log(counter);
-}, 1000);
+// setInterval(function() {
+//     counter++;
+//     console.log(counter);
+// }, 1000);
+
+// setInterval(function () { 
+//     document.body.innerHTML += "Hello" 
+// }, 1000);
