@@ -7,10 +7,11 @@ body {
 }
 
 nav {
-    padding: 20px;
+    padding: 20px 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
 }
 
 ul {
@@ -57,7 +58,7 @@ nav .input-container {
     width: 100%;
     height: 600px;
     /* overflow: hidden; */
-    border: 4px solid red;
+    /* border: 4px solid red; */
     position: relative;
 }
 
@@ -110,4 +111,40 @@ nav .input-container {
 
 .flex {
     display: flex;
+}
+
+main {
+    padding: 40px 120px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.search-games {
+    font-size: 16px;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    /* border-bottom: 2px solid black; */
+    width: 400px;
+}
+
+.flex-container {
+    width: 100%;
+    display: flex;
+}
+
+.game-thumbnail {
+    width: 25%;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 10px;
+}
+.game-thumbnail img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
 }
