@@ -4,7 +4,7 @@
 const allDiashows = document.getElementsByClassName("diashow");
 
 //start diashow
-for(let diashow of allDiashows) {
+for (let diashow of allDiashows) {
     animateDiashow(diashow);
 }
 
@@ -20,24 +20,56 @@ function animateDiashow(diaElmt) {
     diaImages[0].style.opacity = 1;
 
     //Set new image every 2 seconds
-    setInterval(function () {
+    // setInterval(function () {
 
-        //set last image opacity to 0
-        diaImages[counter].style.opacity = 0; 
+    //     //set last image opacity to 0
+    //     diaImages[counter].style.opacity = 0; 
 
-        //increase counter by 1 to show next image
-        counter++;
+    //     //increase counter by 1 to show next image
+    //     counter++;
 
-        //if counter reached length of images set it to 0 again
-        if(counter === diaImages.length) {
+    //     //if counter reached length of images set it to 0 again
+    //     if(counter === diaImages.length) {
+    //         counter = 0;
+    //     }
+
+    //     //show next image
+    //     diaImages[counter].style.opacity = 1;
+
+
+    // }, 2000);
+
+    let buttons = diaElmt.getElementsByTagName("button");
+    let buttonLeft = buttons[0];
+    let buttonRight = buttons[1];
+
+    buttonLeft.onclick = previousImage;
+    buttonRight.onclick = nextImage;
+
+
+    function nextImage() {
+        diaImages[counter].style.opacity = 0;
+        counter = counter + 1;
+        setImage();
+    }
+
+    function previousImage() {
+        diaImages[counter].style.opacity = 0;
+        counter = counter - 1;
+        setImage();
+    }
+
+    function setImage() {
+
+        if (counter === diaImages.length) {
             counter = 0;
+        } else if(counter === -1) {
+            counter = diaImages.length - 1;
         }
-
-        //show next image
+        console.log(counter)
         diaImages[counter].style.opacity = 1;
+    }
 
-
-    }, 2000);
 
 
 }

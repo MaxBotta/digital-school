@@ -69,7 +69,31 @@ nav .input-container {
     top: 0px;
     left: 0px;
     opacity: 0;
-    transition: 2s;
+    transition: 1s;
+}
+
+.diashow button {
+    position: absolute;
+    top: 0px;
+    width: 300px;
+    height: 100%;
+    opacity: 0.6;
+    border: 0;
+    color: white;
+    font-size: 30px;
+}
+
+.diashow button.left {
+    left: 0px;
+    background: linear-gradient(90deg, rgb(35, 5, 62), rgba(0, 0, 0, 0));
+}
+.diashow button.right {
+    right: 0px;
+    background: linear-gradient(-90deg, rgb(35, 5, 62), rgba(0, 0, 0, 0));
+}
+
+.diashow button:hover {
+    opacity: 1;
 }
 
 .w-100 {
