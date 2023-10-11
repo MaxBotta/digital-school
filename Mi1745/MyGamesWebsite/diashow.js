@@ -17,13 +17,13 @@ function animateDiashow(diaElmt) {
     let counter = 0;
 
     //show first image
-    diaImages[counter].style.opacity = 1;
+    diaImages[0].style.opacity = 1;
 
     //Set new image every 2 seconds
     setInterval(function () {
 
         //set last image opacity to 0
-        diaImages[counter].style.opacity = 0;
+        diaImages[counter].style.opacity = 0; 
 
         //increase counter by 1 to show next image
         counter++;
@@ -41,4 +41,3 @@ function animateDiashow(diaElmt) {
 
 
 }
-
