@@ -34,19 +34,64 @@ ul {
 }
 
 .diashow {
-    width: 100%;
     height: 600px;
+    width: 100%;
     background-color: silver;
-    border: 2px solid red;
     position: relative;
 }
 
 .diashow img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    top: 0px;
-    left: 0px;
     opacity: 0;
+    transition: 0.5s;
+    z-index: 0;
+}
+
+.diashow button {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.435);
+    color: rgb(209, 209, 209);
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+}
+
+.diashow button:hover {
+    background-color: rgba(0, 0, 0, 0.695);
+    color: white;
+}
+
+button.left {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+}
+button.right {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+
+.diashow .dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    display: flex;
+    gap: 10px;
+}
+
+.diashow .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: rgb(143, 143, 143);
 }
