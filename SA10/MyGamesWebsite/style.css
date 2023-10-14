@@ -70,4 +70,10 @@ button:hover {
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 0;
+    transition: 1s;
+}
+
+.diashow img.active {
+    opacity: 1;
 }
