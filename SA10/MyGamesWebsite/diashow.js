@@ -2,7 +2,6 @@
 //Suche alle Elemente mit der Klasse diashow
 const diashowElmts = document.getElementsByClassName("diashow");
 
-
 animateDiashow(diashowElmts[0]);
 
 //Definiere Funktion für die Animation der Diashow
