@@ -95,3 +95,13 @@ button.right {
     border-radius: 3px;
     background-color: rgb(143, 143, 143);
 }
+
+.blue {
+    border: 1px solid blue;
+    height: 200px;
+}
+
+.navbar-toggler {
+    outline: 0 !important;
+    border: 0 !important;
+}
