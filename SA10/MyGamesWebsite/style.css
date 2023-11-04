@@ -63,3 +63,9 @@ button:hover {
 .diashow img.active {
     opacity: 1;
 }
+
+
+.card img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
