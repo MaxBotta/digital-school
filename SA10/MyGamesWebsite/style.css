@@ -4,26 +4,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 20px;
-    box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.1);
-}
-
 .logo {
     width: auto;
     height: 80px;
 }
 
-ul {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-    padding: 0px;
-}
 
 input, button {
     height: 40px;
