@@ -2,19 +2,27 @@
 /**
  * To Dos:
  * - Liste aller Game Thumbnails - getElementsByClassName
+ * - Wenn Nutzer in der Suchleiste etwas eintippt, starte gleichzeitig suche
  * - Text aus der Suchleiste auslesen
- * - Durchsuche alle Game Thumbnail Titel und schaue ob Suchtext mit Titel übereinstimmt
+ * - Durchsuche alle Titel und schaue ob Suchtext mit Titel übereinstimmt
  * - Blende alle Elmente aus, die nicht übereinstimmen mit dem Suchtext
  */
 
+const games = document.querySelectorAll(".game");
+const searchInput = document.querySelector("#js-search-games");
 
-
-const searchInput = document.getElementById("search-games");
-
-
+//Füge ein keyup Event hinzu
+//Wird immer ausgelöst, wenn Nutzer tippt
 searchInput.addEventListener("keyup", filterGames);
 
 function filterGames() {
     const searchValue = searchInput.value;
-    console.log(searchValue);
+
+    //Durchsuche jedes Game und gleiche den Titel mit dem Suchwert ab
+    for(let game of games) {
+        const title = game.querySelector("h5").innerText
+        console.log(title)
+    }
+
+  
 }
