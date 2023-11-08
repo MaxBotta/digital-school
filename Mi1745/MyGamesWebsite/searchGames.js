@@ -11,18 +11,23 @@
 const games = document.querySelectorAll(".game");
 const searchInput = document.querySelector("#js-search-games");
 
+
 //Füge ein keyup Event hinzu
 //Wird immer ausgelöst, wenn Nutzer tippt
 searchInput.addEventListener("keyup", filterGames);
 
 function filterGames() {
-    const searchValue = searchInput.value;
+    const searchValue = searchInput.value.toLowerCase();
 
     //Durchsuche jedes Game und gleiche den Titel mit dem Suchwert ab
     for(let game of games) {
-        const title = game.querySelector("h5").innerText
-        console.log(title)
+        const title = game.querySelector("h5").innerText.toLowerCase()
+        
+        if(title.includes(searchValue) === false) {
+            game.style.display = "none";
+        } else {
+            game.style.display = "block";
+        }
     }
 
-  
 }
