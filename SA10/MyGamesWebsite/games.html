@@ -48,7 +48,8 @@
                 <h1>Other Games</h1>
             </div>
             <div class="col-md-12 my-4">
-                <input id="js-search-games" class="search" type="text" placeholder="Search Games..." />
+                <button class="tag-button" onclick="filterByTag(this, 'Open World')">Open World</button>
+                <input onkeyup="filterBySearch(this)" id="js-search-games" class="search" type="text" placeholder="Search Games..." />
             </div>
         </div>
 
@@ -61,6 +62,10 @@
                         <img src="./images/minecraft.jpg" class="card-img-top" alt="Image of a game">
                         <div class="card-body">
                             <h5 class="card-title">Minecraft</h5>
+                            <div class="d-flex gap-2">
+                                <div class="tag">Open World</div>
+                                <div class="tag">RPG</div>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -72,6 +77,10 @@
                         <img src="./images/shorthike.jpg" class="card-img-top" alt="Image of a game">
                         <div class="card-body">
                             <h5 class="card-title">A Short Hike</h5>
+                            <div class="d-flex gap-2">
+                                <div class="tag">Open World</div>
+                                <div class="tag">RPG</div>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -83,6 +92,9 @@
                         <img src="./images/brawlhalla.png" class="card-img-top" alt="Image of a game">
                         <div class="card-body">
                             <h5 class="card-title">Brawlhalla</h5>
+                            <div class="d-flex gap-2">
+                                <div class="tag">Fighting</div>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -135,12 +147,7 @@
 
 
 
-
-
-
-
-    <script src="diashow.js"></script>
-    <script src="searchGames.js"></script>
+    <script src="games.js"></script>
 
 </body>
 
