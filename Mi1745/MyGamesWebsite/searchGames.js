@@ -68,7 +68,6 @@ function filterByTag(filterTagName, activeButton) {
             const gameTagName = tag.innerText;
             
             if(gameTagName.toLowerCase() === filterTagName.toLowerCase()) {
-                console.log("passender tag")
                 game.style.display = "block";
             }
 
