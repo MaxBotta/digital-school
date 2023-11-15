@@ -44,14 +44,15 @@
     </div>
     <div class="row">
       <div class="col-md-12 mb-4">
-        <div class="flex gap-2">
-          <div onclick="filterByTag('Strategy')" class="tag badge flex align-items-center px-3">Strategy</div>
-          <div onclick="filterByTag('Strategy')" class="tag badge flex align-items-center px-3">Shooter</div>
-          <div onclick="filterByTag('Strategy')" class="tag badge flex align-items-center px-3">Jump & Run</div>
-          <div onclick="filterByTag('Strategy')" class="tag badge flex align-items-center px-3">2D</div>
-          <div onclick="filterByTag('Open World')" class="tag badge flex align-items-center px-3">Open World</div>
+        
+        <div class="d-flex gap-2">
+          <button onclick="filterByTag('All', this)" class="tag-btn btn btn-light btn-outline-dark">All</button>
+          <button onclick="filterByTag('Open World', this)" class="tag-btn btn btn-light btn-outline-dark">Open World</button>
+          <button onclick="filterByTag('RPG', this)" class="tag-btn btn btn-light btn-outline-dark">RPG</button>
+          <button onclick="filterByTag('Fighting', this)" class="tag-btn btn btn-light btn-outline-dark">Fighting</button>
           <input id="js-search-games" class="search" type="text" placeholder="Search..." />
         </div>
+
       </div>
     </div>
     <div class="row">
@@ -62,8 +63,8 @@
             <img src="./images/minecraft2.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Minecraft</h5>
-              <div class="card-tag tag badge flex align-items-center px-3">Open World</div>
-              <div class="card-tag tag badge flex align-items-center px-3">Strategy</div>
+              <span class="tag badge bg-dark">Open World</span>
+              <span class="tag badge bg-dark">Multiplayer</span>
             </div>
           </div>
         </a>
@@ -75,6 +76,8 @@
             <img src="./images/shorthike.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">A Short Hike</h5>
+              <span class="tag badge bg-dark">Open World</span>
+              <span class="tag badge bg-dark">RPG</span>
             </div>
           </div>
         </a>

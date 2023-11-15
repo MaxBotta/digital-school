@@ -10,7 +10,7 @@
 
 const games = document.querySelectorAll(".game");
 const searchInput = document.querySelector("#js-search-games");
-
+const tagButtons = document.querySelectorAll('.tag-btn');
 
 //Füge ein keyup Event hinzu
 //Wird immer ausgelöst, wenn Nutzer tippt
@@ -32,18 +32,52 @@ function filterBySearch() {
     
 }
 
-function filterByTag(tagname) {
-    console.log("🚀 ~ file: searchGames.js:36 ~ filterByTag ~ tagname:", tagname)
-    for (let game of games) {
-        const tags = game.querySelectorAll(".tag");
-        console.log("🚀 ~ file: searchGames.js:39 ~ filterByTag ~ tags:", tags)
 
+/**
+ * Filter by tag
+ * To do:
+ * - Wenn Nutzer Button klickt, rufe filterBytag Funktion auf
+ * - Lese Kategorie/Tagname aus button aus bzw. übergebe der Funktion
+ * - Durchsuche alle Spiele
+ * - Lese Tagnamen aus jedem einzelnen Spiel aus
+ */
+
+function filterByTag(filterTagName, activeButton) {
+
+    //deaktiviere alle buttos
+    for(let btn of tagButtons) {
+        btn.classList.remove("active");
+    }
+    activeButton.classList.add("active");
+
+    //Durchsuche alle Spiele
+    for(let game of games) {
+
+        if(filterTagName === "All") {
+            game.style.display = "block";
+            continue;
+        }
+
+        game.style.display = "none";
+
+        //Finde alle Tags im Spiel
+        const tags = game.querySelectorAll('.tag');
+
+        //Dursuche alle Tags
         for(let tag of tags) {
-            if (tag.innerText == tagname) {
-                game.style.display = "none";
-            } else {
+            const gameTagName = tag.innerText;
+            
+            if(gameTagName.toLowerCase() === filterTagName.toLowerCase()) {
+                console.log("passender tag")
                 game.style.display = "block";
             }
+
         }
+
     }
+
 }
+
+
+
+
