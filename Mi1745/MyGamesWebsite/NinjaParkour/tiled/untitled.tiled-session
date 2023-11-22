@@ -9,6 +9,20 @@
     "fileStates": {
         "": {
             "scaleInDock": 1
+        },
+        "level1.tmx": {
+            "scale": 0.5301,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 932.8428598377665,
+                "y": 362.1958121109225
+            }
+        },
+        "level1.tmx#background_blue": {
+            "scaleInDock": 1
+        },
+        "level1.tmx#terrain": {
+            "scaleInDock": 1.8091
         }
     },
     "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/Mi1745/MyGamesWebsite/NinjaParkour/assets/Background",
@@ -22,6 +36,7 @@
     ],
     "project": "untitled.tiled-project",
     "recentFiles": [
+        "level1.tmx"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {
