@@ -3,15 +3,15 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "level1.tmx",
     "expandedProjectPaths": [
         "."
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "": {
-            "scaleInDock": 1.885,
-            "scaleInEditor": 6.13
+            "scaleInDock": 0.3401,
+            "scaleInEditor": 2.69
         },
         "/Users/maxbotta/Documents/platformer/level2.tmx": {
             "scale": 0.64,
@@ -48,11 +48,11 @@
             "scaleInDock": 1
         },
         "level1.tmx": {
-            "scale": 0.1137,
-            "selectedLayer": 2,
+            "scale": 0.32,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 3913.8082673702725,
-                "y": 3262.97273526825
+                "x": 1659.375,
+                "y": 2279.6875
             }
         },
         "level1.tmx#Back_Brown": {
@@ -65,13 +65,41 @@
             "scaleInDock": 4.3117
         },
         "level1.tmx#Spikes": {
-            "scaleInDock": 5.9412
+            "scaleInDock": 5.9412,
+            "scaleInEditor": 2.69
         },
         "level1.tmx#Terrain": {
-            "scaleInDock": 1.885
+            "scaleInDock": 1.885,
+            "scaleInEditor": 2.69
+        },
+        "level1.tmx#back_brown": {
+            "scaleInDock": 2.5207,
+            "scaleInEditor": 1
+        },
+        "level1.tmx#sand_mud_ice": {
+            "scaleInDock": 4.5459,
+            "scaleInEditor": 1
+        },
+        "level1.tmx#saw": {
+            "scaleInDock": 4.3117,
+            "scaleInEditor": 1
+        },
+        "level1.tmx#spikes": {
+            "scaleInDock": 5.9412,
+            "scaleInEditor": 2.69
+        },
+        "level1.tmx#terrain": {
+            "scaleInDock": 3.0268
+        },
+        "level1.tmx#terrain_collide": {
+            "scaleInDock": 2.435,
+            "scaleInEditor": 2.69
+        },
+        "level1.tmx#trampoline": {
+            "scaleInDock": 5.1201
         }
     },
-    "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/SA10/NinjaParkour/assets/PixelAdventure/Traps/Sand Mud Ice",
+    "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/SA10/NinjaParkour/assets/PixelAdventure/Traps/Trampoline",
     "map.height": 60,
     "map.lastUsedFormat": "tmx",
     "map.layerDataFormat": "1",
@@ -80,17 +108,18 @@
     "map.width": 800,
     "mapScene.enableWorlds": true,
     "openFiles": [
+        "level1.tmx"
     ],
     "project": "NinjaParkour.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "level1.tmx",
         "/Users/maxbotta/Documents/platformer/level2.tmx",
-        "/Users/maxbotta/Documents/platformer/platformer1.tmx",
-        "level1.tmx"
+        "/Users/maxbotta/Documents/platformer/platformer1.tmx"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {
-        "height": 16,
-        "width": 16
+        "height": 28,
+        "width": 28
     }
 }

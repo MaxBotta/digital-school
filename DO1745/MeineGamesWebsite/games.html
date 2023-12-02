@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Games Website</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- 
+        Design Navigationsleiste
+        - Schwarzer Schatten
+        - logo
+        - Links/kategorien
+        - Button
+
+     -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img class="logo"
+                    src="./images/Video-Game-Controller-Icon-D-Edit.svg (1).png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="games.html">Games</a>
+                    <a class="nav-link" href="#">Features</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="container">
+
+        <div class="row my-4">
+            <div class="col-md-12">
+                <input id="js-search-games" class="search" type="text" placeholder="Search games..."/>
+            </div>
+        </div>
+
+        <div id="js-games-container" class="row">
+
+            <!-- <div class="col-md-4 game">
+                <a href="https://www.minecraft.net/de-de">
+                    <div class="card my-3">
+                        <img src="./images/minecraft2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Minecraft</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 game">
+                <a href="https://www.blazingsails.com/">
+                    <div class="card my-3">
+                        <img src="./images/blazing sails.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Blazing Sails</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 game">
+                <a href="https://www.openttd.org/">
+                    <div class="card my-3">
+                        <img src="./images/openttd.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Openttd</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 game">
+                <a href="https://spiele.rtl.de/denk-spiele/butterfly-kyodai.html">
+                    <div class="card my-3">
+                        <img src="./images/D1BD7CED-D8EB-4AE5-90F1-5BEAD0037C0E.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Butterfly Kyodai</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 game">
+                <a href="https://minesweeper.online/de/">
+                    <div class="card my-3">
+                        <img src="./images/D2616095-BDC0-426B-A4DA-BEAC8FDFB173.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Minesweeper</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 game">
+                <a href="https://www.callofduty.com/de/modernwarfare3">
+                    <div class="card my-3">
+                        <img src="./images/B8E0FCB6-8A8A-4E38-ACAA-FD3D4B2DB35D.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Call of Duty</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 game">
+                <a href="https://papergames.io/de/tic-tac-toe">
+                    <div class="card my-3">
+                        <img src="./images/A5E8487C-1C29-41A8-B571-DEE40AF02838.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Tic Tac Toe</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 game">
+                <a href="https://overwatch.blizzard.com/de-de/">
+                    <div class="card my-3">
+                        <img src="./images/76A01A60-AE7A-492D-9EE7-45A10E149599.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Overwatch</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 game">
+                <a href="">
+                    <div class="card my-3">
+                        <img src="./images/A32F8F84-6302-468A-A9DB-07662F94AEC1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Fortnite</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 game">
+                <a href="https://taming.io/">
+                    <div class="card my-3">
+                        <img src="./images/ABFCB375-368C-4EF0-A4F1-8D5F3FB21C52.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Taming</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 game">
+                <a href="https://www.google.com/fbx?fbx=snake_arcade">
+                    <div class="card my-3">
+                        <img src="./images/850FD97F-2C18-43B9-8FC4-443ACEA01A24.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Snake Arcade</h5>
+                        </div>
+                    </div>
+                </a>
+            </div> -->
+
+        </div>
+    </main>
+
+
+
+    <script src="./games.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+
+
+{
+    "games": [
+        {
+            "title": "Minecraft",
+            "url": "https://www.minecraft.net/de-de",
+            "imgPath": "./images/minecraft2.png"
+        },
+        {
+            "title": "Tic Tac Toe",
+            "url": "https://www.minecraft.net/de-de",
+            "imgPath": "./images/minecraft2.png"
+        },
+        {
+            "title": "Minecraft",
+            "url": "https://www.minecraft.net/de-de",
+            "imgPath": "./images/minecraft2.png"
+        }
+    ]
+}
