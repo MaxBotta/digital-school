@@ -2,8 +2,7 @@
 
 export class Player extends Phaser.Physics.Arcade.Sprite {
 
-    constructor(scene, x, y, name) {
-        console.log("🚀 ~ file: Player.js:6 ~ Player ~ constructor ~ scene:", scene)
+    constructor(scene, x, y, characterName, name) {
         super(scene, x, y, name);
         scene.add.existing(this);
         scene.physics.add.existing(this);
@@ -15,6 +14,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         this.body.setSize(16, 28);
         this.scale = 2;
 
+        this.characterName = characterName;
+
         this.setCollideWorldBounds(true);
         this.preload();
 
@@ -22,17 +23,6 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
     preload = () => {
         
-        this.scene.load.spritesheet({
-            key: 'player_idle',
-            url: 'assets/PixelAdventure/MainCharacters/Ninja Frog/Idle (32x32).png',
-            frameConfig: {
-                frameWidth: 32,
-                frameHeight: 32,
-                startFrame: 0,
-                endFrame: 11
-            }
-        });
-
         this.scene.load.once('complete', this.create, this.scene); 
         this.scene.load.start();
     }
@@ -41,7 +31,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
         this.anims.create({
             key: 'idle',
-            frames: this.anims.generateFrameNumbers('player_idle'),
+            frames: this.anims.generateFrameNumbers(`${this.characterName}_idle`),
             frameRate: 20,
             repeat: -1
         });
