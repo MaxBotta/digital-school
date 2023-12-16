@@ -3,9 +3,11 @@
 export class Player extends Phaser.Physics.Arcade.Sprite {
 
     constructor(scene, x, y, name) {
-        super(scene, x, y, 'player');
+        console.log("🚀 ~ file: Player.js:6 ~ Player ~ constructor ~ scene:", scene)
+        super(scene, x, y, name);
         scene.add.existing(this);
         scene.physics.add.existing(this);
+        this.scene = scene;
 
         this.damage = 10;
         this.jumpPower = 20;
@@ -18,7 +20,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
     }
 
-    preload() {
+    preload = () => {
         
         this.scene.load.spritesheet({
             key: 'player_idle',
@@ -31,11 +33,11 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             }
         });
 
-        this.scene.load.once('complete', this.create, this.scene);
+        this.scene.load.once('complete', this.create, this.scene); 
         this.scene.load.start();
     }
 
-    create() {
+    create = () => {
 
         this.anims.create({
             key: 'idle',
@@ -44,13 +46,13 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             repeat: -1
         });
 
-
         this.play("idle");
         this.scene.events.on('update', (t, dt) => { this.update(t, dt) });
 
     }
 
-    update() {
+    update = (t, dt) => {
+
 
     }
 
