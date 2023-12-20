@@ -10,6 +10,20 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
         this.characterName = characterName;
         this.life = 100;
+        this.stamina = 20;
+        this.speed = 10;
+    }
+
+    preload = () => {
+
+    }
+
+    create = () => {
+
+    }
+
+    update = () => {
+        
     }
 
 

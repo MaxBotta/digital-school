@@ -1,4 +1,4 @@
-
+import { Player } from "../objects/Player.js"
 
 export class Play extends Phaser.Scene {
     constructor() {
@@ -6,8 +6,8 @@ export class Play extends Phaser.Scene {
     }
 
     create() {
-        let player = this.physics.add.sprite(100, 450, 'player');
-        // let player = new Player(this, x, y, name, characterType)
+        // let player = this.physics.add.sprite(100, 450, 'player');
+        let player = new Player(this, x, y, name, characterType)
 
         player.setBounce(0.2);
         player.setCollideWorldBounds(true);
