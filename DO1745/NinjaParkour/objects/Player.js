@@ -88,7 +88,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             this.isJumping = true;
         }
 
-        if(this.body.velocity.y < 0 && this.body.velocity.y > -4) {
+        if(this.body.blocked.down) {
             this.isJumping = false;
         }
 
