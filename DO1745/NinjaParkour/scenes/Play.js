@@ -6,7 +6,7 @@ export class Play extends Phaser.Scene {
     }
 
     create() {
-        const player = new Player(this, 200, 200, "Player", "Ninja Frog");
+        const player = new Player(this, 200, 200, "Max", "Mask Dude");
 
     }
 

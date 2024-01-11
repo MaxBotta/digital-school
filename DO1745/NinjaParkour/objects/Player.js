@@ -4,6 +4,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
     constructor(scene, x, y, name, characterType) {
         super(scene, x, y, name);
+        
         scene.add.existing(this);
         scene.physics.add.existing(this);
 
@@ -15,7 +16,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         this.isAlive = true;
         this.isJumping = false;
         this.isDoubleJumping = false;
-        this.speed = 80;
+        this.speed = 40;
         this.cursors;
 
         this.preload();
@@ -23,21 +24,10 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     preload = () => {
-
-        this.scene.load.spritesheet({
-            key: 'ninja_frog_run',
-            url: 'assets/PixelAdventure/Main Characters/Ninja Frog/Run (32x32).png',
-            frameConfig: {
-                frameWidth: 32,
-                frameHeight: 32,
-                startFrame: 0,
-                endFrame: 11
-            }
-        });
-
         this.scene.load.once('complete', this.create, this.scene);
         this.scene.load.start();
     }
+
 
     create = () => {
 
@@ -46,14 +36,21 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         //Füge Animationen hinzu
         this.anims.create({
             key: 'idle',
-            frames: this.anims.generateFrameNumbers('ninja_frog_idle'),
+            frames: this.anims.generateFrameNumbers(`${this.characterType}_idle`),
             frameRate: 18,
             repeat: -1
         });
 
         this.anims.create({
             key: 'run',
-            frames: this.anims.generateFrameNumbers('ninja_frog_run'),
+            frames: this.anims.generateFrameNumbers(`${this.characterType}_run`),
+            frameRate: 24,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'jump',
+            frames: this.anims.generateFrameNumbers(`${this.characterType}_jump`),
             frameRate: 24,
             repeat: -1
         });
@@ -84,9 +81,12 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             this.setVelocityX(0);
             this.play("idle", true)
         }
-    }
 
-    jump = () => {
+        //Springen
+        if(this.cursors.up.isDown ) {
+            this.setVelocityY(-400);
+        }
+
 
     }
 

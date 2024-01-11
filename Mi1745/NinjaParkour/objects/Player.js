@@ -12,7 +12,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
         this.characterName = characterName;
         this.scale = 2;
-        this.speed = 200;
+        this.speed = 400;
 
         this.setCollideWorldBounds(true);
 

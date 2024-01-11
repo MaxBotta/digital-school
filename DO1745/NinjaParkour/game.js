@@ -11,7 +11,7 @@ const config = {
         fps: 60,
         default: 'arcade',
         arcade: {
-            gravity: { y: 1000 },
+            gravity: { y: 1400 },
             //debug: true,
             tileBias: 20,
         }
