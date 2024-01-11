@@ -63,10 +63,10 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     update = (t, dt) => {
-        this.move(dt);
+        this.move(t, dt);
     }
 
-    move = (dt) => {
+    move = (t, dt) => {
         //Schauen ob Pfeiltasten gedrückt werden und falls ja Spieler bewegen
         if (this.cursors.left.isDown) {
             this.setVelocityX(-this.speed * dt);
@@ -83,8 +83,13 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         }
 
         //Springen
-        if(this.cursors.up.isDown ) {
+        if(this.cursors.up.isDown && this.isJumping === false) {
             this.setVelocityY(-400);
+            this.isJumping = true;
+        }
+
+        if(this.body.velocity.y < 0 && this.body.velocity.y > -4) {
+            this.isJumping = false;
         }
 
 
