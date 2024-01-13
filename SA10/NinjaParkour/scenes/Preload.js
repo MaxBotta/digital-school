@@ -43,10 +43,12 @@ export class Preload extends Phaser.Scene {
     }
 
     loadPlayerAnimations = () => {
-        for (let type of this.characterNames) {
+        //Mit Schleife alle Bilder für Animationen laden
+        for (let characterName of this.characterNames) {
+
             this.load.spritesheet({
-                key: `${type}_idle`,
-                url: `assets/PixelAdventure/MainCharacters/${type}/Idle (32x32).png`,
+                key: `${characterName}_idle`,
+                url: `assets/PixelAdventure/MainCharacters/${characterName}/Idle (32x32).png`,
                 frameConfig: {
                     frameWidth: 32,
                     frameHeight: 32,
@@ -55,8 +57,8 @@ export class Preload extends Phaser.Scene {
                 }
             });
             this.load.spritesheet({
-                key: `${type}_fall`,
-                url: `assets/PixelAdventure/MainCharacters/${type}/Fall (32x32).png`,
+                key: `${characterName}_fall`,
+                url: `assets/PixelAdventure/MainCharacters/${characterName}/Fall (32x32).png`,
                 frameConfig: {
                     frameWidth: 32,
                     frameHeight: 32,
@@ -65,8 +67,8 @@ export class Preload extends Phaser.Scene {
                 }
             });
             this.load.spritesheet({
-                key: `${type}_hit`,
-                url: `assets/PixelAdventure/MainCharacters/${type}/Hit (32x32).png`,
+                key: `${characterName}_hit`,
+                url: `assets/PixelAdventure/MainCharacters/${characterName}/Hit (32x32).png`,
                 frameConfig: {
                     frameWidth: 32,
                     frameHeight: 32,
@@ -75,8 +77,8 @@ export class Preload extends Phaser.Scene {
                 }
             });
             this.load.spritesheet({
-                key: `${type}_double_jump`,
-                url: `assets/PixelAdventure/MainCharacters/${type}/Double Jump (32x32).png`,
+                key: `${characterName}_double_jump`,
+                url: `assets/PixelAdventure/MainCharacters/${characterName}/Double Jump (32x32).png`,
                 frameConfig: {
                     frameWidth: 32,
                     frameHeight: 32,
@@ -85,8 +87,8 @@ export class Preload extends Phaser.Scene {
                 }
             });
             this.load.spritesheet({
-                key: `${type}_jump`,
-                url: `assets/PixelAdventure/MainCharacters/${type}/Jump (32x32).png`,
+                key: `${characterName}_jump`,
+                url: `assets/PixelAdventure/MainCharacters/${characterName}/Jump (32x32).png`,
                 frameConfig: {
                     frameWidth: 32,
                     frameHeight: 32,
@@ -95,8 +97,8 @@ export class Preload extends Phaser.Scene {
                 }
             });
             this.load.spritesheet({
-                key: `${type}_wall_jump`,
-                url: `assets/PixelAdventure/MainCharacters/${type}/Wall Jump (32x32).png`,
+                key: `${characterName}_wall_jump`,
+                url: `assets/PixelAdventure/MainCharacters/${characterName}/Wall Jump (32x32).png`,
                 frameConfig: {
                     frameWidth: 32,
                     frameHeight: 32,
@@ -105,8 +107,8 @@ export class Preload extends Phaser.Scene {
                 }
             });
             this.load.spritesheet({
-                key: `${type}_run`,
-                url: `assets/PixelAdventure/MainCharacters/${type}/Run (32x32).png`,
+                key: `${characterName}_run`,
+                url: `assets/PixelAdventure/MainCharacters/${characterName}/Run (32x32).png`,
                 frameConfig: {
                     frameWidth: 32,
                     frameHeight: 32,
