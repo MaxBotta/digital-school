@@ -12,7 +12,9 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
         this.characterName = characterName;
         this.scale = 2;
-        this.speed = 400;
+        this.runSpeed = 400;
+        this.jumpSpeed = -400;
+        this.jumpCount = 0;
 
         this.setCollideWorldBounds(true);
 
@@ -51,16 +53,26 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             //nach links laufen
             this.flipX = true;
             this.play("run", true);
-            this.setVelocityX(-this.speed)
+            this.setVelocityX(-this.runSpeed);
         } else if (this.cursors.right.isDown) {
             //nach rechts laufen
             this.flipX = false;
             this.play("run", true);
-            this.setVelocityX(this.speed)
+            this.setVelocityX(this.runSpeed);
         } else {
             //stehen bleiben
             this.play("idle", true);
             this.setVelocityX(0);
+        }
+
+        //springen
+        if(Phaser.Input.Keyboard.JustDown(this.cursors.up) && this.jumpCount < 1) {
+            this.setVelocityY(this.jumpSpeed);
+            this.jumpCount++;
+        }
+
+        if(this.body.blocked.down) {
+            this.jumpCount = 0;
         }
 
     }

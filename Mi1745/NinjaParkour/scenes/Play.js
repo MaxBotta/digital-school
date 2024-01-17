@@ -7,9 +7,9 @@ export class Play extends Phaser.Scene {
 
     create() {
         // let player = this.physics.add.sprite(100, 450, 'player');
-        for(let i = 0; i < 20; i++) {
-            let player = new Player(this, i * 40, 100, "Max", "Pink Man");
-        }
+
+        let player = new Player(this, 100, 100, "Max", "Pink Man");
+
 
     }
 
