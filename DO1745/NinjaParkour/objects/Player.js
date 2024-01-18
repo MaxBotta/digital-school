@@ -55,6 +55,12 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             frameRate: 24,
             repeat: -1
         });
+        this.anims.create({
+            key: 'double_jump',
+            frames: this.anims.generateFrameNumbers(`${this.characterType}_double_jump`),
+            frameRate: 24,
+            repeat: -1
+        });
         //////////////////////
 
         //Spiele Stehanimation ab
@@ -71,23 +77,45 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         //Schauen ob Pfeiltasten gedrückt werden und falls ja Spieler bewegen
         if (this.cursors.left.isDown) {
             this.setVelocityX(-this.speed * dt);
-            this.play("run", true);
+
+            if(this.isJumping === false) {
+                this.play("run", true);
+            }
+
             this.flipX = true;
         }
         else if (this.cursors.right.isDown) {
             this.setVelocityX(this.speed * dt);
-            this.play("run", true);
+
+            if(this.isJumping === false) {
+                this.play("run", true);
+            }
+
             this.flipX = false;
         } else {
             this.setVelocityX(0);
-            this.play("idle", true)
+
+            //Nur wenn Spieler nicht springt, wird die Stehanimation gespielt
+            if(this.isJumping === false) {
+                this.play("idle", true);
+            }
+ 
         }
 
         //Springen
         if (Phaser.Input.Keyboard.JustDown(this.cursors.up) && this.jumpCount < 2) {
             this.setVelocityY(-400);
-            this.jumpCount++;
             
+            this.isJumping = true;
+            console.log(this.jumpCount);
+            if(this.jumpCount === 0) {
+                this.play("jump", true);
+            } else if(this.jumpCount === 1) {
+                this.play("double_jump", true);
+            }
+
+            this.jumpCount++;
+
             this.checkBlockedDown = false;
             setTimeout(() => {
                 this.checkBlockedDown = true;
@@ -97,6 +125,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
         if (this.body.blocked.down && this.checkBlockedDown == true) {
             this.jumpCount = 0;
+            this.isJumping = false;
         }
 
 

@@ -47,7 +47,18 @@ export class Preloader extends Phaser.Scene {
                     frameWidth: 32,
                     frameHeight: 32,
                     startFrame: 0,
-                    endFrame: 11
+                    endFrame: 0
+                }
+            });
+
+            this.load.spritesheet({
+                key: `${characterType}_double_jump`,
+                url: `assets/PixelAdventure/Main Characters/${characterType}/Double Jump (32x32).png`,
+                frameConfig: {
+                    frameWidth: 32,
+                    frameHeight: 32,
+                    startFrame: 0,
+                    endFrame: 5
                 }
             });
         }
