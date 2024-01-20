@@ -11,6 +11,9 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         this.damage = 10;
         this.jumpPower = 20;
         this.speed = 60;
+        this.jumpSpeed = 100;
+        this.isJumping = false;
+        this.jumpCount = 0;
 
         this.body.setSize(16, 28);
         this.scale = 2;
@@ -23,8 +26,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     preload = () => {
-        
-        this.scene.load.once('complete', this.create, this.scene); 
+
+        this.scene.load.once('complete', this.create, this.scene);
         this.scene.load.start();
     }
 
@@ -54,7 +57,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             key: 'double_jump',
             frames: this.anims.generateFrameNumbers(`${this.characterName}_double_jump`),
             frameRate: 20,
-            repeat: -1
+            repeat: 0
         });
         this.anims.create({
             key: 'fall',
@@ -84,20 +87,41 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     update = (t, dt) => {
-        
+
         //Spieler nach links bewegen
-        if(this.cursors.left.isDown) {
+        if (this.cursors.left.isDown) {
             this.play("run", true);
             this.flipX = true;
             this.setVelocityX(-this.speed * dt);
-        } else if(this.cursors.right.isDown) {
+        } else if (this.cursors.right.isDown) {
             this.play("run", true);
             this.flipX = false;
             this.setVelocityX(this.speed * dt);
-        } else {
+        } else if(this.jumpCount == 0) {
             this.play("idle", true);
             this.setVelocityX(0);
         }
+
+        //Spieler springt
+        if (Phaser.Input.Keyboard.JustDown(this.cursors.up) && this.jumpCount < 2) {
+            this.jumpCount += 1;
+            this.setVelocityY(-this.jumpSpeed * dt);
+        }
+
+        //Schauen ob Spieler den Boden berührt
+        if (this.body.velocity.y == 0) {
+            this.jumpCount = 0;
+        }
+
+        //Spiele spring oder fall Animation ab
+        if (this.body.velocity.y < 0) {
+            this.play("jump", true);
+
+        }
+        else if (this.body.velocity.y > 0) {
+            this.play("fall", true);
+        }
+
 
 
     }

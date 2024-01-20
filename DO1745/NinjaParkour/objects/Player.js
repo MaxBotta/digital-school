@@ -55,10 +55,11 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             frameRate: 24,
             repeat: -1
         });
+
         this.anims.create({
             key: 'double_jump',
             frames: this.anims.generateFrameNumbers(`${this.characterType}_double_jump`),
-            frameRate: 24,
+            frameRate: 30,
             repeat: -1
         });
         //////////////////////
@@ -104,10 +105,9 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
         //Springen
         if (Phaser.Input.Keyboard.JustDown(this.cursors.up) && this.jumpCount < 2) {
-            this.setVelocityY(-400);
+            this.setVelocityY(-600);
             
             this.isJumping = true;
-            console.log(this.jumpCount);
             if(this.jumpCount === 0) {
                 this.play("jump", true);
             } else if(this.jumpCount === 1) {

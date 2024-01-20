@@ -53,7 +53,7 @@ export class Preload extends Phaser.Scene {
                     frameWidth: 32,
                     frameHeight: 32,
                     startFrame: 0,
-                    endFrame: 11
+                    endFrame: 10
                 }
             });
             this.load.spritesheet({
@@ -63,7 +63,7 @@ export class Preload extends Phaser.Scene {
                     frameWidth: 32,
                     frameHeight: 32,
                     startFrame: 0,
-                    endFrame: 11
+                    endFrame: 0
                 }
             });
             this.load.spritesheet({
@@ -73,7 +73,7 @@ export class Preload extends Phaser.Scene {
                     frameWidth: 32,
                     frameHeight: 32,
                     startFrame: 0,
-                    endFrame: 11
+                    endFrame: 6
                 }
             });
             this.load.spritesheet({
@@ -83,7 +83,7 @@ export class Preload extends Phaser.Scene {
                     frameWidth: 32,
                     frameHeight: 32,
                     startFrame: 0,
-                    endFrame: 11
+                    endFrame: 5
                 }
             });
             this.load.spritesheet({
@@ -93,7 +93,7 @@ export class Preload extends Phaser.Scene {
                     frameWidth: 32,
                     frameHeight: 32,
                     startFrame: 0,
-                    endFrame: 11
+                    endFrame: 0
                 }
             });
             this.load.spritesheet({
@@ -103,7 +103,7 @@ export class Preload extends Phaser.Scene {
                     frameWidth: 32,
                     frameHeight: 32,
                     startFrame: 0,
-                    endFrame: 11
+                    endFrame: 3
                 }
             });
             this.load.spritesheet({
