@@ -12,8 +12,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
         this.characterName = characterName;
         this.scale = 2;
-        this.runSpeed = 400;
-        this.jumpSpeed = -400;
+        this.runSpeed = 60;
+        this.jumpSpeed = -100;
         this.jumpCount = 0;
 
         this.setCollideWorldBounds(true);
@@ -46,19 +46,19 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
     }
 
-    update = () => {
+    update = (time, dt) => {
 
         //Steuerung
         if (this.cursors.left.isDown) {
             //nach links laufen
             this.flipX = true;
             this.play("run", true);
-            this.setVelocityX(-this.runSpeed);
+            this.setVelocityX(-this.runSpeed * dt);
         } else if (this.cursors.right.isDown) {
             //nach rechts laufen
             this.flipX = false;
             this.play("run", true);
-            this.setVelocityX(this.runSpeed);
+            this.setVelocityX(this.runSpeed * dt);
         } else {
             //stehen bleiben
             this.play("idle", true);
@@ -66,12 +66,12 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         }
 
         //springen
-        if(Phaser.Input.Keyboard.JustDown(this.cursors.up) && this.jumpCount < 1) {
-            this.setVelocityY(this.jumpSpeed);
+        if(Phaser.Input.Keyboard.JustDown(this.cursors.up) && this.jumpCount < 2) {
+            this.setVelocityY(this.jumpSpeed * dt);
             this.jumpCount++;
         }
 
-        if(this.body.blocked.down) {
+        if(this.body.velocity.y === 0) {
             this.jumpCount = 0;
         }
 

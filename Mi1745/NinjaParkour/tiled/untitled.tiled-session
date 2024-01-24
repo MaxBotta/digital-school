@@ -44,8 +44,10 @@
             "scaleInEditor": 3.334
         }
     },
+    "last.exportedFilePath": "/Users/maxbotta/Desktop/DigitalSchool/Mi1745/NinjaParkour/tiled",
     "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/Mi1745/MyGamesWebsite/NinjaParkour/assets/Traps/Fire",
     "map.height": 60,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
     "map.layerDataFormat": "1",
     "map.tileHeight": 16,
