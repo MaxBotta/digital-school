@@ -11,9 +11,9 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         this.body.setSize(16, 28);
 
         this.characterName = characterName;
-        this.scale = 1;
-        this.runSpeed = 60;
-        this.jumpSpeed = -100;
+        this.scale = 1.2;
+        this.runSpeed = 40;
+        this.jumpSpeed = -80;
         this.jumpCount = 0;
 
         // this.setCollideWorldBounds(true);
