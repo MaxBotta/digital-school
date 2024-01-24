@@ -8,9 +8,9 @@ const config = {
     height: 800,
     backgroundColor: 'rgb(0, 200, 255)',
     physics: {
-        fps: 60,
         default: 'arcade',
         arcade: {
+            fps: 60,
             gravity: { y: 2000 },
             debug: true,
             tileBias: 20,
