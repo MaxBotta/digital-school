@@ -9,8 +9,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         scene.physics.add.existing(this);
 
         this.setBounce(0.2);
-        this.setCollideWorldBounds(true);
-        this.scale = 1.5;
+        //this.setCollideWorldBounds(true);
+        this.scale = 1.2;
 
         this.characterType = characterType;
         this.isAlive = true;

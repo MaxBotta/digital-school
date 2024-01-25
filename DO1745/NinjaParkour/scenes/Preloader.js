@@ -15,6 +15,13 @@ export class Preloader extends Phaser.Scene {
 
     preload() {
 
+        //lade alle Bilder für das Level
+        this.load.image("terrain", "assets/PixelAdventure/Terrain/Terrain (16x16).png");
+        this.load.image("backgroundYellow", "assets/PixelAdventure/Background/Yellow.png");
+
+        //Lade level.json
+        this.load.tilemapTiledJSON("level1", "tiled/level1.json");
+
         //lade alle Bilder von allen Charakteren
         for (let characterType of this.characterTypes) {
 
