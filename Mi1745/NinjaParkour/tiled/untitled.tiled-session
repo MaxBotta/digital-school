@@ -3,15 +3,43 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "level1.json",
     "expandedProjectPaths": [
-        "."
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "": {
             "scaleInDock": 1,
             "scaleInEditor": 2.67
+        },
+        "level1.json": {
+            "scale": 0.2113,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 766.682442025556,
+                "y": 1982.9626123994321
+            }
+        },
+        "level1.json#background_blue": {
+            "scaleInDock": 1
+        },
+        "level1.json#background_yellow": {
+            "scaleInDock": 1
+        },
+        "level1.json#fire": {
+            "scaleInDock": 1
+        },
+        "level1.json#sand_mud_ice": {
+            "scaleInDock": 1
+        },
+        "level1.json#spikes": {
+            "scaleInDock": 1
+        },
+        "level1.json#terrain": {
+            "scaleInDock": 1
+        },
+        "level1.json#terrain_collide": {
+            "scaleInDock": 1
         },
         "level1.tmx": {
             "scale": 1.35,
@@ -55,10 +83,12 @@
     "map.tileWidth": 16,
     "map.width": 60,
     "openFiles": [
+        "level1.json"
     ],
     "project": "untitled.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "level1.json",
         "level1.tmx"
     ],
     "tileset.embedInMap": true,

@@ -19,7 +19,6 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         // this.setCollideWorldBounds(true);
 
         this.create();
-
     }
 
     create = () => {

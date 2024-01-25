@@ -1,0 +1,70 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1,
+            "scaleInEditor": 6.6244
+        },
+        "level1.tmx": {
+            "scale": 0.88,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 509.09090909090924,
+                "y": 473.2954545454545
+            }
+        },
+        "level1.tmx#box": {
+            "scaleInDock": 1
+        },
+        "level1.tmx#sand_mud_ice": {
+            "scaleInDock": 4.5377,
+            "scaleInEditor": 1
+        },
+        "level1.tmx#saw": {
+            "scaleInDock": 5.8581,
+            "scaleInEditor": 13.2692
+        },
+        "level1.tmx#spikes": {
+            "scaleInDock": 7.181,
+            "scaleInEditor": 21.1152
+        },
+        "level1.tmx#terrain": {
+            "scaleInDock": 2.4976,
+            "scaleInEditor": 3.07
+        },
+        "level1.tmx#terrain_collide": {
+            "scaleInDock": 2.4375,
+            "scaleInEditor": 3.45
+        }
+    },
+    "last.exportedFilePath": "/Users/maxbotta/Desktop/DigitalSchool/DO1745/NinjaParkour/tiled",
+    "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/DO1745/NinjaParkour/assets/PixelAdventure/Terrain",
+    "map.height": 60,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": "1",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 60,
+    "mapScene.enableWorlds": true,
+    "openFiles": [
+    ],
+    "project": "NinjaParkour.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "level1.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="1000" height="60" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="28">
  <tileset firstgid="1" name="terrain" tilewidth="16" tileheight="16" tilecount="242" columns="22">
-  <image source="../assets/PixelAdveture/Terrain/Terrain (16x16).png" width="352" height="176"/>
+  <image source="../assets/PixelAdventure/Terrain/Terrain (16x16).png" width="352" height="176"/>
  </tileset>
  <tileset firstgid="243" name="spikes" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="../assets/PixelAdveture/Traps/Spikes/Idle.png" width="16" height="16"/>
+  <image source="../assets/PixelAdventure/Traps/Spikes/Idle.png" width="16" height="16"/>
   <tile id="0">
    <properties>
     <property name="kill" type="bool" value="true"/>
@@ -12,7 +12,7 @@
   </tile>
  </tileset>
  <tileset firstgid="244" name="saw" tilewidth="38" tileheight="38" tilecount="1" columns="1">
-  <image source="../assets/PixelAdveture/Traps/Saw/Off.png" width="38" height="38"/>
+  <image source="../assets/PixelAdventure/Traps/Saw/Off.png" width="38" height="38"/>
   <tile id="0">
    <properties>
     <property name="kill" type="bool" value="true"/>
@@ -20,10 +20,10 @@
   </tile>
  </tileset>
  <tileset firstgid="245" name="box" tilewidth="28" tileheight="24" tilecount="1" columns="1">
-  <image source="../assets/PixelAdveture/Items/Boxes/Box1/Idle.png" width="28" height="24"/>
+  <image source="../assets/PixelAdventure/Items/Boxes/Box1/Idle.png" width="28" height="24"/>
  </tileset>
  <tileset firstgid="246" name="terrain_collide" tilewidth="16" tileheight="16" tilecount="242" columns="22">
-  <image source="../assets/PixelAdveture/Terrain/Terrain (16x16).png" width="352" height="176"/>
+  <image source="../assets/PixelAdventure/Terrain/Terrain (16x16).png" width="352" height="176"/>
   <tile id="0">
    <properties>
     <property name="collide" type="bool" value="true"/>
@@ -1236,7 +1236,7 @@
   </tile>
  </tileset>
  <tileset firstgid="488" name="sand_mud_ice" tilewidth="16" tileheight="16" tilecount="55" columns="11">
-  <image source="../assets/PixelAdveture/Traps/Sand Mud Ice/Sand Mud Ice (16x6).png" width="176" height="80"/>
+  <image source="../assets/PixelAdventure/Traps/Sand Mud Ice/Sand Mud Ice (16x6).png" width="176" height="80"/>
   <tile id="0">
    <properties>
     <property name="collide" type="bool" value="true"/>
