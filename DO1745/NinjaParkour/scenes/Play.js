@@ -28,6 +28,10 @@ export class Play extends Phaser.Scene {
         this.cameras.main.setZoom(1.6);
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 
+        //Erstelle Kollision mit den Blöcken
+        terrainLayer.setCollisionByProperty({ collide: true });
+        this.physics.add.collider(this.player, terrainLayer);
+
     }
 
     update() {
