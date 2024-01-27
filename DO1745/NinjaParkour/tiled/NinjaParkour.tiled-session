@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "level1.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -11,15 +11,18 @@
     "fileStates": {
         "": {
             "scaleInDock": 1,
-            "scaleInEditor": 6.6244
+            "scaleInEditor": 3.45
         },
         "level1.tmx": {
-            "scale": 0.88,
+            "scale": 0.3278,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 509.09090909090924,
-                "y": 473.2954545454545
+                "x": 591.8242830994509,
+                "y": 893.8377059182428
             }
+        },
+        "level1.tmx#background_yellow": {
+            "scaleInDock": 1
         },
         "level1.tmx#box": {
             "scaleInDock": 1
@@ -56,6 +59,7 @@
     "map.width": 60,
     "mapScene.enableWorlds": true,
     "openFiles": [
+        "level1.tmx"
     ],
     "project": "NinjaParkour.tiled-project",
     "property.type": "bool",
