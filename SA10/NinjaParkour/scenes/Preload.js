@@ -19,6 +19,17 @@ export class Preload extends Phaser.Scene {
     }
 
     preload = () => {
+        this.loadingBar();
+        this.loadMap();
+        this.loadPlayerAnimations();
+    }
+
+    create = () => {
+        this.scene.start("play");
+    }
+
+    loadingBar = () => {
+        //Ladeanimation Ladebalken
         var progressBar = this.add.graphics();
         var progressBox = this.add.graphics();
         progressBox.fillStyle(0x222222, 0.8);
@@ -34,12 +45,15 @@ export class Preload extends Phaser.Scene {
         this.load.on('complete', function () {
             console.log('complete');
         });
-
-        this.loadPlayerAnimations();
     }
 
-    create = () => {
-        this.scene.start("play");
+    loadMap = () => {
+        //Lade Bilder für Tilemap
+        this.load.image("terrain", "assets/PixelAdventure/Terrain/Terrain (16x16).png");
+        this.load.image("back_brown", "assets/PixelAdventure/Background/Brown.png");
+
+        //Lade Tilemap
+        this.load.tilemapTiledJSON("level1", "tiled/level1.json");
     }
 
     loadPlayerAnimations = () => {
