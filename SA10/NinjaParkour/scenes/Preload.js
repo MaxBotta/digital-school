@@ -48,6 +48,7 @@ export class Preload extends Phaser.Scene {
     }
 
     loadMap = () => {
+        console.log("loadMap")
         //Lade Bilder für Tilemap
         this.load.image("terrain", "assets/PixelAdventure/Terrain/Terrain (16x16).png");
         this.load.image("back_brown", "assets/PixelAdventure/Background/Brown.png");

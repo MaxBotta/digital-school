@@ -3,8 +3,9 @@ import { Preload, Play } from './scenes/index.js';
 
 let config = {
     type: Phaser.AUTO,
-    width: 800,
+    width: 1000,
     height: 800,
+    backgroundColor: "rgb(0, 140, 180)",
     physics: {
         fps: 60,
         default: 'arcade',
