@@ -48,11 +48,11 @@
             "scaleInDock": 1
         },
         "level1.tmx": {
-            "scale": 0.32,
-            "selectedLayer": 3,
+            "scale": 0.22,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 1659.375,
-                "y": 2279.6875
+                "x": 347.72727272727286,
+                "y": 1811.3636363636365
             }
         },
         "level1.tmx#Back_Brown": {
@@ -89,7 +89,7 @@
             "scaleInEditor": 2.69
         },
         "level1.tmx#terrain": {
-            "scaleInDock": 3.0268
+            "scaleInDock": 1.7854
         },
         "level1.tmx#terrain_collide": {
             "scaleInDock": 2.435,

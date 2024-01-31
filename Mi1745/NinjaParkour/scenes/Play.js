@@ -8,16 +8,17 @@ export class Play extends Phaser.Scene {
     }
 
     create() {
-        // let player = this.physics.add.sprite(100, 450, 'player');
 
-        //Erstelle Level
+        //Lade Tilemap
         const map = this.make.tilemap({ key: 'level1', tileWidth: 16, tileHeight: 16 });
+
+        //Lade Tilesets
         const terrain = map.addTilesetImage("terrain", "terrain");
         const terrainCollide = map.addTilesetImage("terrain_collide", "terrain");
         const backgroundYellow = map.addTilesetImage("background_yellow", "background_yellow");
         const backgroundBlue = map.addTilesetImage("background_blue", "background_blue");
 
-        //Erstelle Layer
+        //Erstelle Layer / Ebenen - Reihenfolge ist wichtig
         const backgroundLayer = map.createLayer("background", [backgroundYellow, backgroundBlue]);
         const terrainLayer = map.createLayer("terrain", [terrain, terrainCollide]);
 
@@ -33,6 +34,10 @@ export class Play extends Phaser.Scene {
         terrainLayer.setCollisionByProperty({ collide: true });
         this.physics.add.collider(this.player, terrainLayer);
 
+
+    }
+
+    update() {
 
     }
 
