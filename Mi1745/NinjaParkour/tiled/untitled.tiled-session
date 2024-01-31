@@ -10,14 +10,14 @@
     "fileStates": {
         "": {
             "scaleInDock": 1,
-            "scaleInEditor": 2.67
+            "scaleInEditor": 4.86
         },
         "level1.json": {
-            "scale": 0.2113,
+            "scale": 0.4034,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 766.682442025556,
-                "y": 1982.9626123994321
+                "x": 1772.4343083787803,
+                "y": 2730.5404065443727
             }
         },
         "level1.json#background_blue": {
@@ -33,13 +33,14 @@
             "scaleInDock": 1
         },
         "level1.json#spikes": {
-            "scaleInDock": 1
+            "scaleInDock": 9.1895,
+            "scaleInEditor": 1
         },
         "level1.json#terrain": {
-            "scaleInDock": 1
+            "scaleInDock": 1.6662
         },
         "level1.json#terrain_collide": {
-            "scaleInDock": 1
+            "scaleInDock": 1.8094
         },
         "level1.tmx": {
             "scale": 1.35,

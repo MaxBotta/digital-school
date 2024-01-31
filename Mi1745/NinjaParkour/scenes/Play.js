@@ -12,15 +12,17 @@ export class Play extends Phaser.Scene {
         //Lade Tilemap
         const map = this.make.tilemap({ key: 'level1', tileWidth: 16, tileHeight: 16 });
 
-        //Lade Tilesets
-        const terrain = map.addTilesetImage("terrain", "terrain");
-        const terrainCollide = map.addTilesetImage("terrain_collide", "terrain");
-        const backgroundYellow = map.addTilesetImage("background_yellow", "background_yellow");
-        const backgroundBlue = map.addTilesetImage("background_blue", "background_blue");
+        //Lade Tilesets / erstelle Kachelsets
+        const terrain = map.addTilesetImage("terrain", "terrain_img");
+        const terrainCollide = map.addTilesetImage("terrain_collide", "terrain_img");
+        const backgroundYellow = map.addTilesetImage("background_yellow", "background_yellow_img");
+        const backgroundBlue = map.addTilesetImage("background_blue", "background_blue_img");
+        const spikes = map.addTilesetImage("spikes", "spikes_img");
 
         //Erstelle Layer / Ebenen - Reihenfolge ist wichtig
         const backgroundLayer = map.createLayer("background", [backgroundYellow, backgroundBlue]);
         const terrainLayer = map.createLayer("terrain", [terrain, terrainCollide]);
+        const spikesLayer = map.createLayer("spikes", spikes);
 
         //Erstelle Spieler
         this.player = new Player(this, 100, 2600, "Max", "Pink Man");
