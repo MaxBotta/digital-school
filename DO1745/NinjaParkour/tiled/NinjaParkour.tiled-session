@@ -13,12 +13,41 @@
             "scaleInDock": 1,
             "scaleInEditor": 3.45
         },
-        "level1.tmx": {
-            "scale": 0.3278,
+        "level1.json": {
+            "scale": 0.08837890625,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 591.8242830994509,
-                "y": 893.8377059182428
+                "x": 7993.9889502762435,
+                "y": 480.88397790055205
+            }
+        },
+        "level1.json#background_yellow": {
+            "scaleInDock": 1
+        },
+        "level1.json#box": {
+            "scaleInDock": 1
+        },
+        "level1.json#sand_mud_ice": {
+            "scaleInDock": 1
+        },
+        "level1.json#saw": {
+            "scaleInDock": 1
+        },
+        "level1.json#spikes": {
+            "scaleInDock": 1
+        },
+        "level1.json#terrain": {
+            "scaleInDock": 1
+        },
+        "level1.json#terrain_collide": {
+            "scaleInDock": 1
+        },
+        "level1.tmx": {
+            "scale": 1.791,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 61.13902847571189,
+                "y": 699.3299832495812
             }
         },
         "level1.tmx#background_yellow": {

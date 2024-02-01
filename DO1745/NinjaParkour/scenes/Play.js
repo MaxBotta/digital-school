@@ -9,7 +9,7 @@ export class Play extends Phaser.Scene {
     create() {
 
         //Erstelle Level
-        const map = this.make.tilemap({ key: "level1" });
+        const map = this.make.tilemap({ key: "level1-test" });
 
         //Erstelle Kachelsets/Tileset
         const backgroundYellowTileset = map.addTilesetImage("background_yellow", "background_yellow_img");
