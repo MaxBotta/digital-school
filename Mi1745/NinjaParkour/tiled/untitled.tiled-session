@@ -5,6 +5,7 @@
     },
     "activeFile": "level1.json",
     "expandedProjectPaths": [
+        "."
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
@@ -14,10 +15,10 @@
         },
         "level1.json": {
             "scale": 0.4034,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 1772.4343083787803,
-                "y": 2730.5404065443727
+                "x": 246.6534457114527,
+                "y": 2358.7010411502233
             }
         },
         "level1.json#background_blue": {
