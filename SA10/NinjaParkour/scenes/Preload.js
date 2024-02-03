@@ -48,10 +48,10 @@ export class Preload extends Phaser.Scene {
     }
 
     loadMap = () => {
-        console.log("loadMap")
         //Lade Bilder für Tilemap
-        this.load.image("terrain", "assets/PixelAdventure/Terrain/Terrain (16x16).png");
-        this.load.image("back_brown", "assets/PixelAdventure/Background/Brown.png");
+        this.load.image("terrain_img", "assets/PixelAdventure/Terrain/Terrain (16x16).png");
+        this.load.image("back_brown_img", "assets/PixelAdventure/Background/Brown.png");
+        this.load.image("spikes_img", "assets/PixelAdventure/Traps/Spikes/Idle.png");
 
         //Lade Tilemap
         this.load.tilemapTiledJSON("level1", "tiled/level1.json");

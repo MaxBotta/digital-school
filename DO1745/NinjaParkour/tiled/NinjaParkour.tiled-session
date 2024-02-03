@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "level1.tmx",
+    "activeFile": "level1.json",
     "expandedProjectPaths": [
         "."
     ],
@@ -14,11 +14,11 @@
             "scaleInEditor": 3.45
         },
         "level1.json": {
-            "scale": 0.08837890625,
+            "scale": 0.3597,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 7993.9889502762435,
-                "y": 480.88397790055205
+                "x": 519.8776758409786,
+                "y": 679.7331109257714
             }
         },
         "level1.json#background_yellow": {
@@ -46,8 +46,8 @@
             "scale": 1.791,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 61.13902847571189,
-                "y": 699.3299832495812
+                "x": 8089.3355667225005,
+                "y": 514.5170295924065
             }
         },
         "level1.tmx#background_yellow": {
@@ -88,12 +88,14 @@
     "map.width": 60,
     "mapScene.enableWorlds": true,
     "openFiles": [
-        "level1.tmx"
+        "level1.tmx",
+        "level1.json"
     ],
     "project": "NinjaParkour.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "level1.tmx"
+        "level1.tmx",
+        "level1.json"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {
