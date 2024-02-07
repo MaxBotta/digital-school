@@ -21,7 +21,7 @@ export class Preload extends Phaser.Scene {
     preload = () => {
         this.loadingBar();
         this.loadMap();
-        this.loadPlayerAnimations();
+        this.loadPlayerSpritesheets();
     }
 
     create = () => {
@@ -57,7 +57,7 @@ export class Preload extends Phaser.Scene {
         this.load.tilemapTiledJSON("level1", "tiled/level1.json");
     }
 
-    loadPlayerAnimations = () => {
+    loadPlayerSpritesheets = () => {
         //Mit Schleife alle Bilder für Animationen laden
         for (let characterName of this.characterNames) {
 

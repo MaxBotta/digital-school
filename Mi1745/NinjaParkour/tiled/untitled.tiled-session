@@ -14,11 +14,11 @@
             "scaleInEditor": 4.86
         },
         "level1.json": {
-            "scale": 0.4034,
-            "selectedLayer": 1,
+            "scale": 2.6211,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 246.6534457114527,
-                "y": 2358.7010411502233
+                "x": 119.03399336156573,
+                "y": 1040.975163099462
             }
         },
         "level1.json#background_blue": {
@@ -28,7 +28,7 @@
             "scaleInDock": 1
         },
         "level1.json#fire": {
-            "scaleInDock": 1
+            "scaleInDock": 9.5044
         },
         "level1.json#sand_mud_ice": {
             "scaleInDock": 1
@@ -38,7 +38,7 @@
             "scaleInEditor": 1
         },
         "level1.json#terrain": {
-            "scaleInDock": 1.6662
+            "scaleInDock": 2.2044
         },
         "level1.json#terrain_collide": {
             "scaleInDock": 1.8094

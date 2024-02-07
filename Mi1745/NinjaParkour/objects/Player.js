@@ -12,8 +12,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
         this.characterName = characterName;
         this.scale = 1.2;
-        this.runSpeed = 40;
-        this.jumpSpeed = -80;
+        this.runSpeed = 20;
+        this.jumpSpeed = -40;
         this.jumpCount = 0;
 
         // this.setCollideWorldBounds(true);
@@ -65,14 +65,26 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         }
 
         //springen
-        if(Phaser.Input.Keyboard.JustDown(this.cursors.up) && this.jumpCount < 2) {
+        if (Phaser.Input.Keyboard.JustDown(this.cursors.up) && this.jumpCount < 2) {
             this.setVelocityY(this.jumpSpeed * dt);
             this.jumpCount++;
         }
 
-        if(this.body.velocity.y === 0) {
+        if (this.body.velocity.y === 0) {
             this.jumpCount = 0;
         }
+
+    }
+
+    kill = () => {
+        console.log("player was killed");
+
+        this.setVelocityY(-100);
+
+        //Respawn des Spielers
+        setTimeout(() => {
+            this.setPosition(100, 2400);
+        }, 1000);
 
     }
 

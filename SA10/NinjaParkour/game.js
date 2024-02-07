@@ -10,7 +10,7 @@ let config = {
         fps: 60,
         default: 'arcade',
         arcade: {
-            gravity: { y: 1500 },
+            gravity: { y: 1000 },
             // debug: true,
             tileBias: 20,
         }

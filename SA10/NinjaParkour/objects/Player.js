@@ -10,8 +10,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
         this.damage = 10;
         this.jumpPower = 20;
-        this.speed = 40;
-        this.jumpSpeed = 70;
+        this.speed = 20;
+        this.jumpSpeed = 30;
         this.isJumping = false;
         this.jumpCount = 0;
 
@@ -98,7 +98,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             this.play("run", true);
             this.flipX = false;
             this.setVelocityX(this.speed * dt);
-        } else if(this.jumpCount == 0) {
+        } else {
             this.play("idle", true);
             this.setVelocityX(0);
         }
@@ -122,9 +122,6 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         else if (this.body.velocity.y > 0) {
             this.play("fall", true);
         }
-
-
-
     }
 
 }
