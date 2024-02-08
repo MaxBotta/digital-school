@@ -80,7 +80,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
     update = (t, dt) => {
 
-        if(this.isAlive === false) return;
+        if (this.isAlive === false) return;
 
         this.playerControl(t, dt);
     }
@@ -90,7 +90,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         if (this.cursors.left.isDown) {
             this.setVelocityX(-this.speed * dt);
 
-            if(this.isJumping === false) {
+            if (this.isJumping === false) {
                 this.play("run", true);
             }
 
@@ -99,7 +99,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         else if (this.cursors.right.isDown) {
             this.setVelocityX(this.speed * dt);
 
-            if(this.isJumping === false) {
+            if (this.isJumping === false) {
                 this.play("run", true);
             }
 
@@ -108,20 +108,20 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             this.setVelocityX(0);
 
             //Nur wenn Spieler nicht springt, wird die Stehanimation gespielt
-            if(this.isJumping === false) {
+            if (this.isJumping === false) {
                 this.play("idle", true);
             }
- 
+
         }
 
         //Springen
         if (Phaser.Input.Keyboard.JustDown(this.cursors.up) && this.jumpCount < 2) {
             this.setVelocityY(-this.jumpSpeed * dt);
-            
+
             this.isJumping = true;
-            if(this.jumpCount === 0) {
+            if (this.jumpCount === 0) {
                 this.play("jump", true);
-            } else if(this.jumpCount === 1) {
+            } else if (this.jumpCount === 1) {
                 this.play("double_jump", true);
             }
 
@@ -131,7 +131,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             setTimeout(() => {
                 this.checkBlockedDown = true;
             }, 500)
-            
+
         }
 
         if (this.body.blocked.down && this.checkBlockedDown == true) {
@@ -142,15 +142,18 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     kill = () => {
-        if(this.isAlive === true) {
+
+        if (this.isAlive === true) {
+            console.log("kill")
+            this.setVelocityY(-600)
             this.play("hit", true);
             this.isAlive = false;
-        }
 
-        setTimeout(() => {
-            this.setPosition(200, 600);
-            this.isAlive = true;
-        }, 2000)
+            setTimeout(() => {
+                this.setPosition(200, 600);
+                this.isAlive = true;
+            }, 600)
+        }
     }
 
 }
