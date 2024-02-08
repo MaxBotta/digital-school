@@ -17,7 +17,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         this.isJumping = false;
         this.isDoubleJumping = false;
         this.jumpCount = 0;
-        this.speed = 40;
+        this.speed = 20;
+        this.jumpSpeed = 30;
         this.cursors;
 
         this.preload();
@@ -62,6 +63,13 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             frameRate: 30,
             repeat: -1
         });
+
+        this.anims.create({
+            key: 'hit',
+            frames: this.anims.generateFrameNumbers(`${this.characterType}_hit`),
+            frameRate: 30,
+            repeat: -1
+        });
         //////////////////////
 
         //Spiele Stehanimation ab
@@ -71,6 +79,9 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     update = (t, dt) => {
+
+        if(this.isAlive === false) return;
+
         this.playerControl(t, dt);
     }
 
@@ -105,7 +116,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
         //Springen
         if (Phaser.Input.Keyboard.JustDown(this.cursors.up) && this.jumpCount < 2) {
-            this.setVelocityY(-600);
+            this.setVelocityY(-this.jumpSpeed * dt);
             
             this.isJumping = true;
             if(this.jumpCount === 0) {
@@ -128,7 +139,18 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             this.isJumping = false;
         }
 
+    }
 
+    kill = () => {
+        if(this.isAlive === true) {
+            this.play("hit", true);
+            this.isAlive = false;
+        }
+
+        setTimeout(() => {
+            this.setPosition(200, 600);
+            this.isAlive = true;
+        }, 2000)
     }
 
 }

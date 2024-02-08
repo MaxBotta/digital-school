@@ -9,7 +9,7 @@ export class Play extends Phaser.Scene {
     create() {
 
         //Erstelle Level
-        const map = this.make.tilemap({ key: "level1-test" });
+        const map = this.make.tilemap({ key: "level1" });
 
         //Erstelle Kachelsets/Tileset
         const backgroundYellowTileset = map.addTilesetImage("background_yellow", "background_yellow_img");
@@ -20,7 +20,7 @@ export class Play extends Phaser.Scene {
         //Erstelle Ebenen/Layer
         const backgroundLayer = map.createLayer("background", backgroundYellowTileset);
         const terrainLayer = map.createLayer("terrain", [terrainTileset, terrainCollideTileset]);
-        const spikesLayer = map.createLayer("spikes", spikeTileset);
+        const trapsLayer = map.createLayer("traps", [spikeTileset]);
 
         //Erstelle Spieler
         this.player = new Player(this, 200, 600, "Max", "Mask Dude");
@@ -34,9 +34,17 @@ export class Play extends Phaser.Scene {
         terrainLayer.setCollisionByProperty({ collide: true });
         this.physics.add.collider(this.player, terrainLayer);
 
+        //Kill Bausteine
+        // const killTraps = map.filterTiles((tile) => tile.properties.kill === true);
+        trapsLayer.setCollisionByProperty({ kill: true });
+        this.physics.add.collider(this.player, trapsLayer, () => {
+            this.player.kill();
+        })
+
     }
 
     update() {
 
     }
+
 }

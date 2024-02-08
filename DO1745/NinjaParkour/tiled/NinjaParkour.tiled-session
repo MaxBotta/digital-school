@@ -14,11 +14,11 @@
             "scaleInEditor": 3.45
         },
         "level1.json": {
-            "scale": 0.3597,
-            "selectedLayer": 0,
+            "scale": 2.0509,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 519.8776758409786,
-                "y": 679.7331109257714
+                "x": 596.5673606709249,
+                "y": 668.730801111707
             }
         },
         "level1.json#background_yellow": {
@@ -26,6 +26,10 @@
         },
         "level1.json#box": {
             "scaleInDock": 1
+        },
+        "level1.json#fire": {
+            "scaleInDock": 1,
+            "scaleInEditor": 11.1206
         },
         "level1.json#sand_mud_ice": {
             "scaleInDock": 1
@@ -40,14 +44,15 @@
             "scaleInDock": 1
         },
         "level1.json#terrain_collide": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "level1.tmx": {
-            "scale": 1.791,
+            "scale": 0.464,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 8089.3355667225005,
-                "y": 514.5170295924065
+                "x": 802.8017241379309,
+                "y": 466.59482758620675
             }
         },
         "level1.tmx#background_yellow": {
@@ -78,7 +83,7 @@
         }
     },
     "last.exportedFilePath": "/Users/maxbotta/Desktop/DigitalSchool/DO1745/NinjaParkour/tiled",
-    "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/DO1745/NinjaParkour/assets/PixelAdventure/Background",
+    "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/DO1745/NinjaParkour/assets/PixelAdventure/Traps/Fire",
     "map.height": 60,
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",

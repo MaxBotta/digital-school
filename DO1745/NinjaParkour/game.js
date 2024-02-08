@@ -12,7 +12,7 @@ const config = {
         default: 'arcade',
         arcade: {
             gravity: { y: 1400 },
-            //debug: true,
+            debug: true,
             tileBias: 20,
         }
     },
