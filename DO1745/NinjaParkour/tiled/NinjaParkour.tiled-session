@@ -14,11 +14,11 @@
             "scaleInEditor": 3.45
         },
         "level1.json": {
-            "scale": 2.0509,
+            "scale": 0.96,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 596.5673606709249,
-                "y": 668.730801111707
+                "x": 793.75,
+                "y": 734.375
             }
         },
         "level1.json#background_yellow": {
@@ -28,7 +28,7 @@
             "scaleInDock": 1
         },
         "level1.json#fire": {
-            "scaleInDock": 1,
+            "scaleInDock": 4.1077,
             "scaleInEditor": 11.1206
         },
         "level1.json#sand_mud_ice": {
@@ -38,7 +38,8 @@
             "scaleInDock": 1
         },
         "level1.json#spikes": {
-            "scaleInDock": 1
+            "scaleInDock": 6.0174,
+            "scaleInEditor": 36.5386
         },
         "level1.json#terrain": {
             "scaleInDock": 1
@@ -93,14 +94,13 @@
     "map.width": 60,
     "mapScene.enableWorlds": true,
     "openFiles": [
-        "level1.tmx",
         "level1.json"
     ],
     "project": "NinjaParkour.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "level1.tmx",
-        "level1.json"
+        "level1.json",
+        "level1.tmx"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {

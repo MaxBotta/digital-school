@@ -146,6 +146,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         if (this.isAlive === true) {
             console.log("kill")
             this.setVelocityY(-600)
+            this.anims.chain(["hit", "jump"])
             this.play("hit", true);
             this.isAlive = false;
 

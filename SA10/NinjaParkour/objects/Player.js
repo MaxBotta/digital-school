@@ -8,6 +8,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         scene.physics.add.existing(this);
         this.scene = scene;
 
+        this.isAlive = true;
         this.damage = 10;
         this.jumpPower = 20;
         this.speed = 20;
@@ -89,6 +90,9 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
     update = (t, dt) => {
 
+        //Wenn Spieler tot ist, wird update Funktion abgebrochen
+        if(this.isAlive === false) return;
+
         //Spieler nach links bewegen
         if (this.cursors.left.isDown || this.wasdKeys.left.isDown) {
             this.play("run", true);
@@ -123,5 +127,18 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             this.play("fall", true);
         }
     }
+
+    kill = () => {
+        if(this.isAlive === false) return;
+
+        this.isAlive = false;
+        this.play("hit", true);
+
+        setTimeout(() => {
+            this.setPosition(100, 2600);
+            this.isAlive = true;
+        }, 1000);
+    }
+
 
 }

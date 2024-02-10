@@ -22,6 +22,7 @@ export class Play extends Phaser.Scene {
         //Erstelle Ebenen/Layer
         const backgroundLayer = map.createLayer("background", backBrownTileset);
         const terrainLayer = map.createLayer("terrain", [terrainTileset, terrainCollideTileset]);
+        const trapsLayer = map.createLayer("traps", [spikesTileset]);
 
         //Erstelle Spieler
         this.player = new Player(this, 100, 2000, "Pink Man", 'Max');
@@ -34,6 +35,15 @@ export class Play extends Phaser.Scene {
         //Erstelle Kollision mit den Blöcken
         terrainLayer.setCollisionByProperty({ collide: true });
         this.physics.add.collider(this.player, terrainLayer);
+
+        //Erstelle Kollision mit den Fallen
+        trapsLayer.setCollisionByProperty({ kill: true });
+        this.physics.add.collider(this.player, trapsLayer, () => {
+            console.log("Player died")
+            this.player.kill();
+        });
+
+
 
 
     }
