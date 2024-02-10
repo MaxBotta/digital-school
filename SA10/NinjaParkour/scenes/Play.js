@@ -38,10 +38,7 @@ export class Play extends Phaser.Scene {
 
         //Erstelle Kollision mit den Fallen
         trapsLayer.setCollisionByProperty({ kill: true });
-        this.physics.add.collider(this.player, trapsLayer, () => {
-            console.log("Player died")
-            this.player.kill();
-        });
+        this.physics.add.collider(this.player, trapsLayer, this.player.kill);
 
 
 
