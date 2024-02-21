@@ -48,11 +48,11 @@
             "scaleInDock": 1
         },
         "level1.tmx": {
-            "scale": 0.81,
-            "selectedLayer": 3,
+            "scale": 1.2128,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 901.2345679012345,
-                "y": 2858.641975308642
+                "x": 662.104221635884,
+                "y": 2419.1952506596303
             }
         },
         "level1.tmx#Back_Brown": {
@@ -102,7 +102,7 @@
     "last.exportedFilePath": "/Users/maxbotta/Desktop/DigitalSchool/SA10/NinjaParkour/tiled",
     "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/SA10/NinjaParkour/assets/PixelAdventure/Traps/Trampoline",
     "map.height": 60,
-    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedExportFilter": "All Files (*)",
     "map.lastUsedFormat": "tmx",
     "map.layerDataFormat": "1",
     "map.tileHeight": 16,

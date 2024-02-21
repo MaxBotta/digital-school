@@ -46,6 +46,16 @@ export class Preloader extends Phaser.Scene {
                     endFrame: 11
                 }
             });
+            this.load.spritesheet({
+                key: `${character}_hit`,
+                url: `assets/Main Characters/${character}/Hit (32x32).png`,
+                frameConfig: {
+                    frameWidth: 32,
+                    frameHeight: 32,
+                    startFrame: 0,
+                    endFrame: 6
+                }
+            });
         }
 
     }

@@ -12,9 +12,10 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
         this.characterName = characterName;
         this.scale = 1.2;
-        this.runSpeed = 20;
-        this.jumpSpeed = -40;
+        this.runSpeed = 40;
+        this.jumpSpeed = -60;
         this.jumpCount = 0;
+        this.isAlive = true;
 
         // this.setCollideWorldBounds(true);
 
@@ -38,6 +39,12 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             frameRate: 20,
             repeat: -1
         });
+        this.scene.anims.create({
+            key: 'hit',
+            frames: this.anims.generateFrameNumbers(this.characterName + "_hit"),
+            frameRate: 20,
+            repeat: -1
+        });
 
         this.play("idle");
 
@@ -46,6 +53,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     update = (time, dt) => {
+
+        if(this.isAlive === false) return;
 
         //Steuerung
         if (this.cursors.left.isDown) {
@@ -77,16 +86,26 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     kill = () => {
-        console.log("player was killed");
 
-        this.setVelocityY(-100);
+        if(this.isAlive === false) return;
+
+        console.log("player was killed");
+        this.isAlive = false;
+        this.setVelocityY(-600);
+        this.play("hit", true);
 
         //Respawn des Spielers
         setTimeout(() => {
-            this.setPosition(100, 2400);
+            this.respawn();
         }, 1000);
 
     }
 
+    respawn = () => {
+        this.setPosition(100, 2400);
+        this.isAlive = true;
+    }
+
 
 }
+
