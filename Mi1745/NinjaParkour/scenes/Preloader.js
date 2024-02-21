@@ -56,6 +56,36 @@ export class Preloader extends Phaser.Scene {
                     endFrame: 6
                 }
             });
+            this.load.spritesheet({
+                key: `${character}_jump`,
+                url: `assets/Main Characters/${character}/Jump (32x32).png`,
+                frameConfig: {
+                    frameWidth: 32,
+                    frameHeight: 32,
+                    startFrame: 0,
+                    endFrame: 0
+                }
+            });
+            this.load.spritesheet({
+                key: `${character}_fall`,
+                url: `assets/Main Characters/${character}/Fall (32x32).png`,
+                frameConfig: {
+                    frameWidth: 32,
+                    frameHeight: 32,
+                    startFrame: 0,
+                    endFrame: 0
+                }
+            });
+            this.load.spritesheet({
+                key: `${character}_double_jump`,
+                url: `assets/Main Characters/${character}/Double Jump (32x32).png`,
+                frameConfig: {
+                    frameWidth: 32,
+                    frameHeight: 32,
+                    startFrame: 0,
+                    endFrame: 5
+                }
+            });
         }
 
     }
