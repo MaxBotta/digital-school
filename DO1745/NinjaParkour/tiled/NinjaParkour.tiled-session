@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "level1.json",
+    "activeFile": "",
     "expandedProjectPaths": [
         "."
     ],
@@ -14,11 +14,11 @@
             "scaleInEditor": 3.45
         },
         "level1.json": {
-            "scale": 1.1806,
-            "selectedLayer": 4,
+            "scale": 1.0562,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 775.8766728781975,
-                "y": 690.3269523970862
+                "x": 786.7828062866881,
+                "y": 835.5425108880894
             }
         },
         "level1.json#background_yellow": {
@@ -42,14 +42,16 @@
             "scaleInEditor": 36.5386
         },
         "level1.json#terrain": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "level1.json#terrain_collide": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "level1.json#trampoline": {
-            "scaleInDock": 3.9935
+            "scaleInDock": 3.9935,
+            "scaleInEditor": 1
         },
         "level1.tmx": {
             "scale": 0.464,

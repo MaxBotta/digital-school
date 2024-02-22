@@ -46,113 +46,6 @@
         }, 
         {
          "draworder":"topdown",
-         "id":6,
-         "name":"saw",
-         "objects":[
-                {
-                 "gid":244,
-                 "height":38,
-                 "id":2,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":38,
-                 "x":445.323,
-                 "y":755.022
-                }, 
-                {
-                 "gid":244,
-                 "height":38,
-                 "id":3,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":38,
-                 "x":220.772,
-                 "y":771.003
-                }, 
-                {
-                 "gid":244,
-                 "height":38,
-                 "id":4,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":38,
-                 "x":588.949,
-                 "y":674.824
-                }, 
-                {
-                 "gid":244,
-                 "height":38,
-                 "id":5,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":38,
-                 "x":428.757,
-                 "y":627.323
-                }, 
-                {
-                 "gid":244,
-                 "height":38,
-                 "id":6,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":38,
-                 "x":812.333,
-                 "y":739.364
-                }, 
-                {
-                 "gid":244,
-                 "height":38,
-                 "id":8,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":38,
-                 "x":970.198,
-                 "y":732.067
-                }, 
-                {
-                 "gid":244,
-                 "height":38,
-                 "id":26,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":38,
-                 "x":1052.4,
-                 "y":609.803
-                }, 
-                {
-                 "gid":244,
-                 "height":38,
-                 "id":27,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":38,
-                 "x":889.447,
-                 "y":626.402
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":false,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
          "id":8,
          "name":"trampolines",
          "objects":[
@@ -197,32 +90,9 @@
          "visible":true,
          "x":0,
          "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":5,
-         "name":"items",
-         "objects":[
-                {
-                 "gid":245,
-                 "height":24,
-                 "id":1,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":28,
-                 "x":714.097,
-                 "y":770.026
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":false,
-         "x":0,
-         "y":0
         }],
  "nextlayerid":9,
- "nextobjectid":31,
+ "nextobjectid":53,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",

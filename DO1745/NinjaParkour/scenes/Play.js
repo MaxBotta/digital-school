@@ -1,4 +1,5 @@
 import { Player } from "../objects/Player.js";
+import { Trampoline } from "../objects/Trampoline.js";
 
 export class Play extends Phaser.Scene {
     constructor() {
@@ -40,6 +41,22 @@ export class Play extends Phaser.Scene {
         trapsLayer.setCollisionByProperty({ kill: true });
         this.physics.add.collider(this.player, trapsLayer, () => {
             this.player.kill();
+        })
+
+        //Durchsuche Trampolin Layer und erstelle Trampoline
+        const trampolineLayer = map.getObjectLayer("trampolines");
+        //Liste für alle Trampoline
+        const trampolines = [];
+        //Erstelle Trampolin für jedes Trampolin in der Tiled Map
+        for (const trampoline of trampolineLayer.objects) {
+            const newTrampoline = new Trampoline(this, trampoline.x, trampoline.y);
+            //Füge neues Trampolin zur Liste hinzu
+            trampolines.push(newTrampoline);
+        }
+
+        //Kollision mit Trampolinen
+        this.physics.add.collider(this.player, trampolines, (player, trampoline) => {
+            trampoline.jump(player);
         })
 
     }

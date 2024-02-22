@@ -24,6 +24,18 @@ export class Preloader extends Phaser.Scene {
         //Lade level.json
         this.load.tilemapTiledJSON("level1", "tiled/level1.json");
 
+        //Lade Trampolin Spritesheets
+        this.load.spritesheet({
+            key: `trampoline_idle`,
+            url: `assets/PixelAdventure/Traps/Trampoline/Idle.png`,
+            frameConfig: {
+                frameWidth: 28,
+                frameHeight: 28,
+                startFrame: 0,
+                endFrame: 0
+            }
+        });
+
         //lade alle Bilder von allen Charakteren
         for (let characterType of this.characterTypes) {
 
