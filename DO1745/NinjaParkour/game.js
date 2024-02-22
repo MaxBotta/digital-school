@@ -17,6 +17,12 @@ const config = {
         }
     },
     scene: [Preloader, Play],
+    scale: {
+        mode: Phaser.Scale.FIT,
+        zoom: 1,
+        width: "100%",
+        height: "100%",
+    },
 }
 
 export default new Phaser.Game(config);

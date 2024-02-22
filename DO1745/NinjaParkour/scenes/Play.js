@@ -16,11 +16,12 @@ export class Play extends Phaser.Scene {
         const terrainTileset = map.addTilesetImage("terrain", "terrain_img");
         const terrainCollideTileset = map.addTilesetImage("terrain_collide", "terrain_img");
         const spikeTileset = map.addTilesetImage("spikes", "spikes_img");
+        const fireTileset = map.addTilesetImage("fire", "fire_img");
 
         //Erstelle Ebenen/Layer
         const backgroundLayer = map.createLayer("background", backgroundYellowTileset);
         const terrainLayer = map.createLayer("terrain", [terrainTileset, terrainCollideTileset]);
-        const trapsLayer = map.createLayer("traps", [spikeTileset]);
+        const trapsLayer = map.createLayer("traps", [spikeTileset, fireTileset]);
 
         //Erstelle Spieler
         this.player = new Player(this, 200, 600, "Max", "Mask Dude");

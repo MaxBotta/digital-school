@@ -19,6 +19,7 @@ export class Preloader extends Phaser.Scene {
         this.load.image("terrain_img", "assets/PixelAdventure/Terrain/Terrain (16x16).png");
         this.load.image("background_yellow_img", "assets/PixelAdventure/Background/Yellow.png");
         this.load.image("spikes_img", "assets/PixelAdventure/Traps/Spikes/Idle.png");
+        this.load.image("fire_img", "assets/PixelAdventure/Traps/Fire/On (16x32).png");
 
         //Lade level.json
         this.load.tilemapTiledJSON("level1", "tiled/level1.json");
