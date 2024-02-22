@@ -153,6 +153,53 @@
         }, 
         {
          "draworder":"topdown",
+         "id":8,
+         "name":"trampolines",
+         "objects":[
+                {
+                 "gid":565,
+                 "height":28,
+                 "id":28,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":28,
+                 "x":429.697347588984,
+                 "y":768.090029514669
+                }, 
+                {
+                 "gid":565,
+                 "height":28,
+                 "id":29,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":28,
+                 "x":995.377947949614,
+                 "y":768.67510127074
+                }, 
+                {
+                 "gid":565,
+                 "height":28,
+                 "id":30,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":28,
+                 "x":857.853701329375,
+                 "y":496.151292259937
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":5,
          "name":"items",
          "objects":[
@@ -174,8 +221,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":8,
- "nextobjectid":28,
+ "nextlayerid":9,
+ "nextobjectid":31,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -3220,6 +3267,19 @@
                         }]
                 }],
          "tilewidth":16
+        }, 
+        {
+         "columns":1,
+         "firstgid":565,
+         "image":"..\/assets\/PixelAdventure\/Traps\/Trampoline\/Idle.png",
+         "imageheight":28,
+         "imagewidth":28,
+         "margin":0,
+         "name":"trampoline",
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":28,
+         "tilewidth":28
         }],
  "tilewidth":16,
  "type":"map",

@@ -14,11 +14,11 @@
             "scaleInEditor": 3.45
         },
         "level1.json": {
-            "scale": 0.96,
-            "selectedLayer": 2,
+            "scale": 1.1806,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 793.75,
-                "y": 734.375
+                "x": 775.8766728781975,
+                "y": 690.3269523970862
             }
         },
         "level1.json#background_yellow": {
@@ -47,6 +47,9 @@
         "level1.json#terrain_collide": {
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "level1.json#trampoline": {
+            "scaleInDock": 3.9935
         },
         "level1.tmx": {
             "scale": 0.464,
@@ -84,7 +87,7 @@
         }
     },
     "last.exportedFilePath": "/Users/maxbotta/Desktop/DigitalSchool/DO1745/NinjaParkour/tiled",
-    "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/DO1745/NinjaParkour/assets/PixelAdventure/Traps/Fire",
+    "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/DO1745/NinjaParkour/assets/PixelAdventure/Traps/Trampoline",
     "map.height": 60,
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
@@ -104,7 +107,7 @@
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {
-        "height": 16,
-        "width": 16
+        "height": 28,
+        "width": 28
     }
 }
