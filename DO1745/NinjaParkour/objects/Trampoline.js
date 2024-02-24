@@ -12,7 +12,7 @@ export class Trampoline extends Phaser.Physics.Arcade.Sprite {
         //Macht das Trampolin unbewegbar
         this.setImmovable(true);
 
-        this.jumpPower = 1000;
+        this.jumpPower = 800;
 
         this.create();
     }

@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "level1.json",
     "expandedProjectPaths": [
         "."
     ],
@@ -14,11 +14,11 @@
             "scaleInEditor": 3.45
         },
         "level1.json": {
-            "scale": 1.0562,
+            "scale": 1.1351,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 786.7828062866881,
-                "y": 835.5425108880894
+                "x": 831.644789005374,
+                "y": 697.2953924764337
             }
         },
         "level1.json#background_yellow": {
@@ -88,7 +88,7 @@
             "scaleInEditor": 3.45
         }
     },
-    "last.exportedFilePath": "/Users/maxbotta/Desktop/DigitalSchool/DO1745/NinjaParkour/tiled",
+    "last.exportedFilePath": "/Users/maxbotta/Documents",
     "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/DO1745/NinjaParkour/assets/PixelAdventure/Traps/Trampoline",
     "map.height": 60,
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",

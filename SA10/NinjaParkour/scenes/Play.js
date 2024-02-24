@@ -1,5 +1,6 @@
 
 import { Player } from '../objects/Player.js';
+import { Trampoline } from '../objects/Trampoline.js'
 
 export class Play extends Phaser.Scene {
 
@@ -25,7 +26,7 @@ export class Play extends Phaser.Scene {
         const trapsLayer = map.createLayer("traps", [spikesTileset]);
 
         //Erstelle Spieler
-        this.player = new Player(this, 100, 2000, "Pink Man", 'Max');
+        this.player = new Player(this, 100, 2600, "Pink Man", 'Max');
 
         //Kamera verfolgt Spieler
         this.cameras.main.startFollow(this.player, true);
@@ -39,6 +40,19 @@ export class Play extends Phaser.Scene {
         //Erstelle Kollision mit den Fallen
         trapsLayer.setCollisionByProperty({ kill: true });
         this.physics.add.collider(this.player, trapsLayer, this.player.kill);
+
+        //Erstelle ein Trampolin für jedes Trampolin in der Trampolinebene
+        const trampolinesLayer = map.getObjectLayer("trampolines");
+        const trampolines = [];
+        for (const trampoline of trampolinesLayer.objects) {
+            const newTrampoline = new Trampoline(this, trampoline.x, trampoline.y)
+            trampolines.push(newTrampoline);
+        }
+
+        //Kollision mit Trampolinen
+        this.physics.add.collider(this.player, trampolines, (player, trampoline) => {
+            trampoline.jump(player);
+        })
 
 
 
