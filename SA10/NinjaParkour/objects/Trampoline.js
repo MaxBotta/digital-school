@@ -33,12 +33,20 @@ export class Trampoline extends Phaser.Physics.Arcade.Sprite {
             key: 'idle',
             frames: this.anims.generateFrameNumbers('trampoline_idle'),
             frameRate: 20,
-            repeat: -1
+            repeat: 0
         });
-        this.play("idle", true);
+        this.anims.create({
+            key: 'jump',
+            frames: this.anims.generateFrameNumbers('trampoline_jump'),
+            frameRate: 20,
+            repeat: 0
+        });
+        this.play("idle");
     }
 
     jump = (player) => {
+        this.play("jump");
+        this.chain("idle");
         player.setVelocityY(-800);
     }
 
