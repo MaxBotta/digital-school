@@ -48,11 +48,11 @@
             "scaleInDock": 1
         },
         "level1.tmx": {
-            "scale": 1.2128,
-            "selectedLayer": 1,
+            "scale": 1.3027,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 724.3568601583113,
-                "y": 2452.176781002638
+                "x": 1023.2593843555693,
+                "y": 2291.0109772011974
             }
         },
         "level1.tmx#Back_Brown": {

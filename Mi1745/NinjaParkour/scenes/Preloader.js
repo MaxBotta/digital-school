@@ -23,6 +23,18 @@ export class Preloader extends Phaser.Scene {
         //load tilemap
         this.load.tilemapTiledJSON("level1", "tiled/level1.json");
 
+        //Load saw spritesheet
+        this.load.spritesheet({
+            key: "saw",
+            url: "assets/Traps/Saw/On (38x38).png",
+            frameConfig: {
+                frameWidth: 38,
+                frameHeight: 38,
+                startFrame: 0,
+                endFrame: 7
+            }
+        });
+
 
         //lade alle Bilder von allen Charakteren
         for (let character of this.characterNames) {

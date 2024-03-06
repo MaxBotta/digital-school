@@ -1,4 +1,5 @@
 import { Player } from "../objects/Player.js"
+import { Saw } from "../objects/Saw.js"
 
 export class Play extends Phaser.Scene {
     constructor() {
@@ -41,6 +42,9 @@ export class Play extends Phaser.Scene {
         this.physics.add.collider(this.player, trapsLayer, () => {
             this.player.kill();
         })
+
+        //Add saws
+        const saw = new Saw(this, 200, 2600);
 
 
 
