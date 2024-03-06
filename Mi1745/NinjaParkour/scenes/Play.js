@@ -44,7 +44,7 @@ export class Play extends Phaser.Scene {
         })
 
         //Add saws
-        const saw = new Saw(this, 200, 2600);
+        const saw = new Saw(this, 300, 2600);
 
 
 
