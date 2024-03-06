@@ -39,12 +39,11 @@ export class Play extends Phaser.Scene {
 
         //Füge kill zu traps hinzu
         trapsLayer.setCollisionByProperty({ kill: true });
-        this.physics.add.collider(this.player, trapsLayer, () => {
-            this.player.kill();
-        })
+        this.physics.add.collider(this.player, trapsLayer, this.player.kill)
 
         //Add saws
         const saw = new Saw(this, 300, 2600);
+        this.physics.add.collider(this.player, saw, this.player.kill)
 
 
 
