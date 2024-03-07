@@ -25,7 +25,7 @@ export class Play extends Phaser.Scene {
         const trapsLayer = map.createLayer("traps", [spikeTileset, fireTileset]);
 
         //Erstelle Spieler
-        this.player = new Player(this, 200, 600, "Max", "Mask Dude");
+        this.player = new Player(this, 200, 600, "Max", "Ninja Frog");
 
         //Kamera verfolgt Spieler
         this.cameras.main.startFollow(this.player, true);
