@@ -22,7 +22,7 @@ export class Preload extends Phaser.Scene {
         this.loadingBar();
         this.loadMap();
         this.loadPlayerSpritesheets();
-        this.loadTrampolineSpritesheets();
+        this.loadTrapsSpritesheets();
     }
 
     create = () => {
@@ -58,7 +58,9 @@ export class Preload extends Phaser.Scene {
         this.load.tilemapTiledJSON("level1", "tiled/level1.json");
     }
 
-    loadTrampolineSpritesheets = () => {
+    loadTrapsSpritesheets = () => {
+
+        //Lade Spritesheets für Trampoline
         this.load.spritesheet({
             key: `trampoline_idle`,
             url: `assets/PixelAdventure/Traps/Trampoline/Idle.png`,
@@ -75,6 +77,18 @@ export class Preload extends Phaser.Scene {
             frameConfig: {
                 frameWidth: 28,
                 frameHeight: 28,
+                startFrame: 0,
+                endFrame: 7
+            }
+        });
+
+        //Lade Spritesheets für die Segen
+        this.load.spritesheet({
+            key: `saw`,
+            url: `assets/PixelAdventure/Traps/Saw/On (38x38).png`,
+            frameConfig: {
+                frameWidth: 38,
+                frameHeight: 38,
                 startFrame: 0,
                 endFrame: 7
             }

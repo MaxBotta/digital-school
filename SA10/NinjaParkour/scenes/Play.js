@@ -1,6 +1,7 @@
 
 import { Player } from '../objects/Player.js';
 import { Trampoline } from '../objects/Trampoline.js'
+import { Saw } from '../objects/Saw.js'
 
 export class Play extends Phaser.Scene {
 
@@ -53,6 +54,13 @@ export class Play extends Phaser.Scene {
         this.physics.add.collider(this.player, trampolines, (player, trampoline) => {
             trampoline.jump(player);
         })
+
+        const sawLayer = map.getObjectLayer("saws");
+        const saws = [];
+        for (const saw of sawLayer.objects) {
+            const newSaw = new Saw(this, saw.x, saw.y)
+            saws.push(newSaw);
+        }
 
 
 
