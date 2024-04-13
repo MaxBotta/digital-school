@@ -102,7 +102,7 @@
     "last.exportedFilePath": "/Users/maxbotta/Desktop/DigitalSchool/SA10/NinjaParkour/tiled",
     "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/SA10/NinjaParkour/assets/PixelAdventure/Traps/Trampoline",
     "map.height": 60,
-    "map.lastUsedExportFilter": "All Files (*)",
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
     "map.layerDataFormat": "1",
     "map.tileHeight": 16,

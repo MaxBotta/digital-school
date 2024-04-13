@@ -133,6 +133,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         this.isAlive = false;
         this.play("hit", true);
 
+        //respawn player nach einer Sekunde
         setTimeout(() => {
             this.setPosition(100, 2600);
             this.isAlive = true;

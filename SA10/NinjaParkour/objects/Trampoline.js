@@ -24,6 +24,8 @@ export class Trampoline extends Phaser.Physics.Arcade.Sprite {
         //Nicht bewegbar
         this.body.immovable = true;
 
+        this.jumpPower = -800;
+
         this.create();
     }
 
@@ -47,7 +49,7 @@ export class Trampoline extends Phaser.Physics.Arcade.Sprite {
     jump = (player) => {
         this.play("jump");
         this.chain("idle");
-        player.setVelocityY(-800);
+        player.setVelocityY(this.jumpPower);
     }
 
 }
