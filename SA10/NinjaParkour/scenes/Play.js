@@ -55,6 +55,7 @@ export class Play extends Phaser.Scene {
             trampoline.jump(player);
         })
 
+        //Erstelle Sägen
         const sawLayer = map.getObjectLayer("saws");
         const saws = [];
         for (const saw of sawLayer.objects) {
