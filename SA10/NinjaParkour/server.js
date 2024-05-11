@@ -23,4 +23,9 @@ server.listen(port, () => {
 //Was zu tun ist, wenn sich ein neuer Nutzer verbindet
 io.on('connection', (socket) => {
     console.log("a new user is connected " + socket.id);
+
+    socket.on('new_user', (msg) => {
+        console.log(msg)
+    })
 })
+
