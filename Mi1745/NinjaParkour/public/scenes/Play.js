@@ -55,7 +55,13 @@ export class Play extends Phaser.Scene {
             console.log("connected to server");
 
             //send all player information to server
-            this.socket.emit("new_user", "Hallo ich bin " + this.player.username);
+            this.socket.emit("new_user", {
+                id: this.socket.id,
+                username: this.player.username,
+                x: this.player.x,
+                y: this.player.y,
+                animation: this.player.anims.currentAnim.key
+            });
         })
 
     }

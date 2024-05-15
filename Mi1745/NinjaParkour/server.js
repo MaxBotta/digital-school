@@ -21,6 +21,7 @@ server.listen(port, () => {
     console.log('listening on *:' + port);
 });
 
+const USERS = [];
 
 //socket connection
 io.on('connection', (socket) => {
@@ -29,6 +30,7 @@ io.on('connection', (socket) => {
     //When a new user connects
     socket.on("new_user", (msg) => {
         console.log("new user", msg)
+        USERS.push(msg)
     })
 
 });
