@@ -75,7 +75,7 @@ export class Play extends Phaser.Scene {
 
     }
 
-    connectSocket() {
+    connectSocket = () => {
         //Ertselle ein Socket
         const socket = io();
 
