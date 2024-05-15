@@ -6,6 +6,7 @@ export class Play extends Phaser.Scene {
         super("play");
 
         this.player = null;
+        this.socket = null;
     }
 
     create() {
@@ -46,6 +47,16 @@ export class Play extends Phaser.Scene {
         this.physics.add.collider(this.player, saw, this.player.kill)
 
 
+        //Connect websocket to server
+        this.socket = io();
+
+        //connect to server
+        this.socket.on("connect", () => {
+            console.log("connected to server");
+
+            //send all player information to server
+            this.socket.emit("new_user", "Hallo ich bin " + this.player.username);
+        })
 
     }
 

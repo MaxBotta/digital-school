@@ -10,6 +10,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         scene.physics.add.existing(this);
         this.body.setSize(16, 28);
 
+        this.username = name;
+
         this.characterName = characterName;
         this.scale = 1.2;
         this.runSpeed = 40;
