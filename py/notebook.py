@@ -41,7 +41,7 @@ while programclose == False:
             note_id = None
             for note in all_notes:
                 index = index + 1
-                if index == index_input:
+                if index == int(index_input):
                     note_id = note["id"]
                     break
 
