@@ -5,6 +5,7 @@ export class Play extends Phaser.Scene {
     constructor() {
         super('play');
         this.player = null;
+        this.socket = null;
     }
 
     create() {
@@ -57,6 +58,16 @@ export class Play extends Phaser.Scene {
         //Kollision mit Trampolinen
         this.physics.add.collider(this.player, trampolines, (player, trampoline) => {
             trampoline.jump(player);
+        })
+
+
+        //Erstelle socket Verbindung
+        this.socket = io();
+
+        //Wenn Spieler sich verbindet
+        this.socket.on('connect', () => {
+            console.log('connected to server');
+            alert('connected to server');
         })
 
     }
