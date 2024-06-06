@@ -9,6 +9,7 @@ export class Play extends Phaser.Scene {
     constructor() {
         super('play');
         this.player = null;
+        this.socket = null;
     }
 
     create() {
@@ -64,9 +65,7 @@ export class Play extends Phaser.Scene {
             saws.push(newSaw);
         }
 
-        //Mit dem Websocket Server verbinden
-        this.connectSocket();
-
+        this.connectWebsocket();
 
 
     }
@@ -75,21 +74,22 @@ export class Play extends Phaser.Scene {
 
     }
 
-    connectSocket = () => {
-        //Ertselle ein Socket
-        const socket = io();
+    //Verbindet sich mit dem Websocket Server
+    connectWebsocket = () => {
+        this.socket = io();
 
-        //Wenn der Socket mit dem Server verbunden ist
-        socket.on('connect', () => {
-            console.log("Connected to server");
+        this.socket.on('connect', () => {
+            alert('You are connected to the server');
 
-            //Sende position, username und id an Server
-            socket.emit('new_user', {
-                username: this.player.username,
-                id: socket.id,
-                x: this.player.x.toFixed(2),
-                y: this.player.y.toFixed(2)
-            })
+            //Schicke Spielerinfos an Server
+            this.socket.emit('new_user', {
+                id: this.socket.id,
+                characterName: this.player.characterName,
+                animation: this.player.anims.currentAnim.key,
+                x: this.player.x,
+                y: this.player.y,
+                flipX: this.player.flipX
+            });
         })
     }
 

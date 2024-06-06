@@ -1,7 +1,7 @@
 
 const express = require('express');
 const http = require('http');
-const { Server } = require("socket.io");
+const { Server } = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
@@ -20,12 +20,12 @@ server.listen(port, () => {
 });
 
 
-//Was zu tun ist, wenn sich ein neuer Nutzer verbindet
+//Wenn sich ein Client/Spieler verbindet
 io.on('connection', (socket) => {
-    console.log("a new user is connected " + socket.id);
+    console.log('a new user is connected ' + socket.id);
 
+    //Wenn sich ein neuer Spieler verbunden hat
     socket.on('new_user', (msg) => {
-        console.log(msg)
+        console.log(msg);
     })
 })
-
