@@ -27,6 +27,11 @@ server.listen(port, () => {
 //Erstelle eine Websocket Vebrindung und lege fest, was passier, wenn sich ein neuer Nutzer verbindet
 io.on('connection', (socket) => {
     console.log('a new user is connected ' + socket.id);
+
+    //Wenn ein Spieler eine "new_player" nachricht sendet
+    socket.on('new_player', (message) => {
+        console.log(message);
+    })
 })
 
 

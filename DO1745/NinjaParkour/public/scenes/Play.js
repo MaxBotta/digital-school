@@ -67,7 +67,17 @@ export class Play extends Phaser.Scene {
         //Wenn Spieler sich verbindet
         this.socket.on('connect', () => {
             console.log('connected to server');
-            alert('You are connected to the server!');
+            
+            //Sende Spielerdaten an Server
+            this.socket.emit('new_player', {
+                username: this.player.username,
+                characterType: this.player.charaterType,
+                x: this.player.x,
+                y: this.player.y,
+                isAlive: this.player.isAlive,
+                animation: this.player.anims.currentAnim.key,
+                flipX: this.player.flipX
+            })
         })
 
     }
