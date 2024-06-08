@@ -10,6 +10,7 @@ export class Play extends Phaser.Scene {
         super('play');
         this.player = null;
         this.socket = null;
+        this.remoteUsers = [];
     }
 
     create() {
@@ -65,6 +66,7 @@ export class Play extends Phaser.Scene {
             saws.push(newSaw);
         }
 
+        //Wenn das Level gebaut wurde, dann verbinde dich mit dem Websocket Server
         this.connectWebsocket();
 
 
@@ -90,6 +92,15 @@ export class Play extends Phaser.Scene {
                 y: this.player.y,
                 flipX: this.player.flipX
             });
+
+            this.socket.on('new_user_added', (msg) => {
+                //Erstelle einen neuen Remote Spieler
+                const newRemotePlayer = new RemotePlayer(this, msg.x, msg.y, msg.characterName, msg.id);
+
+                //Füge den neuen Spieler zur Liste der Remote Users hinzu
+                this.remoteUsers.push(newRemotePlayer);
+            })
+
         })
     }
 
