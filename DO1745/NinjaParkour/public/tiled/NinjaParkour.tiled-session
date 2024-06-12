@@ -11,14 +11,14 @@
     "fileStates": {
         "": {
             "scaleInDock": 1,
-            "scaleInEditor": 3.45
+            "scaleInEditor": 1
         },
         "level1.json": {
             "scale": 1.1351,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 831.644789005374,
-                "y": 697.2953924764337
+                "x": 1126.3324817196724,
+                "y": 909.6114879746278
             }
         },
         "level1.json#background_yellow": {
@@ -35,7 +35,8 @@
             "scaleInDock": 1
         },
         "level1.json#saw": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "level1.json#spikes": {
             "scaleInDock": 6.0174,

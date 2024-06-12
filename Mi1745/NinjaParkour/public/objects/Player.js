@@ -3,8 +3,8 @@
 export class Player extends Phaser.Physics.Arcade.Sprite {
 
     //baut unseren Spieler
-    constructor(scene, x, y, name, characterName) {
-        super(scene, x, y, name);
+    constructor(scene, x, y, username, characterName) {
+        super(scene, x, y);
 
         scene.add.existing(this);
         scene.physics.add.existing(this);
@@ -18,6 +18,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         this.jumpSpeed = -80;
         this.jumpCount = 0;
         this.isAlive = true;
+        this.username = username;
 
         // this.setCollideWorldBounds(true);
 

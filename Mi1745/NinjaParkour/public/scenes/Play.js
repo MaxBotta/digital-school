@@ -27,7 +27,26 @@ export class Play extends Phaser.Scene {
         const trapsLayer = map.createLayer("traps", [spikes]);
 
         //Erstelle Spieler
-        this.player = new Player(this, 100, 2600, "Max", "Pink Man");
+        const usernames = [
+            "Tina",
+            "Bobby",
+            "Helmut",
+            "Linda",
+            "Klaus",
+            "Hans",
+        ]
+        const randUsername = usernames[Math.floor(Math.random() * usernames.length)];
+
+        const characterNames = [
+            "Pink Man",
+            "Ninja Frog",
+            "Mask Dude",
+            "Virtual Guy"
+        ]
+
+        const randCharacter = characterNames[Math.floor(Math.random() * characterNames.length)];
+
+        this.player = new Player(this, 100, 2600, randUsername, randCharacter);
 
         //Kamera verfolgt Spieler
         this.cameras.main.startFollow(this.player, true);
@@ -52,16 +71,29 @@ export class Play extends Phaser.Scene {
 
         //connect to server
         this.socket.on("connect", () => {
-            console.log("connected to server");
+            console.log("You are connected to the server");
 
-            //send all player information to server
+            //Benachrichtige den Server, dass ein neuer Spieler hinzugefügt wurde
             this.socket.emit("new_user", {
                 id: this.socket.id,
                 username: this.player.username,
                 x: this.player.x,
                 y: this.player.y,
-                animation: this.player.anims.currentAnim.key
+                animation: this.player.anims.currentAnim.key,
+                characterName: this.player.characterName,
+                flipX: this.player.flipX
             });
+
+            //Wenn ein neuer Spieler hinzugefügt wird
+            this.socket.on("new_user_joined", (newUser) => {
+
+                //Zeige in der Browser Konsole, dass ein neuer Spieler hinzugekommen ist
+                console.log("new user joined", newUser)
+
+                //Füge einen neuen remote Player hinzu
+
+            })
+
         })
 
     }

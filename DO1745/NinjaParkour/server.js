@@ -32,6 +32,7 @@ io.on('connection', (socket) => {
     socket.on('new_player', (message) => {
         console.log(message);
     })
+
 })
 
 

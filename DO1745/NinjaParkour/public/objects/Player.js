@@ -2,7 +2,7 @@ import { rqd } from "../utils.js";
 
 export class Player extends Phaser.Physics.Arcade.Sprite {
 
-    constructor(scene = rqd(), x = rqd(), y = rqd(), username = rqd(), characterType = rqd()) {
+    constructor(scene = rqd(), x = rqd(), y = rqd(), username = rqd(), characterType = rqd()) {   
         super(scene, x, y);
 
         scene.add.existing(this);
