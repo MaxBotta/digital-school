@@ -88,7 +88,7 @@ export class Play extends Phaser.Scene {
             this.socket.on("new_user_joined", (newUser) => {
 
                 //Zeige in der Browser Konsole, dass ein neuer Spieler hinzugekommen ist
-                console.log("new user joined", newUser)
+                console.log("A new user has joined", newUser)
 
                 //Füge einen neuen remote Player hinzu
 
