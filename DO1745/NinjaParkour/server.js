@@ -24,13 +24,38 @@ server.listen(port, () => {
     console.log('listening on *:' + port);
 });
 
-//Erstelle eine Websocket Vebrindung und lege fest, was passier, wenn sich ein neuer Nutzer verbindet
-io.on('connection', (socket) => {
-    console.log('a new user is connected ' + socket.id);
 
-    //Wenn ein Spieler eine "new_player" nachricht sendet
-    socket.on('new_player', (message) => {
-        console.log(message);
+//Liste aller Spieler
+const USERS = [];
+
+//Was soll passieren, wenn sich ein Spieler mit dem Server verbindet
+io.on('connection', (playerSocket) => {
+    console.log('a new user is connected ' + playerSocket.id);
+
+    //Wenn User eine "new_player" nachricht sendet
+    playerSocket.on('new_player', (newUser) => {
+
+        //Überprüfe ob Spielerdaten vollständig sind
+        if (newUser.username !== undefined
+            && newUser.characterType !== undefined
+            && newUser.x !== undefined
+            && newUser.y !== undefined
+            && newUser.isAlive !== undefined
+            && newUser.animation !== undefined
+            && newUser.flipX !== undefined
+        ) {
+            //Füge neuen Spieler zur Liste aller Spieler hinzu
+            USERS.push(newUser);
+            console.log("Neuer Spieler hinzugefügt: ", newUser)
+
+            //Benachrichtige alle anderen Spieler, dass ein neuer Spieler hinzugefügt wurde
+            playerSocket.broadcast.emit("new_player_joined", newUser)
+
+        } else {
+            console.log("Spielerdaten unvollständig", newUser)
+        }
+
+        console.log("Anzahl Spieler: " + USERS.length)
     })
 
 })

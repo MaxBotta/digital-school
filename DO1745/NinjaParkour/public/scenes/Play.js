@@ -1,4 +1,5 @@
 import { Player } from "../objects/Player.js";
+import { RemotePlayer } from "../objects/RemotePlayer.js";
 import { Trampoline } from "../objects/Trampoline.js";
 
 export class Play extends Phaser.Scene {
@@ -67,16 +68,24 @@ export class Play extends Phaser.Scene {
         //Wenn Spieler sich verbindet
         this.socket.on('connect', () => {
             console.log('connected to server');
-            
+
             //Sende Spielerdaten an Server
             this.socket.emit('new_player', {
                 username: this.player.username,
-                characterType: this.player.charaterType,
+                characterType: this.player.characterType,
                 x: this.player.x,
                 y: this.player.y,
                 isAlive: this.player.isAlive,
                 animation: this.player.anims.currentAnim.key,
                 flipX: this.player.flipX
+            })
+
+            //Wenn ein neuer Spieler dem Spiel beigetreten ist
+            this.socket.on("new_player_joined", (newUser) => {
+                console.log("Neuer Spieler beigetreten: " + newUser.username);
+
+                //Zeige neuen Spieler an 
+                const newRemotePlayer = new RemotePlayer(this, newUser.x, newUser.y, newUser.username, newUser.characterType);
             })
         })
 
