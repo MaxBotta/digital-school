@@ -81,11 +81,13 @@ export class Play extends Phaser.Scene {
         this.socket = io();
 
         this.socket.on('connect', () => {
-            alert('You are connected to the server');
+            console.log('Connected to server');
+            
+            this.player.setId(this.socket.id);
 
             //Schicke Spielerinfos an Server
             this.socket.emit('new_user', {
-                id: this.socket.id,
+                id: this.player.id,
                 characterName: this.player.characterName,
                 animation: this.player.anims.currentAnim.key,
                 x: this.player.x,
@@ -93,13 +95,50 @@ export class Play extends Phaser.Scene {
                 flipX: this.player.flipX
             });
 
-            this.socket.on('new_user_added', (msg) => {
+            //Wenn ein neuer Spieler sich verbindet
+            this.socket.on('new_user_added', (user) => {
                 //Erstelle einen neuen Remote Spieler
-                const newRemotePlayer = new RemotePlayer(this, msg.x, msg.y, msg.characterName, msg.id);
+                const newRemotePlayer = new RemotePlayer(this, user.x, user.y, user.characterName, user.id);
 
                 //Füge den neuen Spieler zur Liste der Remote Users hinzu
                 this.remoteUsers.push(newRemotePlayer);
             })
+
+            //Wenn wir über alle bestehdenen Spieler informiert werden
+            this.socket.on('all_users', (allUsers) => {
+                //Erstelle einen Remote Player für jeden User
+                for (const user of allUsers) {
+                    if (user.id !== this.player.id) {
+                        const newRemotePlayer = new RemotePlayer(this, user.x, user.y, user.characterName, user.id);
+                        this.remoteUsers.push(newRemotePlayer);
+                    }
+                }
+            })
+
+            //Wenn wir über die neuen Spielerinformationen informiert werden
+            this.socket.on('update_users', (allUsers) => {
+                //Jeden Remote Spieler updaten
+                for (const user of allUsers) {
+                    const remotePlayer = this.remoteUsers.find(u => u.id === user.id);
+                    if (remotePlayer) {
+                        remotePlayer.setPosition(user.x, user.y);
+                        remotePlayer.setAnimation(user.animation);
+                        remotePlayer.setFlipX(user.flipX);
+                    }
+                }
+            })
+
+            //Sende alle 30ms die Spielerinformationen an den Server
+            setInterval(() => {
+                this.socket.emit('update_user', {
+                    id: this.player.id,
+                    characterName: this.player.characterName,
+                    animation: this.player.anims.currentAnim.key,
+                    x: this.player.x,
+                    y: this.player.y,
+                    flipX: this.player.flipX
+                });
+            }, 30)
 
         })
     }

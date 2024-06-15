@@ -24,16 +24,16 @@ server.listen(port, () => {
 const USERS = [];
 
 //Wenn sich ein Client/Spieler verbindet
-io.on('connection', (socket) => {
-    console.log('a new user is connected ' + socket.id);
+io.on('connection', (playerSocket) => {
+    console.log('a new user is connected ' + playerSocket.id);
 
     //Wenn sich ein neuer Spieler verbunden hat
-    socket.on('new_user', (msg) => {
+    playerSocket.on('new_user', (msg) => {
         console.log("new user", msg);
 
         //Füge den Spieler zur Spielerliste hinzu
         const newUser = {
-            id: socket.id,
+            id: playerSocket.id,
             characterName: msg.characterName,
             animation: msg.animation,
             x: msg.x,
@@ -41,10 +41,36 @@ io.on('connection', (socket) => {
             flipX: msg.flipX
         };
 
-        USERS.push(newUser);
+        //Füge den neuen Spieler zur Liste der Spieler hinzu,
+        //falls dieser Spieler noch nicht existiert
+        if (!USERS.find(u => u.id === newUser.id)) {
+            USERS.push(newUser);
+        }
 
-        //Informiere alle ANDEREN Spieler darüber, dass eine neuer Spieler da ist
-        socket.broadcast.emit('new_user_added', newUser);
+        //Informiere den neuen Spieler über die besteheden Spieler
+        playerSocket.emit('all_users', USERS);
+
+        //Informiere alle ANDEREN Spieler darüber, dass ein neuer Spieler da ist
+        playerSocket.broadcast.emit('new_user_added', newUser);
 
     })
+
+    //Wenn wir über die neuen Spielerinformationen informiert werden
+    playerSocket.on('update_user', (user) => {
+        //Jeden Remote Spieler updaten
+        for (const u of USERS) {
+            if (u.id === user.id) {
+                u.x = user.x;
+                u.y = user.y;
+                u.animation = user.animation;
+                u.flipX = user.flipX;
+                u.characterName = user.characterName;
+            }
+        }
+    })
 })
+
+//Sendet alle 30ms die Spielerinformationen an alle Clients/Spieler
+setInterval(() => {
+    io.emit('update_users', USERS);
+}, 30)
