@@ -29,17 +29,25 @@ io.on('connection', (playerSocket) => {
 
     //When a new user connects
     playerSocket.on("new_user", (newUser) => {
+
         //Prüfe ob der neue Spieler alle benötigten Attribute hat
-        if (newUser.id && newUser.username && newUser.x && newUser.y && newUser.animation) {
+        if (newUser.id !== undefined
+            && newUser.username !== undefined
+            && newUser.x !== undefined
+            && newUser.y !== undefined
+            && newUser.animation !== undefined
+            && newUser.characterName !== undefined
+            && newUser.flipX !== undefined
+        ) {
+
             //FÜge neuen Spieler zur Liste aller Spieler
             USERS.push(newUser)
 
             //Zeige im Serverterminal den neuen Spieler
-            console.log("new user added", newUser.username)
+            console.log("New user joined the game", newUser.username)
 
             //Benachrichtige alle anderen Spieler über den neuen Spieler
             playerSocket.broadcast.emit("new_user_joined", newUser)
-            // playerSocket.broadcast.emit("update_users", USERS)
 
 
         } else {

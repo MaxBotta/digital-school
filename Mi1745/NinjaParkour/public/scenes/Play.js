@@ -1,4 +1,5 @@
 import { Player } from "../objects/Player.js"
+import { RemotePlayer } from "../objects/RemotePlayer.js"
 import { Saw } from "../objects/Saw.js"
 
 export class Play extends Phaser.Scene {
@@ -7,6 +8,7 @@ export class Play extends Phaser.Scene {
 
         this.player = null;
         this.socket = null;
+        this.users = [];
     }
 
     create() {
@@ -69,7 +71,7 @@ export class Play extends Phaser.Scene {
         //Connect websocket to server
         this.socket = io();
 
-        //connect to server
+        //Wenn sich der Spieler mit dem Server verbunden hat
         this.socket.on("connect", () => {
             console.log("You are connected to the server");
 
@@ -87,10 +89,20 @@ export class Play extends Phaser.Scene {
             //Wenn ein neuer Spieler hinzugefügt wird
             this.socket.on("new_user_joined", (newUser) => {
 
-                //Zeige in der Browser Konsole, dass ein neuer Spieler hinzugekommen ist
-                console.log("A new user has joined", newUser)
+                console.log("Ein neuer Nutzer ist im Spiel")
 
-                //Füge einen neuen remote Player hinzu
+                //erstelle neuen Spieler
+                const newPlayer = new RemotePlayer({
+                    id: newUser.id,
+                    scene: this, 
+                    x: newUser.x, 
+                    y: newUser.y, 
+                    username: newUser.username, 
+                    characterName: newUser.characterName, 
+                });
+
+                //Füger Spieler zur Liste hinzu
+                this.users.push(newPlayer);
 
             })
 
