@@ -36,7 +36,8 @@ io.on('connection', (playerSocket) => {
     playerSocket.on('new_player', (newUser) => {
 
         //Überprüfe ob Spielerdaten vollständig sind
-        if (newUser.username !== undefined
+        if (newUser.id !== undefined
+            && newUser.username !== undefined
             && newUser.characterType !== undefined
             && newUser.x !== undefined
             && newUser.y !== undefined
@@ -44,18 +45,21 @@ io.on('connection', (playerSocket) => {
             && newUser.animation !== undefined
             && newUser.flipX !== undefined
         ) {
+            //Sendet alle Spielerdaten an den neuen Spieler
+            playerSocket.emit("all_players", USERS);
+
             //Füge neuen Spieler zur Liste aller Spieler hinzu
             USERS.push(newUser);
-            console.log("Neuer Spieler hinzugefügt: ", newUser)
+            console.log("Neuer Spieler hinzugefügt: ", newUser);
 
             //Benachrichtige alle anderen Spieler, dass ein neuer Spieler hinzugefügt wurde
-            playerSocket.broadcast.emit("new_player_joined", newUser)
+            playerSocket.broadcast.emit("new_player_joined", newUser);
 
         } else {
-            console.log("Spielerdaten unvollständig", newUser)
+            console.log("Spielerdaten unvollständig", newUser);
         }
 
-        console.log("Anzahl Spieler: " + USERS.length)
+        console.log("Anzahl Spieler: " + USERS.length);
     })
 
 })

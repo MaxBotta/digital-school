@@ -2,7 +2,7 @@ import { rqd } from "../utils.js";
 
 export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
 
-    constructor(scene = rqd(), x = rqd(), y = rqd(), username = rqd(), characterType = rqd()) {   
+    constructor(scene = rqd(), x = rqd(), y = rqd(), username = rqd(), characterType = rqd(), id = rqd()) {   
         super(scene, x, y);
 
         scene.add.existing(this);
@@ -19,6 +19,7 @@ export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
         this.characterType = characterType;
         this.isAlive = true;
         this.username = username;
+        this.id = id;
 
         this.preload();
 
