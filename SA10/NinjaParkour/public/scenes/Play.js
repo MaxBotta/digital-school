@@ -82,7 +82,7 @@ export class Play extends Phaser.Scene {
 
         this.socket.on('connect', () => {
             console.log('Connected to server');
-            
+
             this.player.setId(this.socket.id);
 
             //Schicke Spielerinfos an Server
@@ -105,40 +105,44 @@ export class Play extends Phaser.Scene {
             })
 
             //Wenn wir über alle bestehdenen Spieler informiert werden
-            this.socket.on('all_users', (allUsers) => {
+            this.socket.on('all_users', (allExistingUsers) => {
                 //Erstelle einen Remote Player für jeden User
-                for (const user of allUsers) {
-                    if (user.id !== this.player.id) {
-                        const newRemotePlayer = new RemotePlayer(this, user.x, user.y, user.characterName, user.id);
-                        this.remoteUsers.push(newRemotePlayer);
-                    }
+                for (const user of allExistingUsers) {
+                    const newRemotePlayer = new RemotePlayer(this, user.x, user.y, user.characterName, user.id);
+                    this.remoteUsers.push(newRemotePlayer);
                 }
             })
 
-            //Wenn wir über die neuen Spielerinformationen informiert werden
-            this.socket.on('update_users', (allUsers) => {
-                //Jeden Remote Spieler updaten
-                for (const user of allUsers) {
-                    const remotePlayer = this.remoteUsers.find(u => u.id === user.id);
+            //Wenn wir die neuen Spielerdaten bekommen
+            this.socket.on('update_users', (users) => {
+                //Durchlaufe alle Spieler und aktualisiere die Daten
+                for (const user of users) {
+                    //Finde den Spieler in der Liste der Remote Spieler
+                    const remotePlayer = this.remoteUsers.find(player => player.id === user.id);
+
+                    //Wenn wir einen Spieler gefunden haben, dann aktualisiere die Daten
                     if (remotePlayer) {
                         remotePlayer.setPosition(user.x, user.y);
                         remotePlayer.setAnimation(user.animation);
                         remotePlayer.setFlipX(user.flipX);
                     }
+
                 }
             })
 
-            //Sende alle 30ms die Spielerinformationen an den Server
+            //Sende alle 30ms die Position des Spielers an den Server
             setInterval(() => {
                 this.socket.emit('update_user', {
                     id: this.player.id,
                     characterName: this.player.characterName,
                     animation: this.player.anims.currentAnim.key,
-                    x: this.player.x,
-                    y: this.player.y,
+                    x: this.player.x.toFixed(2),
+                    y: this.player.y.toFixed(2),
                     flipX: this.player.flipX
-                });
+                })
             }, 30)
+
+
 
         })
     }

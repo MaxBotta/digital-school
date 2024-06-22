@@ -31,6 +31,9 @@ io.on('connection', (playerSocket) => {
     playerSocket.on('new_user', (msg) => {
         console.log("new user", msg);
 
+        //Informiere den neuen Spieler über die besteheden Spieler
+        playerSocket.emit('all_users', USERS);
+
         //Füge den Spieler zur Spielerliste hinzu
         const newUser = {
             id: playerSocket.id,
@@ -43,34 +46,34 @@ io.on('connection', (playerSocket) => {
 
         //Füge den neuen Spieler zur Liste der Spieler hinzu,
         //falls dieser Spieler noch nicht existiert
-        if (!USERS.find(u => u.id === newUser.id)) {
+        if (!USERS.find(user => user.id === newUser.id)) {
             USERS.push(newUser);
         }
-
-        //Informiere den neuen Spieler über die besteheden Spieler
-        playerSocket.emit('all_users', USERS);
 
         //Informiere alle ANDEREN Spieler darüber, dass ein neuer Spieler da ist
         playerSocket.broadcast.emit('new_user_added', newUser);
 
     })
 
-    //Wenn wir über die neuen Spielerinformationen informiert werden
-    playerSocket.on('update_user', (user) => {
-        //Jeden Remote Spieler updaten
-        for (const u of USERS) {
-            if (u.id === user.id) {
-                u.x = user.x;
-                u.y = user.y;
-                u.animation = user.animation;
-                u.flipX = user.flipX;
-                u.characterName = user.characterName;
+    //erhält alle 30ms die Spielerdaten des Spielers
+    playerSocket.on('update_user', (userData) => {
+        // console.log(user.characterName, user.x, user.y)
+
+        //Aktualisiere die Spielerdaten des Spielers
+        for(const user of USERS) {
+            if(user.id === userData.id) {
+                user.x = userData.x
+                user.y = userData.y
+                user.animation = userData.animation
+                user.flipX = userData.flipX
             }
         }
     })
+
 })
 
-//Sendet alle 30ms die Spielerinformationen an alle Clients/Spieler
+//sende alle 30ms alle Spielerdaten an alle Spieler
 setInterval(() => {
     io.emit('update_users', USERS);
 }, 30)
+
