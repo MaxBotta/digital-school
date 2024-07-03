@@ -17,6 +17,7 @@ export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
         this.id = id;
         this.characterName = characterName;
         this.scale = 1.2;
+        this.nameText = null;
 
         this.create();
     }
@@ -32,9 +33,13 @@ export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
     setPosition = (x, y) => {
         this.x = x;
         this.y = y;
+        this.nameText.x = x;
+        this.nameText.y = y;
     }
 
     create = () => {
+
+        this.nameText = this.scene.add.text(this.x, this.y, this.username);
 
         this.scene.anims.create({
             key: 'idle',

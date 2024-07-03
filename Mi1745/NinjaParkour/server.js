@@ -27,6 +27,11 @@ const USERS = [];
 //socket connection
 io.on('connection', (playerSocket) => {
 
+    //Update player alle 30ms
+    setInterval(() => {
+        io.emit("update_players", USERS)
+    }, 30)
+
     //When a new user connects
     playerSocket.on("new_user", (newUser) => {
 

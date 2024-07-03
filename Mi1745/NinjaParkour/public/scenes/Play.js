@@ -88,6 +88,7 @@ export class Play extends Phaser.Scene {
 
             //Empfange alle exisiterenden Spieler vom Server
             this.socket.on("all_users", (users) => {
+                console.log("All users", users);
                 for (const user of users) {
                     const newRemotePlayer = new RemotePlayer({
                         scene: this,
@@ -119,6 +120,26 @@ export class Play extends Phaser.Scene {
                 //Füger Spieler zur Liste hinzu
                 this.remotePlayers.push(newPlayer);
 
+            })
+
+            this.socket.on("udpate_players", (users) => {
+                //Für jeden user vom Server
+                for(const user of users) {
+                    //Schaue durch jeden user im Spiel
+                    for(const localUser of this.remotePlayers) {
+                        //Wenn der User bei uns im Spiel ist
+                        if(user.id === localUser.id) {
+                            //Setze die Position
+                            localUser.setPosition(user.x, user.y);
+                            //Setze die Animation
+                            localUser.setAnimation(user.animation);
+                            //Setze die FlipX
+                            localUser.setFlipX(user.flipX);
+                            //Setze characterName
+                            localUser.characterName = user.characterName;
+                        }
+                    }
+                }
             })
 
 
