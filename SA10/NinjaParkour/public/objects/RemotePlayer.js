@@ -9,6 +9,9 @@ export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
         //Remote Spieler haben keine Graviation
         this.body.setAllowGravity(false);
 
+        //Nicht bewegbar
+        this.body.immovable = true;
+
         this.scene = scene;
 
         this.id = id;
@@ -76,8 +79,6 @@ export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
         //Spiele erste Animation ab
         this.play("idle");
 
-        this.scene.events.on('update', (t, dt) => { this.update(t, dt) });
-
     }
 
     setPosition = (x, y) => {
@@ -86,7 +87,7 @@ export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
     }
 
     setAnimation = (animation) => {
-        this.play(animation);
+        this.play(animation, true);
     }
 
     setFlipX = (flipX) => {

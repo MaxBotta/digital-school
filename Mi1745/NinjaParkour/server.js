@@ -30,6 +30,9 @@ io.on('connection', (playerSocket) => {
     //When a new user connects
     playerSocket.on("new_user", (newUser) => {
 
+        //Sende alle Spieler an neuen Spieler
+        playerSocket.emit("all_users", USERS)
+
         //Prüfe ob der neue Spieler alle benötigten Attribute hat
         if (newUser.id !== undefined
             && newUser.username !== undefined

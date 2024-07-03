@@ -28,8 +28,8 @@ io.on('connection', (playerSocket) => {
     console.log('a new user is connected ' + playerSocket.id);
 
     //Wenn sich ein neuer Spieler verbunden hat
-    playerSocket.on('new_user', (msg) => {
-        console.log("new user", msg);
+    playerSocket.on('new_user', (user) => {
+        console.log("new user", user);
 
         //Informiere den neuen Spieler über die besteheden Spieler
         playerSocket.emit('all_users', USERS);
@@ -37,16 +37,16 @@ io.on('connection', (playerSocket) => {
         //Füge den Spieler zur Spielerliste hinzu
         const newUser = {
             id: playerSocket.id,
-            characterName: msg.characterName,
-            animation: msg.animation,
-            x: msg.x,
-            y: msg.y,
-            flipX: msg.flipX
+            characterName: user.characterName,
+            animation: user.animation,
+            x: user.x,
+            y: user.y,
+            flipX: user.flipX
         };
 
         //Füge den neuen Spieler zur Liste der Spieler hinzu,
         //falls dieser Spieler noch nicht existiert
-        if (!USERS.find(user => user.id === newUser.id)) {
+        if (USERS.find(user => user.id === newUser.id)) {
             USERS.push(newUser);
         }
 

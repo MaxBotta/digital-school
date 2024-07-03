@@ -78,6 +78,7 @@ export class Play extends Phaser.Scene {
 
     //Verbindet sich mit dem Websocket Server
     connectWebsocket = () => {
+        //Stelle eine Verbindung zum Websocket Server her
         this.socket = io();
 
         this.socket.on('connect', () => {
@@ -86,14 +87,17 @@ export class Play extends Phaser.Scene {
             this.player.setId(this.socket.id);
 
             //Schicke Spielerinfos an Server
-            this.socket.emit('new_user', {
-                id: this.player.id,
-                characterName: this.player.characterName,
-                animation: this.player.anims.currentAnim.key,
-                x: this.player.x,
-                y: this.player.y,
-                flipX: this.player.flipX
-            });
+            this.socket.emit('new_user',
+                {
+                    id: this.player.id,
+                    characterName: this.player.characterName,
+                    animation: this.player.anims.currentAnim.key,
+                    x: this.player.x,
+                    y: this.player.y,
+                    flipX: this.player.flipX
+                }
+            );
+
 
             //Wenn ein neuer Spieler sich verbindet
             this.socket.on('new_user_added', (user) => {
@@ -106,6 +110,7 @@ export class Play extends Phaser.Scene {
 
             //Wenn wir über alle bestehdenen Spieler informiert werden
             this.socket.on('all_users', (allExistingUsers) => {
+                console.log(allExistingUsers)
                 //Erstelle einen Remote Player für jeden User
                 for (const user of allExistingUsers) {
                     const newRemotePlayer = new RemotePlayer(this, user.x, user.y, user.characterName, user.id);
@@ -118,14 +123,18 @@ export class Play extends Phaser.Scene {
                 //Durchlaufe alle Spieler und aktualisiere die Daten
                 for (const user of users) {
                     //Finde den Spieler in der Liste der Remote Spieler
-                    const remotePlayer = this.remoteUsers.find(player => player.id === user.id);
+                    // const remotePlayer = this.remoteUsers.find(player => player.id === user.id);
 
-                    //Wenn wir einen Spieler gefunden haben, dann aktualisiere die Daten
-                    if (remotePlayer) {
-                        remotePlayer.setPosition(user.x, user.y);
-                        remotePlayer.setAnimation(user.animation);
-                        remotePlayer.setFlipX(user.flipX);
+                    for (const remotePlayer of this.remoteUsers) {
+                        //Wenn wir einen Spieler gefunden haben, dann aktualisiere die Daten
+                        if (remotePlayer.id === user.id && remotePlayer.id !== this.player.id) {
+                            // remotePlayer.setPosition(user.x, user.y);
+                            // remotePlayer.setAnimation(user.animation);
+                            // remotePlayer.setFlipX(user.flipX);
+                        }
                     }
+
+
 
                 }
             })

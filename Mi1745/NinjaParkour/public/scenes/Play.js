@@ -8,7 +8,7 @@ export class Play extends Phaser.Scene {
 
         this.player = null;
         this.socket = null;
-        this.users = [];
+        this.remotePlayers = [];
     }
 
     create() {
@@ -86,6 +86,21 @@ export class Play extends Phaser.Scene {
                 flipX: this.player.flipX
             });
 
+            //Empfange alle exisiterenden Spieler vom Server
+            this.socket.on("all_users", (users) => {
+                for (const user of users) {
+                    const newRemotePlayer = new RemotePlayer({
+                        scene: this,
+                        x: user.x,
+                        y: user.y,
+                        username: user.username,
+                        characterName: user.characterName,
+                        id: user.id
+                    });
+                    this.remotePlayers.push(newRemotePlayer);
+                }
+            })
+
             //Wenn ein neuer Spieler hinzugefügt wird
             this.socket.on("new_user_joined", (newUser) => {
 
@@ -94,17 +109,19 @@ export class Play extends Phaser.Scene {
                 //erstelle neuen Spieler
                 const newPlayer = new RemotePlayer({
                     id: newUser.id,
-                    scene: this, 
-                    x: newUser.x, 
-                    y: newUser.y, 
-                    username: newUser.username, 
-                    characterName: newUser.characterName, 
+                    scene: this,
+                    x: newUser.x,
+                    y: newUser.y,
+                    username: newUser.username,
+                    characterName: newUser.characterName,
                 });
 
                 //Füger Spieler zur Liste hinzu
-                this.users.push(newPlayer);
+                this.remotePlayers.push(newPlayer);
 
             })
+
+
 
         })
 
