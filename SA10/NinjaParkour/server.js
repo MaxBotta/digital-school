@@ -46,7 +46,7 @@ io.on('connection', (playerSocket) => {
 
         //Füge den neuen Spieler zur Liste der Spieler hinzu,
         //falls dieser Spieler noch nicht existiert
-        if (USERS.find(user => user.id === newUser.id)) {
+        if (!USERS.find(user => user.id === newUser.id)) {
             USERS.push(newUser);
         }
 

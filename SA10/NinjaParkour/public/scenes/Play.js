@@ -113,8 +113,11 @@ export class Play extends Phaser.Scene {
                 console.log(allExistingUsers)
                 //Erstelle einen Remote Player für jeden User
                 for (const user of allExistingUsers) {
-                    const newRemotePlayer = new RemotePlayer(this, user.x, user.y, user.characterName, user.id);
-                    this.remoteUsers.push(newRemotePlayer);
+                    //Nur wenn User nicht der eiegene Spieler ist
+                    if (user.id !== this.player.id) {
+                        const newRemotePlayer = new RemotePlayer(this, user.x, user.y, user.characterName, user.id);
+                        this.remoteUsers.push(newRemotePlayer);
+                    }
                 }
             })
 
@@ -128,9 +131,9 @@ export class Play extends Phaser.Scene {
                     for (const remotePlayer of this.remoteUsers) {
                         //Wenn wir einen Spieler gefunden haben, dann aktualisiere die Daten
                         if (remotePlayer.id === user.id && remotePlayer.id !== this.player.id) {
-                            // remotePlayer.setPosition(user.x, user.y);
-                            // remotePlayer.setAnimation(user.animation);
-                            // remotePlayer.setFlipX(user.flipX);
+                            remotePlayer.setPosition(user.x, user.y);
+                            remotePlayer.setAnimation(user.animation);
+                            remotePlayer.setFlipX(user.flipX);
                         }
                     }
 
@@ -145,8 +148,8 @@ export class Play extends Phaser.Scene {
                     id: this.player.id,
                     characterName: this.player.characterName,
                     animation: this.player.anims.currentAnim.key,
-                    x: this.player.x.toFixed(2),
-                    y: this.player.y.toFixed(2),
+                    x: this.player.x,
+                    y: this.player.y,
                     flipX: this.player.flipX
                 })
             }, 30)
