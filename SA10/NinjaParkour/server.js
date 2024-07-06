@@ -70,6 +70,20 @@ io.on('connection', (playerSocket) => {
         }
     })
 
+    playerSocket.on('disconnect', () => {
+        //Entferne Spieler aus Spielerliste
+        for(const user of USERS) {
+            if(user.id === playerSocket.id) {
+                USERS.splice(USERS.indexOf(user), 1);
+            }
+            break;
+        }
+
+        //Informiere alle ANDEREN Spieler darüber, dass ein Spieler weg ist
+        playerSocket.broadcast.emit('user_disconnected', playerSocket.id);
+
+    })
+
 })
 
 //sende alle 30ms alle Spielerdaten an alle Spieler

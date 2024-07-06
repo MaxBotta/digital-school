@@ -142,6 +142,16 @@ export class Play extends Phaser.Scene {
                 }
             })
 
+            this.socket.on('user_disconnected', (userId) => {
+                //Finde den Remote Spieler in der liste und entferne ihn
+                for (const remotePlayer of this.remoteUsers) {
+                    if (remotePlayer.id === userId) {
+                        this.remoteUsers.splice(this.remoteUsers.indexOf(remotePlayer), 1);
+                        remotePlayer.destroy();
+                    }
+                }
+            });
+
             //Sende alle 30ms die Position des Spielers an den Server
             setInterval(() => {
                 this.socket.emit('update_user', {
@@ -152,7 +162,7 @@ export class Play extends Phaser.Scene {
                     y: this.player.y,
                     flipX: this.player.flipX
                 })
-            }, 30)
+            }, 30);
 
 
 
