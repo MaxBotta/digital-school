@@ -33,13 +33,13 @@ export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
     setPosition = (x, y) => {
         this.x = x;
         this.y = y;
-        this.nameText.x = x;
-        this.nameText.y = y;
+        this.nameText.x = x - 20;
+        this.nameText.y = y - 30;
     }
 
     create = () => {
 
-        this.nameText = this.scene.add.text(this.x, this.y, this.username);
+        this.nameText = this.scene.add.text(this.x - 20, this.y - 30, this.username);
 
         this.scene.anims.create({
             key: 'idle',

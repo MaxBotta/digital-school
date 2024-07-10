@@ -122,13 +122,14 @@ export class Play extends Phaser.Scene {
 
             })
 
-            this.socket.on("udpate_players", (users) => {
+            //Wird alle 30ms vom Server gesendet
+            this.socket.on("update_players", (users) => {
                 //Für jeden user vom Server
-                for(const user of users) {
+                for (const user of users) {
                     //Schaue durch jeden user im Spiel
-                    for(const localUser of this.remotePlayers) {
+                    for (const localUser of this.remotePlayers) {
                         //Wenn der User bei uns im Spiel ist
-                        if(user.id === localUser.id) {
+                        if (user.id === localUser.id) {
                             //Setze die Position
                             localUser.setPosition(user.x, user.y);
                             //Setze die Animation
@@ -142,7 +143,34 @@ export class Play extends Phaser.Scene {
                 }
             })
 
+            //Wenn ein Spieler das SPiel verlässt
+            this.socket.on("player_disconnected", (id) => {
+                console.log("Spieler hat das Spiel verlassen", id)
+                //durchsuche alle Spieler im Spiel
+                for (const user of this.remotePlayers) {
+                    //wenn user mit passender id gefunden wurde
+                    if (user.id === id) {
+                        //lösche Spieler aus der Spielerliste
+                        this.remotePlayers.splice(this.remotePlayers.indexOf(user), 1);
 
+                        //lösche Spieler aus der Szene
+                        user.destroy();
+                    }
+                }
+            })
+
+            //Sende alle 30ms ein Update an den Server
+            setInterval(() => {
+                this.socket.emit("update_player", {
+                    id: this.socket.id,
+                    username: this.player.username,
+                    x: this.player.x,
+                    y: this.player.y,
+                    animation: this.player.anims.currentAnim.key,
+                    characterName: this.player.characterName,
+                    flipX: this.player.flipX
+                })
+            }, 30);
 
         })
 

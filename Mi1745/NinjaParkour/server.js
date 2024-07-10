@@ -27,11 +27,6 @@ const USERS = [];
 //socket connection
 io.on('connection', (playerSocket) => {
 
-    //Update player alle 30ms
-    setInterval(() => {
-        io.emit("update_players", USERS)
-    }, 30)
-
     //When a new user connects
     playerSocket.on("new_user", (newUser) => {
 
@@ -61,7 +56,34 @@ io.on('connection', (playerSocket) => {
         } else {
             console.log("INVALID USER!!!", newUser)
         }
-
     })
+
+    //Empfange alle 30ms update von Spieler
+    playerSocket.on("update_player", (user) => {
+        const currentUser = USERS.find(u => u.id === user.id);
+        if (currentUser) {
+            currentUser.x = user.x;
+            currentUser.y = user.y;
+            currentUser.animation = user.animation;
+            currentUser.characterName = user.characterName;
+            currentUser.flipX = user.flipX;
+            currentUser.username = user.username;
+        }
+    })
+
+    //Wenn ein Spieler das Spiel verlässt
+    playerSocket.on("disconnect", () => {
+        for(const user of USERS) {
+            if(user.id === playerSocket.id) {
+                USERS.splice(USERS.indexOf(user), 1);
+            }
+        }
+        playerSocket.emit("player_disconnected", playerSocket.id);
+    })
+
+    //Update players alle 30ms
+    setInterval(() => {
+        playerSocket.emit("update_players", USERS)
+    }, 30)
 
 });
