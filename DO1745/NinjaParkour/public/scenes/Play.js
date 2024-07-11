@@ -70,6 +70,8 @@ export class Play extends Phaser.Scene {
         this.socket.on('connect', () => {
             console.log('connected to server');
 
+            this.player.id = this.socket.id;
+
             //Sende Spielerdaten an Server
             this.socket.emit('new_player', {
                 id: this.socket.id,
@@ -101,11 +103,41 @@ export class Play extends Phaser.Scene {
                 for (const user of users) {
                     //Erstelle neuen Remote Spieler
                     const newRemotePlayer = new RemotePlayer(this, user.x, user.y, user.username, user.characterType, user.id);
-                    
+
                     //Füge neuen Remote Spieler zur Liste aller Spieler hinzu
                     this.users.push(newRemotePlayer)
                 }
             })
+
+            //Empfange alle 30ms ein Update aller Spieler
+            this.socket.on("update_players", (users) => {
+                //Durchsuche alle Spieler und update die entsprechenden Spieler
+                for (const user of users) {
+                    for (const localUser of this.users) {
+                        if (user.id === localUser.id) {
+                            localUser.x = user.x;
+                            localUser.y = user.y;
+                            localUser.flipX = user.flipX;
+                            localUser.isAlive = user.isAlive;
+                            localUser.characterType = user.characterType;
+                            localUser.play(user.animation, true);
+                        }
+                    }
+                }
+            })
+
+            //Sende alle 30ms ein Update des Spielers an den Server
+            setInterval(() => {
+                this.socket.emit("update_player", {
+                    id: this.player.id,
+                    x: this.player.x,
+                    y: this.player.y,
+                    isAlive: this.player.isAlive,
+                    animation: this.player.anims.currentAnim.key,
+                    flipX: this.player.flipX,
+                    characterType: this.player.characterType
+                })
+            }, 30)
         })
 
     }

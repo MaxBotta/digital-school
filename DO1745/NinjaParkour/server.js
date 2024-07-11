@@ -51,6 +51,7 @@ io.on('connection', (playerSocket) => {
             //Füge neuen Spieler zur Liste aller Spieler hinzu
             USERS.push(newUser);
             console.log("Neuer Spieler hinzugefügt: ", newUser);
+            console.log("Aktuelle Spieler: ", USERS);
 
             //Benachrichtige alle anderen Spieler, dass ein neuer Spieler hinzugefügt wurde
             playerSocket.broadcast.emit("new_player_joined", newUser);
@@ -61,6 +62,26 @@ io.on('connection', (playerSocket) => {
 
         console.log("Anzahl Spieler: " + USERS.length);
     })
+
+    //Empfgange alle 30ms ein Update des Spielers
+    playerSocket.on("update_player", (user) => {
+        for(const localUser of USERS) {
+            if(user.id === localUser.id) {
+                console.log("Update Spieler");
+                localUser.x = user.x;
+                localUser.y = user.y;
+                localUser.animation = user.animation;
+                localUser.flipX = user.flipX;
+                localUser.isAlive = user.isAlive;
+                localUser.characterType = user.characterType;
+            }
+        }
+    })
+
+    //Sende alle 30ms ein Update aller Spieler an alle Spieler
+    setInterval(() => {
+        playerSocket.emit("update_players", USERS);
+    }, 30);
 
 })
 
