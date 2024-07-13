@@ -38,6 +38,7 @@ io.on('connection', (playerSocket) => {
         const newUser = {
             id: playerSocket.id,
             characterName: user.characterName,
+            username: user.username,
             animation: user.animation,
             x: user.x,
             y: user.y,

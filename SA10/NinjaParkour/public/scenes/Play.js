@@ -30,7 +30,7 @@ export class Play extends Phaser.Scene {
         const trapsLayer = map.createLayer("traps", [spikesTileset]);
 
         //Erstelle Spieler
-        this.player = new Player(this, 100, 2600, "Ninja Frog", 'Max');
+        this.player = new Player(this, 100, 2600, "Ninja Frog");
 
         //Kamera verfolgt Spieler
         this.cameras.main.startFollow(this.player, true);
@@ -103,7 +103,7 @@ export class Play extends Phaser.Scene {
             //Wenn ein neuer Spieler sich verbindet
             this.socket.on('new_user_added', (user) => {
                 //Erstelle einen neuen Remote Spieler
-                const newRemotePlayer = new RemotePlayer(this, user.x, user.y, user.characterName, user.id);
+                const newRemotePlayer = new RemotePlayer(this, user.x, user.y, user.characterName, user.username, user.id);
 
                 //Füge den neuen Spieler zur Liste der Remote Users hinzu
                 this.remoteUsers.push(newRemotePlayer);
@@ -116,7 +116,7 @@ export class Play extends Phaser.Scene {
                 for (const user of allExistingUsers) {
                     //Nur wenn User nicht der eiegene Spieler ist
                     if (user.id !== this.player.id) {
-                        const newRemotePlayer = new RemotePlayer(this, user.x, user.y, user.characterName, user.id);
+                        const newRemotePlayer = new RemotePlayer(this, user.x, user.y, user.characterName, user.username, user.id);
                         this.remoteUsers.push(newRemotePlayer);
                     }
                 }

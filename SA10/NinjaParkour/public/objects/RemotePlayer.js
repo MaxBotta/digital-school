@@ -1,7 +1,7 @@
 
 export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
 
-    constructor(scene, x, y, characterName, id) {
+    constructor(scene, x, y, characterName, username, id) {
         super(scene, x, y);
         scene.add.existing(this);
         scene.physics.add.existing(this);
@@ -15,11 +15,13 @@ export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
         this.scene = scene;
 
         this.id = id;
+        this.username = username;
 
         this.body.setSize(16, 28);
         this.scale = 1.2;
 
         this.characterName = characterName;
+        this.nameText = null;
 
         // this.setCollideWorldBounds(true);
         this.preload();
@@ -33,6 +35,8 @@ export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
     }
 
     create = () => {
+        this.nameText = this.scene.add.text(this.x - 20, this.y - 40, this.username);
+
         this.anims.create({
             key: 'idle',
             frames: this.anims.generateFrameNumbers(`${this.characterName}_idle`),
@@ -84,6 +88,8 @@ export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
     setPosition = (x, y) => {
         this.x = x;
         this.y = y;
+        this.nameText.x = x - 20;
+        this.nameText.y = y - 40;
     }
 
     setAnimation = (animation) => {
@@ -92,6 +98,11 @@ export class RemotePlayer extends Phaser.Physics.Arcade.Sprite {
 
     setFlipX = (flipX) => {
         this.flipX = flipX;
+    }
+
+    destroy = () => {
+        this.nameText.destroy();
+        super.destroy();
     }
 
 
