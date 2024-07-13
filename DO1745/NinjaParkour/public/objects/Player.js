@@ -18,8 +18,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         this.isJumping = false;
         this.isDoubleJumping = false;
         this.jumpCount = 0;
-        this.speed = 20;
-        this.jumpSpeed = 40;
+        this.speed = 30;
+        this.jumpSpeed = 60;
         this.cursors;
         this.username = username;
         this.id = null;
