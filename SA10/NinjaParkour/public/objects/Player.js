@@ -6,8 +6,6 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         scene.add.existing(this);
         scene.physics.add.existing(this);
         this.scene = scene;
-
-        this.username = username;
         this.id = null;
 
         this.isAlive = true;
@@ -24,6 +22,19 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         //random name between 4
         this.charactes = ["Ninja Frog", "Mask Dude", "Virtual Guy", "Pink Man"];
         this.characterName = this.charactes[Math.floor(Math.random() * this.charactes.length)];
+
+        //random usernames
+        const usernames = [
+            "Blaze",
+            "Venom",
+            "Phoenix",
+            "Fury",
+            "Shadow",
+            "Storm",
+            "Ace",
+            "Nova",
+        ];
+        this.username = usernames[Math.floor(Math.random() * usernames.length)];
 
         // this.setCollideWorldBounds(true);
         this.preload();
@@ -99,7 +110,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     update = (t, dt) => {
 
         //Wenn Spieler tot ist, wird update Funktion abgebrochen
-        if(this.isAlive === false) return;
+        if (this.isAlive === false) return;
 
         //Spieler nach links bewegen
         if (this.cursors.left.isDown || this.wasdKeys.left.isDown) {
@@ -137,7 +148,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     kill = () => {
-        if(this.isAlive === false) return;
+        if (this.isAlive === false) return;
 
         this.isAlive = false;
         this.play("hit", true);

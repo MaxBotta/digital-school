@@ -76,7 +76,6 @@ io.on('connection', (playerSocket) => {
             if(user.id === playerSocket.id) {
                 USERS.splice(USERS.indexOf(user), 1);
             }
-            break;
         }
 
         //Informiere alle ANDEREN Spieler darüber, dass ein Spieler weg ist

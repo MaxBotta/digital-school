@@ -90,6 +90,7 @@ export class Play extends Phaser.Scene {
             this.socket.emit('new_user',
                 {
                     id: this.player.id,
+                    username: this.player.username,
                     characterName: this.player.characterName,
                     animation: this.player.anims.currentAnim.key,
                     x: this.player.x,
@@ -148,6 +149,7 @@ export class Play extends Phaser.Scene {
                     if (remotePlayer.id === userId) {
                         this.remoteUsers.splice(this.remoteUsers.indexOf(remotePlayer), 1);
                         remotePlayer.destroy();
+                        console.log('User disconnected', remotePlayer.username);
                     }
                 }
             });
@@ -156,6 +158,7 @@ export class Play extends Phaser.Scene {
             setInterval(() => {
                 this.socket.emit('update_user', {
                     id: this.player.id,
+                    username: this.player.username,
                     characterName: this.player.characterName,
                     animation: this.player.anims.currentAnim.key,
                     x: this.player.x,
