@@ -1,0 +1,116 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "level1.json",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "level1.json": {
+            "scale": 1.1351,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 1126.3324817196724,
+                "y": 909.6114879746278
+            }
+        },
+        "level1.json#background_yellow": {
+            "scaleInDock": 1
+        },
+        "level1.json#box": {
+            "scaleInDock": 1
+        },
+        "level1.json#fire": {
+            "scaleInDock": 4.1077,
+            "scaleInEditor": 11.1206
+        },
+        "level1.json#sand_mud_ice": {
+            "scaleInDock": 1
+        },
+        "level1.json#saw": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "level1.json#spikes": {
+            "scaleInDock": 6.0174,
+            "scaleInEditor": 36.5386
+        },
+        "level1.json#terrain": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "level1.json#terrain_collide": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "level1.json#trampoline": {
+            "scaleInDock": 3.9935,
+            "scaleInEditor": 1
+        },
+        "level1.tmx": {
+            "scale": 0.464,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 802.8017241379309,
+                "y": 466.59482758620675
+            }
+        },
+        "level1.tmx#background_yellow": {
+            "scaleInDock": 1
+        },
+        "level1.tmx#box": {
+            "scaleInDock": 1
+        },
+        "level1.tmx#sand_mud_ice": {
+            "scaleInDock": 4.5377,
+            "scaleInEditor": 1
+        },
+        "level1.tmx#saw": {
+            "scaleInDock": 5.8581,
+            "scaleInEditor": 13.2692
+        },
+        "level1.tmx#spikes": {
+            "scaleInDock": 7.181,
+            "scaleInEditor": 21.1152
+        },
+        "level1.tmx#terrain": {
+            "scaleInDock": 2.4976,
+            "scaleInEditor": 3.07
+        },
+        "level1.tmx#terrain_collide": {
+            "scaleInDock": 2.4375,
+            "scaleInEditor": 3.45
+        }
+    },
+    "last.exportedFilePath": "/Users/maxbotta/Documents",
+    "last.imagePath": "/Users/maxbotta/Desktop/DigitalSchool/DO1745/NinjaParkour/assets/PixelAdventure/Traps/Trampoline",
+    "map.height": 60,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": "1",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 60,
+    "mapScene.enableWorlds": true,
+    "openFiles": [
+        "level1.json"
+    ],
+    "project": "NinjaParkour.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "level1.json",
+        "level1.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 28,
+        "width": 28
+    }
+}

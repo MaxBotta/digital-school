@@ -1,0 +1,111 @@
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(239, 239, 239);
+}
+
+
+.logo {
+    width: auto;
+    height: 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+
+
+.diashow {
+    height: 600px;
+    width: 100%;
+    background-color: silver;
+    position: relative;
+}
+
+.diashow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 0;
+}
+
+.diashow button {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.435);
+    color: rgb(209, 209, 209);
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+}
+
+.diashow button:hover {
+    background-color: rgba(0, 0, 0, 0.695);
+    color: white;
+}
+
+button.left {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+}
+button.right {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+
+.diashow .dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    display: flex;
+    gap: 10px;
+}
+
+.diashow .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: rgb(143, 143, 143);
+}
+
+.navbar-toggler {
+    outline: 0 !important;
+    border: 0 !important;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.search {
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 
+
+        - Eingabefeld für neue Todos
+        - Einen Button um Todos hinzuzufügen
+        - Liste mit allen Todos
+        - Checkbox in jedem Todo
+
+        - Todos löschen
+        - Todos speichern
+        - Frist mit Datum
+        - Todo Name ändern
+        - Sortieren von erledigten und nicht erledigten Todos
+        - Farben um zu kennzeichnen wie wichtig ein Todo ist
+
+        Optional:
+        - Tags
+        - Erledigte Todos verschwinden
+            - Extra Liste mit erledigten Todos
+            - Aufzählung wie viele Todos erledigt wurden
+        - Anlegen verschiedener Todo listen
+
+
+     -->
+
+    <main class="app">
+        <p><b>Supercoole Todo List</b></p>
+        <div class="flex">
+            <input id="todo-input" type="text" placeholder="Was musst du erledigen?" />
+            <button onclick="addTodo()">Hinzufügen</button>
+        </div>
+
+        <ul id="todos">
+        </ul>
+
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
