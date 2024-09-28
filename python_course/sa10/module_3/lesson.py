@@ -1,9 +1,16 @@
-
-# Vergleichsoperatoren
-
+# Zuweisungsoperatoren
 x = 5
 y = 10
 z = 5
+
+a = 3
+
+# Kurzschreibweise
+a = a + 1
+a += 1
+a *= 2
+
+# Vergleichsoperatoren
 
 x > y   #False
 x == y  #False
