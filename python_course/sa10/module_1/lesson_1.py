@@ -32,3 +32,8 @@ elif temperature < 18:
     print("Es ist kühl.")
 else: 
     print("Es ist warm.")
+    
+#Listen
+temperatures = [15, 20, 25, 30]
+fruits = ["Apfel", "Banane", "Orange", "Kiwi"]
+print(temperatures[1])
