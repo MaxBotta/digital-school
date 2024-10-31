@@ -34,6 +34,7 @@ questions = [
 #answer_1_a = questions[0]['answers']['a']
 
 
+score = 0
 
 for question in questions:
     print(question['question'])
@@ -43,3 +44,9 @@ for question in questions:
     print('c: ', question['answers']['c'])
     
     player_answer = input('Welche Antwort ist richtig (a, b oder c)')
+    
+    if player_answer == question['answer']:
+        score += 1
+        print('Richtiiiig!!!')
+    else:
+        print('falsch!!! :/')
