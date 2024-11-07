@@ -12,7 +12,7 @@ Ergänzung:
 questions = [
     { 
         'question': 'Was ist die Hauptstadt von Frankreich?', 
-        'answers': { 
+        'options': { 
             'a': 'Paris',
             'b': 'Lissabon', 
             'c': 'Stockholm'
@@ -21,7 +21,7 @@ questions = [
     },
     { 
         'question': 'Was ist die Hauptstadt von Portugal', 
-        'answers': { 
+        'options': { 
             'a': 'Paris',
             'b': 'Lissabon', 
             'c': 'Stockholm'
@@ -30,23 +30,27 @@ questions = [
     }
 ]
 
+
 #question_1 = questions[0]['question']
 #answer_1_a = questions[0]['answers']['a']
 
-
+# Punkte auf 0 setzen
 score = 0
 
-for question in questions:
-    print(question['question'])
+# Durch alle Fragen durchgehen
+for q in questions:
+    print(q['question'])
     
-    print('a: ', question['answers']['a'])
-    print('b: ', question['answers']['b'])
-    print('c: ', question['answers']['c'])
+    print('a: ', q['options']['a'])
+    print('b: ', q['options']['b'])
+    print('c: ', q['options']['c'])
     
     player_answer = input('Welche Antwort ist richtig (a, b oder c)')
     
-    if player_answer == question['answer']:
+    if player_answer == q['answer']:
         score += 1
         print('Richtiiiig!!!')
     else:
         print('falsch!!! :/')
+        
+print('Your score is: ', score)
