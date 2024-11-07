@@ -9,56 +9,22 @@ Ergänzung:
 
 '''
 
-categories = [
-    {
-        'name': 'Hauptstädte',
-        'questions': [
-                { 
-                'question': 'Was ist die Hauptstadt von Frankreich?', 
-                'options': { 
-                    'a': 'Paris',
-                    'b': 'Lissabon', 
-                    'c': 'Stockholm'
-                },
-                'answer': 'a' 
-            },
-            { 
-                'question': 'Was ist die Hauptstadt von Portugal', 
-                'options': { 
-                    'a': 'Paris',
-                    'b': 'Lissabon', 
-                    'c': 'Stockholm'
-                },
-                'answer': 'b' 
-            }
-        ]
-    },
-    {
-        'name': 'Filme',
-        'questions': [
-            
-        ] 
-    }
-]
-
-
-
-
-#question_1 = questions[0]['question']
-#answer_1_a = questions[0]['answers']['a']
+from questions import categories
 
 # Punkte auf 0 setzen
 score = 0
 
 print('Wähle eine Kategorie')
 
+index = 0
 for cat in categories:
-    print(cat['name'])
+    index += 1
+    print(str(index) + ': ', cat['name'])
     
-player_cat = input(...)
+player_cat = input('Wähle eine Kategorie: ')
 
 # Durch alle Fragen durchgehen
-for q in questions:
+for q in categories[int(player_cat) - 1]['questions']:
     print(q['question'])
     
     print('a: ', q['options']['a'])
