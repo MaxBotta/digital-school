@@ -1,3 +1,6 @@
+from random import randint
+from questions import categories
+
 '''
 The program asks the player questions about the capital cities. 
 Users get three chances to answer each question. Correct answer will score one point. 
@@ -16,66 +19,38 @@ To Dos:
 '''
 
 
-from random import randint
-
-questions = [
-    {
-        'question': 'What is the capital city of France?',
-        'options': {
-            'a': 'Berlin',
-            'b': 'Paris',
-            'c': 'Stockholm'
-        },
-        'answer': 'b'
-    },
-    {
-        'question': 'What is the capital city of Italy?',
-        'options': {
-            'a': 'Amsterdam',
-            'b': 'Lisbon',
-            'c': 'Rome'
-        },
-        'answer': 'c'
-    },
-    {
-        'question': 'What is the capital city of Spain?',
-        'options': {
-            'a': 'Madrid',
-            'b': 'Paris',
-            'c': 'Stockholm'
-        },
-        'answer': 'a'
-    },
-]
-
 
 def start_game():
     score = 0
     
-    # TODO: implement that player can choose a category
-    # category = input('Which category? (a: capital cities, b: coding )')
+    for i, cat in enumerate(categories):
+        print(str(i + 1) + ': ', cat['name'])
     
-    # if category == 'a':
-
+    # player chooses a category
+    category_index = input('Choose a category (1, 2, ...): ')
+    
+    # get the choosen category
+    category = categories[int(category_index) - 1]
+    
     # Wiederhole x mal: Stelle dem Nutzer eine Frage
-    for q in questions:
+    for q in category['questions']:
+        print('')
+        print('------------------------------------')
+        
         # Stelle dem Nutzer die Frage
         print(q['question'])
         
-        # Zähle Antworten
-        answer_counter = 0
+        # Alle Antowrten anzeigen
+        for key in q['options']:
+            print(key + ': ', q['options'][key])
         
-        while answer_counter < 3:
-            player_input = input('Your answer: ')
+        player_input = input('Your answer: ')
             
-            #Kontrolliere ob die Spielerantwort richtig ist
-            if player_input == q['answer']:
-                score += 1
-                print('This answer is right :)')
-                break
-            else:
-                answer_counter += 1
-                print('This answer is wrong :/')
+        if player_input == q['answer']:
+            score += 1
+            print('This answer is right :)')
+        else:
+            print('This answer is wrong :/')
                 
     print('This is your score: ' , score)
     
