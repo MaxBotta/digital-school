@@ -7,10 +7,12 @@ For this app we will use variables, functions, if statements and loops.
 
 '''
 To Dos:
-- Das Programm soll dem Nutzer nacheinander 5 zufällige fragen stellen
-- Für jede Frage hat der Nutzer 3 Chancen
-- Für jede richtig beantwortete Frage erhält der Spieler einen Punkt
-- Wurden alle fragen beantwortet, wird das Programm beendet
+-   Wenn das Programm startet, soll der Spieler aus einer von 3 Kategorien wählen
+-   Das Programm soll dem Nutzer nacheinander 5 zufällige Fragen stellen
+-   Der Spieler kann aus 3 Antwortmöglichkeiten eine wählen, 
+    diese soll durch Eingabe von a,b oder c ausgewählt werden
+-   Für jede richtig beantwortete Frage erhält der Spieler einen Punkt
+-   Wurden alle Fragen beantwortet, wird das Programm beendet
 '''
 
 
@@ -19,24 +21,31 @@ from random import randint
 questions = [
     {
         'question': 'What is the capital city of France?',
-        'answer': 'Paris'
+        'options': {
+            'a': 'Berlin',
+            'b': 'Paris',
+            'c': 'Stockholm'
+        },
+        'answer': 'b'
     },
     {
         'question': 'What is the capital city of Italy?',
-        'answer': 'Rome'
+        'options': {
+            'a': 'Amsterdam',
+            'b': 'Lisbon',
+            'c': 'Rome'
+        },
+        'answer': 'c'
     },
     {
         'question': 'What is the capital city of Spain?',
-        'answer': 'Madrid'
+        'options': {
+            'a': 'Madrid',
+            'b': 'Paris',
+            'c': 'Stockholm'
+        },
+        'answer': 'a'
     },
-    {
-        'question': 'What is the capital city of Germany?',
-        'answer': 'Berlin'
-    },
-    {
-        'question': 'What is the capital city of Portugal?',
-        'answer': 'Lisbon'
-    }
 ]
 
 
