@@ -9,7 +9,7 @@ def start_app():
     
     is_spicy_input = input("Do you want to eat spicy? y/n")
     if is_spicy_input == "y":
-        is_spicy_input = True
+        is_spicy = True
         
     cuisine_input = int(input("What cuisine do you prefer? 1: asian 2: mexican 3: italian"))
     if cuisine_input == 1:
@@ -23,12 +23,13 @@ def start_app():
     fitting_meals = []
     for meal in recipes:
         if meal["spicy"] == is_spicy and meal["cuisine"] == cuisine:
-            fitting_meals.insert(meal)
+            fitting_meals.append(meal)
     
     #was wenn Liste leer ist?
+    print(len(fitting_meals))
     
     #Gebe gefundene Gerichte aus
-    print("I recommend the meal", fitting_meals[0])
-    print("Nice side dishes: ", fitting_meals[0]["side_dishes"] )
+    print("I recommend the meal", fitting_meals[0]["name"])
+    print("Nice side dishes: ", fitting_meals[0]["side_dishes"])
         
 start_app()

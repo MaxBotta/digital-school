@@ -5,7 +5,7 @@ recipes = [
         
         "name": "Sushi",
         "ingredients": ["rice", "seaweed", "fish", "soy sauce"],
-        "side dishes": ["miso soup", "edamame"],
+        "side_dishes": ["miso soup", "edamame"],
         "spicy": False,
         "meal_time": "dinner",
         "country": "Japan",
@@ -14,7 +14,7 @@ recipes = [
     {
         "name": "Pad Thai",
         "ingredients": ["rice noodles", "shrimp", "peanuts", "egg"],
-        "side dishes": ["spring rolls", "fried rice"],
+        "side_dishes": ["spring rolls", "fried rice"],
         "spicy": True,
         "meal_time": "lunch",
         "country": "Thailand",
@@ -23,7 +23,7 @@ recipes = [
     {
         "name": "Bibimbap",
         "ingredients": ["rice", "beef", "vegetables", "egg"],
-        "side dishes": ["kimchi", "dumplings"],
+        "side_dishes": ["kimchi", "dumplings"],
         "spicy": True,
         "meal_time": "dinner",
         "country": "Korea",
@@ -33,7 +33,7 @@ recipes = [
     {
         "name": "Pizza",
         "ingredients": ["dough", "tomato sauce", "cheese", "pepperoni"],
-        "side dishes": ["salad", "breadsticks"],
+        "side_dishes": ["salad", "breadsticks"],
         "spicy": False,
         "meal_time": "dinner",
         "country": "Italy",
@@ -42,7 +42,7 @@ recipes = [
     {
         "name": "Pasta Carbonara",
         "ingredients": ["pasta", "bacon", "egg", "cheese"],
-        "side dishes": ["bread", "salad"],
+        "side_dishes": ["bread", "salad"],
         "spicy": False,
         "meal_time": "lunch",
         "country": "Italy",
@@ -51,7 +51,7 @@ recipes = [
     {
         "name": "Lasagna",
         "ingredients": ["pasta", "meat", "cheese", "tomato sauce"],
-        "side dishes": ["bread", "salad"],
+        "side_dishes": ["bread", "salad"],
         "spicy": False,
         "meal_time": "dinner",
         "country": "Italy",
@@ -61,7 +61,7 @@ recipes = [
     {
         "name": "Gyros",
         "ingredients": ["pita", "lamb", "tzatziki", "tomato"],
-        "side dishes": ["fries", "salad"],
+        "side_dishes": ["fries", "salad"],
         "spicy": False,
         "meal_time": "lunch",
         "country": "Greece",
@@ -70,7 +70,7 @@ recipes = [
     {
         "name": "Moussaka",
         "ingredients": ["eggplant", "meat", "bechamel", "tomato sauce"],
-        "side dishes": ["bread", "salad"],
+        "side_dishes": ["bread", "salad"],
         "spicy": False,
         "meal_time": "dinner",
         "country": "Greece",
@@ -79,7 +79,7 @@ recipes = [
     {
         "name": "Dolma",
         "ingredients": ["grape leaves", "rice", "meat", "lemon"],
-        "side dishes": ["salad", "bread"],
+        "side_dishes": ["salad", "bread"],
         "spicy": False,
         "meal_time": "dinner",
         "country": "Greece",
@@ -89,7 +89,7 @@ recipes = [
     {
         "name": "Tacos",
         "ingredients": ["tortilla", "beef", "salsa", "guacamole"],
-        "side dishes": ["rice", "beans"],
+        "side_dishes": ["rice", "beans"],
         "spicy": True,
         "meal_time": "lunch",
         "country": "Mexico",
@@ -98,7 +98,7 @@ recipes = [
     {
         "name": "Enchiladas",
         "ingredients": ["tortilla", "chicken", "cheese", "salsa"],
-        "side dishes": ["rice", "beans"],
+        "side_dishes": ["rice", "beans"],
         "spicy": True,
         "meal_time": "dinner",
         "country": "Mexico",
@@ -107,7 +107,7 @@ recipes = [
     {
         "name": "Chiles Rellenos",
         "ingredients": ["chiles", "cheese", "meat", "sauce"],
-        "side dishes": ["rice", "beans"],
+        "side_dishes": ["rice", "beans"],
         "spicy": True,
         "meal_time": "dinner",
         "country": "Mexico",
