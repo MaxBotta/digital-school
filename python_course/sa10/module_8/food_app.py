@@ -1,116 +1,34 @@
+from recipes import recipes
 
-recipes = [
-    #asian cusisine
-    {
+def start_app():
+    print("Welcome to the Food App! I will recommend a recipe for you based on your preferences.")
+    
+    is_spicy = False
+    cuisine = ""
+    meal_time = ""
+    
+    is_spicy_input = input("Do you want to eat spicy? y/n")
+    if is_spicy_input == "y":
+        is_spicy_input = True
         
-        "name": "Sushi",
-        "ingredients": ["rice", "seaweed", "fish", "soy sauce"],
-        "side dishes": ["miso soup", "edamame"],
-        "spicy": False,
-        "meal_time": "dinner",
-        "country": "Japan",
-        "cuisine": "Asian"
-    },
-    {
-        "name": "Pad Thai",
-        "ingredients": ["rice noodles", "shrimp", "peanuts", "egg"],
-        "side dishes": ["spring rolls", "fried rice"],
-        "spicy": True,
-        "meal_time": "lunch",
-        "country": "Thailand",
-        "cuisine": "Asian"
-    },
-    {
-        "name": "Bibimbap",
-        "ingredients": ["rice", "beef", "vegetables", "egg"],
-        "side dishes": ["kimchi", "dumplings"],
-        "spicy": True,
-        "meal_time": "dinner",
-        "country": "Korea",
-        "cuisine": "Asian"
-    },
-    #italian cuisine
-    {
-        "name": "Pizza",
-        "ingredients": ["dough", "tomato sauce", "cheese", "pepperoni"],
-        "side dishes": ["salad", "breadsticks"],
-        "spicy": False,
-        "meal_time": "dinner",
-        "country": "Italy",
-        "cuisine": "Italian"
-    },
-    {
-        "name": "Pasta Carbonara",
-        "ingredients": ["pasta", "bacon", "egg", "cheese"],
-        "side dishes": ["bread", "salad"],
-        "spicy": False,
-        "meal_time": "lunch",
-        "country": "Italy",
-        "cuisine": "Italian"
-    },
-    {
-        "name": "Lasagna",
-        "ingredients": ["pasta", "meat", "cheese", "tomato sauce"],
-        "side dishes": ["bread", "salad"],
-        "spicy": False,
-        "meal_time": "dinner",
-        "country": "Italy",
-        "cuisine": "Italian"
-    },
-    #greek cuisine
-    {
-        "name": "Gyros",
-        "ingredients": ["pita", "lamb", "tzatziki", "tomato"],
-        "side dishes": ["fries", "salad"],
-        "spicy": False,
-        "meal_time": "lunch",
-        "country": "Greece",
-        "cuisine": "Greek"
-    },
-    {
-        "name": "Moussaka",
-        "ingredients": ["eggplant", "meat", "bechamel", "tomato sauce"],
-        "side dishes": ["bread", "salad"],
-        "spicy": False,
-        "meal_time": "dinner",
-        "country": "Greece",
-        "cuisine": "Greek"
-    },
-    {
-        "name": "Dolma",
-        "ingredients": ["grape leaves", "rice", "meat", "lemon"],
-        "side dishes": ["salad", "bread"],
-        "spicy": False,
-        "meal_time": "dinner",
-        "country": "Greece",
-        "cuisine": "Greek"
-    },
-    #mexican cuisine
-    {
-        "name": "Tacos",
-        "ingredients": ["tortilla", "beef", "salsa", "guacamole"],
-        "side dishes": ["rice", "beans"],
-        "spicy": True,
-        "meal_time": "lunch",
-        "country": "Mexico",
-        "cuisine": "Mexican"
-    },
-    {
-        "name": "Enchiladas",
-        "ingredients": ["tortilla", "chicken", "cheese", "salsa"],
-        "side dishes": ["rice", "beans"],
-        "spicy": True,
-        "meal_time": "dinner",
-        "country": "Mexico",
-        "cuisine": "Mexican"
-    },
-    {
-        "name": "Chiles Rellenos",
-        "ingredients": ["chiles", "cheese", "meat", "sauce"],
-        "side dishes": ["rice", "beans"],
-        "spicy": True,
-        "meal_time": "dinner",
-        "country": "Mexico",
-        "cuisine": "Mexican"
-    }
-]
+    cuisine_input = int(input("What cuisine do you prefer? 1: asian 2: mexican 3: italian"))
+    if cuisine_input == 1:
+        cuisine = "asian"
+    elif cuisine_input == 2:
+        cuisine = "mexican"
+    elif cuisine_input == 3:
+        cuisine = "italian"
+        
+    #Suche passende Gerichte aus Liste von Gerichten
+    fitting_meals = []
+    for meal in recipes:
+        if meal["spicy"] == is_spicy and meal["cuisine"] == cuisine:
+            fitting_meals.insert(meal)
+    
+    #was wenn Liste leer ist?
+    
+    #Gebe gefundene Gerichte aus
+    print("I recommend the meal", fitting_meals[0])
+    print("Nice side dishes: ", fitting_meals[0]["side_dishes"] )
+        
+start_app()
