@@ -1,4 +1,5 @@
 from recipes import recipes
+from random import randint
 
 def start_app():
     print("Welcome to the Food App! I will recommend a recipe for you based on your preferences.")
@@ -11,12 +12,14 @@ def start_app():
     if is_spicy_input == "y":
         is_spicy = True
         
-    cuisine_input = int(input("What cuisine do you prefer? 1: asian 2: mexican 3: italian"))
+    cuisine_input = int(input("What cuisine do you prefer? 1: asian 2: mexican 3: italian 4: greek"))
     if cuisine_input == 1:
         cuisine = "asian"
     elif cuisine_input == 2:
         cuisine = "mexican"
     elif cuisine_input == 3:
+        cuisine = "italian"
+    elif cuisine_input == 4:
         cuisine = "italian"
         
     #Suche passende Gerichte aus Liste von Gerichten
@@ -28,8 +31,10 @@ def start_app():
     #was wenn Liste leer ist?
     print(len(fitting_meals))
     
+    random_meal = fitting_meals[randint(0, len(fitting_meals) - 1)]
+    
     #Gebe gefundene Gerichte aus
-    print("I recommend the meal", fitting_meals[0]["name"])
-    print("Nice side dishes: ", fitting_meals[0]["side_dishes"])
+    print("I recommend the meal", random_meal["name"])
+    print("Nice side dishes: ", random_meal["side_dishes"])
         
 start_app()
