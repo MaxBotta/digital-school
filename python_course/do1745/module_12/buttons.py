@@ -1,5 +1,6 @@
 #Import the required Libraries
 from tkinter import Label, Button, Tk
+import time
 
 #Create an instance of Tkinter frame
 win = Tk()
@@ -7,34 +8,78 @@ win = Tk()
 #Set the geometry of the Tkinter frame
 win.geometry("750x250")
 
+questions = [
+    {
+        "question": "What is the capital of Germany?",
+        "options": {
+            "a": "Berlin",
+            "b": "Paris",
+            "c": "London"
+        },
+        "answer": "a"
+    },
+    {
+        "question": "What is the capital of France?",
+        "options": {
+            "a": "Berlin",
+            "b": "Paris",
+            "c": "London"
+        },
+        "answer": "b"
+    },
+    {
+        "question": "What is the capital of England?",
+        "options": {
+            "a": "Berlin",
+            "b": "Paris",
+            "c": "London"
+        },
+        "answer": "c"
+    }
+]
+
+
+current_question = 0
+
 #write text into the window
-label = Label(win, text="Change the text of this label", font=("Helvetica", 16))
+label = Label(win, text="Welcome to the quiz game!", font=("Helvetica", 16))
 label.pack(pady=10)
 
-def change_text():
-    label.config(text = 'Hello World')
+answer_a = Button(win, text = "test")
+answer_a.pack(pady=10)
 
-my_button = Button(win, text = "Please update", command = change_text)
-my_button.pack(pady=10)
+answer_b = Button(win, text = "test")
+answer_b.pack(pady=10)
 
-#Define a function to update the entry widget
-# def entry_update(text):
-#    entry.delete(0,END)
-#    entry.insert(0,text)
+answer_c = Button(win, text = "test")
+answer_c.pack(pady=10)
 
-# #Create an Entry Widget
-# entry= Entry(win, width= 30, bg= "white")
-# entry.pack(pady=10)
+def set_text(label, text):
+    label.config(text=text)
+    
+    #3 seconds to next question
+def set_timer():
+    for i in range(3):
+        label.config(text=str(3-i))
+        time.sleep(1)
+    
+    global current_question
+    current_question += 1
+    set_question(current_question)
 
-# #Create Multiple Buttons with different commands
-# button_dict={}
-# option= ["Python", "Java", "Go", "C++"]
+def check_answer(answer):
+    if questions[current_question]["answer"] == answer:
+        set_text(label, "Correct!")
+    else:
+        set_text(label, "Wrong!")
+    set_timer()
 
-# for i in option:
-#    def func(x=i):
-#       return entry_update(x)
+def set_question(index):
+    set_text(label, questions[index]["question"])
+    answer_a.config(text=questions[index]["options"]["a"], command=check_answer("a"))
+    answer_b.config(text=questions[index]["options"]["b"], command=check_answer("b"))
+    answer_c.config(text=questions[index]["options"]["c"], command=check_answer("c"))
 
-#    button_dict[i]=ttk.Button(win, text=i, command= func)
-#    button_dict[i].pack()
+set_question(current_question)
 
 win.mainloop()
