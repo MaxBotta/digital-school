@@ -1,41 +1,25 @@
 from tkinter import Tk, simpledialog, messagebox, mainloop
+import crud
 
 root = Tk()
 root.withdraw()
 
-path = "/Users/maxbotta/Desktop/Berlitz/DigitalSchool/python_course/sa10/module_12/"
+user_year = str(simpledialog.askinteger("Year", "Enter a year."))
+year, counries, result = crud.read(user_year)
 
-def find_year(input_year):
-    file = open(path + "uefa_euro.txt", "r")
-    for line in file:
-        cleaned_up = line.rstrip('\n')
-        splitted = cleaned_up.split("/")
-        year = splitted[0]
-        countries = splitted[1]
-        result = splitted[2]
+if result is None:
+    input_answer = simpledialog.askstring("Add Result", f"There was no entry for the year {user_year}. Would you like to add a result? y/n")
+    
+    if input_answer == "y":
+        input_countries = simpledialog.askstring("Countries", "Which countries played? country1-country2")
+        input_result = simpledialog.askstring("Countries", "What was the result? 1-0")
+        input_correct = simpledialog.askstring("Add Result", f"You added a new result. In the year {user_year} the countries {input_countries} played with a result of {input_result}. Is this correct? y/n")
         
-        if year == str(input_year):
-            file.close()
-            return year, countries, result
-    
-    file.close()
-    return None, None, None
-    
-
-def write_year(year, countries, result):
-    file = open(path + "uefa_euro.txt", "a")
-    file.write("\n")
-    file.write("2000/France-Italy/2-1")
-    file.close()
+        if input_correct is "y":
+             crud.create(user_year, input_countries, input_result)
+        
+else:
+    messagebox.showinfo("Result", f"The result of the UEFA Euro {year} was {counries} with a result of {result}.")
 
 
-user_answer = simpledialog.askinteger("Year", "Enter a year.")
-
-year, counries, result = find_year(user_answer)
-
-messagebox.showinfo("Result", f"The result of the UEFA Euro {year} was {counries} with a result of {result}.")
-
-
-
-
-mainloop()
+root.mainloop()
