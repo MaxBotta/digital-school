@@ -12,42 +12,42 @@ Ergänzung:
 '''
 
 from questions import categories
+from tkinter import Tk, simpledialog, messagebox
+
+root = Tk()
+root.withdraw()
 
 # Punkte auf 0 setzen
 score = 0
 
-print('Wähle eine Kategorie')
-
+category_string = 'Wähle eine Kategorie: \n'
 index = 0
 for cat in categories:
     index += 1
-    print(str(index) + ': ', cat['name'])
+    category_string += f'{str(index)} : {cat['name']}\n'
     
-player_cat = input('Wähle eine Kategorie: ')
+player_cat = simpledialog.askinteger('Kategorie', category_string)
+
 
 # Durch alle Fragen durchgehen
 for q in categories[int(player_cat) - 1]['questions']:
-    print(q['question'])
-    
-    print('a: ', q['options']['a'])
-    print('b: ', q['options']['b'])
-    print('c: ', q['options']['c'])
-    
+
     tries = 2
     while tries > 0:
-        player_answer = input('Welche Antwort ist richtig (a, b oder c)')
-            
+        player_answer = simpledialog.askstring('Frage', f'{q['question']} \n a: {q['options']['a']} \n b: {q['options']['b']} \n c: {q['options']['c']}')
+
         if player_answer == q['answer']:
             if tries == 2:
                 score += 2
             else:
                 score += 1
-            print('Richtiiiig!!!')
+            messagebox.showinfo('Auswertung', 'Richtig!')
             break
         else:
             tries -= 1
-            print('falsch :/')
+            messagebox.showinfo('Auswertung', 'Falsch!')
             if tries == 0:
-                print('Die richtige Antwort ist', q['answer'])
+                messagebox.showinfo('Auswertung', 'Die richtige Antwort ist ' + q['answer'])
         
-print('Punkte: ', score)
+        
+messagebox.showinfo('Punkte', 'Punkte: ' + str(score))

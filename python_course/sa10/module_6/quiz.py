@@ -1,5 +1,6 @@
 from random import randint
 from questions import categories
+from tkinter import Tk, simpledialog, messagebox
 
 '''
 The program asks the player questions about the capital cities. 
@@ -19,12 +20,19 @@ To Dos:
 '''
 
 
+root = Tk()
+root.withdraw()
+
 
 def start_game():
     score = 0
     
+    category_string = 'Wähle eine der folgenden Kategorien: '
     for i, cat in enumerate(categories):
-        print(str(i + 1) + ': ', cat['name'])
+        category_string += str(i + 1) + ': ' + cat['name'] + ', '
+        
+    simpledialog.askinteger('Kategorien', category_string)
+        
     
     # player chooses a category
     category_index = input('Choose a category (1, 2, ...): ')

@@ -49,6 +49,6 @@ for q in categories[int(player_cat) - 1]['questions']:
             if tries == 0:
                 messagebox.showinfo('Result', 'Die richtige Antwort ist: ' + q['answer'])
         
-messagebox.showinfo('Punkte: ', 'Punktestand: ' + score)
+messagebox.showinfo('Punkte: ', 'Punktestand: ' + str(score))
 
 root.mainloop()

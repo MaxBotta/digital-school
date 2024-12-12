@@ -15,10 +15,10 @@ categories = [
                 'question': 'Was ist die Hauptstadt von Portugal', 
                 'options': { 
                     'a': 'Paris',
-                    'b': 'Lissabon', 
-                    'c': 'Stockholm'
+                    'b': 'Brüssel', 
+                    'c': 'Lissabon'
                 },
-                'answer': 'b' 
+                'answer': 'c' 
             }
         ]
     },
