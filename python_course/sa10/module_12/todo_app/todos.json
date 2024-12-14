@@ -14,6 +14,14 @@
             "id": 3,
             "title": "Buy eggs",
             "completed": false
+        },
+        {
+            "title": "Hausaufgaben machen",
+            "completed": false
+        },
+        {
+            "title": "Test",
+            "completed": false
         }
     ]
 }
