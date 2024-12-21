@@ -16,10 +16,7 @@
             "completed": false
         },
         {
-            "title": "Hausaufgaben machen",
-            "completed": false
-        },
-        {
+            "id": 5,
             "title": "Test",
             "completed": false
         }

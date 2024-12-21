@@ -1,6 +1,4 @@
-from struct import pack
 from tkinter import Tk, Label, Button, Entry
-from tracemalloc import start
 from questions import categories
 
 root = Tk()

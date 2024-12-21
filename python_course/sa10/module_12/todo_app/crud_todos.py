@@ -10,9 +10,16 @@ def read():
 def create(new_todo_text):
     todos = read()
     
+    # Find the highest id
+    highest_id = 0
+    for todo in todos:
+        if todo['id'] > highest_id:
+            highest_id = todo['id']
+    
     with open(path, 'w') as file:
         
         new_todo = {
+            'id': highest_id + 1,
             'title': new_todo_text, 
             'completed': False
         }
