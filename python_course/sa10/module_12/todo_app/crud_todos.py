@@ -35,5 +35,16 @@ def create(new_todo_text):
 def update():
     pass
 
-def delete():
-    pass
+def delete(id):
+    todos = read()
+    
+    for todo in todos:
+        if todo['id'] == id:
+            todos.remove(todo)
+            
+    with open(path, 'w') as file:
+        data = {
+            "todos": todos
+        }
+        json.dump(data, file)
+    

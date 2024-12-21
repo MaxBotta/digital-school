@@ -1,21 +1,56 @@
-from tkinter import Tk, Label, Entry, Button, ttk
-from crud_todos import read, create
+from crud_todos import read, create, delete
+import customtkinter as ctk
 
-root = Tk()
-style = ttk.Style(root)
-style.theme_use('aqua')
+root = ctk.CTk()
 
 root.geometry('400x600')
 
+todo_elements = []
+
+frame1 = ctk.CTkFrame(root, fg_color='transparent')
+frame1.grid(row=0, column=0, padx=10, pady=10, sticky="w")
+
+title = ctk.CTkLabel(frame1, text='Todo App', font=('Helvetica', 20))
+title.grid(row=0, column=0, padx=10, pady=10, sticky="w")
+
+frame2 = ctk.CTkFrame(root, fg_color='transparent')
+frame2.grid(row=1, column=0, padx=10, pady=10, sticky="w")
+
 todos = read()
-for todo in todos:
-    label = ttk.Label(root, text=todo['title'])
-    label.pack(pady=10)
+for i, todo in enumerate(todos):
+    label = ctk.CTkLabel(frame2, text=todo['title'])
+    label.grid(row=i + 1, column=0, padx=10, pady=5, sticky="w")
+    todo_elements.append(label)
+    delete_button = ctk.CTkButton(frame2, text='Delete', command=lambda id=todo['id']: delete(id))
+    delete_button.grid(row=i + 1, column=1, padx=10, pady=5)
+    todo_elements.append(delete_button)
+    
+frame3 = ctk.CTkFrame(root, fg_color='transparent')
+frame3.grid(row=2, column=0, padx=10, pady=10, sticky="w")
 
-entry = ttk.Entry(root)
-entry.pack(pady=10)
+entry = ctk.CTkEntry(frame3)
+entry.grid(row=0, column=0, padx=10, pady=10, sticky="ew")
 
-button = ttk.Button(root, text='Add task', command=lambda: create(entry.get()))
-button.pack(pady=10)
+def create_todo_and_udpate():
+    create(entry.get())
+    update()
+
+add_button = ctk.CTkButton(frame3, text='Add todo', command=lambda: create(entry.get()))
+add_button.grid(row=0, column=1, padx=10, pady=10, sticky="w")
+
+#update after new todo
+def update():
+    global todos
+    todos = read()
+    
+    #delete all todos
+    for element in todo_elements:
+        element.destroy()
+        
+    for i, todo in enumerate(todos):
+        label = ctk.CTkLabel(frame2, text=todo['title'])
+        label.grid(row=i + 1, column=0, padx=10, pady=5, sticky="w")
+        button = ctk.CTkButton(frame2, text='Delete')
+        button.grid(row=i + 1, column=1, padx=10, pady=5)
 
 root.mainloop()
