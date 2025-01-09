@@ -1,31 +1,32 @@
 from crud_todos import read, create, delete
 import customtkinter as ctk
 
-root = ctk.CTk()
+app = ctk.CTk()
 
-root.geometry('400x600')
+app.geometry('400x600')
+app.config(bg='white')
 
 todo_elements = []
 
-frame1 = ctk.CTkFrame(root, fg_color='transparent')
+frame1 = ctk.CTkFrame(app, fg_color='white')
 frame1.grid(row=0, column=0, padx=10, pady=10, sticky="w")
 
 title = ctk.CTkLabel(frame1, text='Todo App', font=('Helvetica', 20))
 title.grid(row=0, column=0, padx=10, pady=10, sticky="w")
 
-frame2 = ctk.CTkFrame(root, fg_color='transparent')
+frame2 = ctk.CTkFrame(app, fg_color='white')
 frame2.grid(row=1, column=0, padx=10, pady=10, sticky="w")
 
 todos = read()
 for i, todo in enumerate(todos):
     label = ctk.CTkLabel(frame2, text=todo['title'])
-    label.grid(row=i + 1, column=0, padx=10, pady=5, sticky="w")
+    label.grid(row=i, column=0, padx=10, pady=5, sticky="w")
     todo_elements.append(label)
     delete_button = ctk.CTkButton(frame2, text='Delete', command=lambda id=todo['id']: delete(id))
-    delete_button.grid(row=i + 1, column=1, padx=10, pady=5)
+    delete_button.grid(row=i, column=1, padx=10, pady=5)
     todo_elements.append(delete_button)
     
-frame3 = ctk.CTkFrame(root, fg_color='transparent')
+frame3 = ctk.CTkFrame(app, fg_color='white')
 frame3.grid(row=2, column=0, padx=10, pady=10, sticky="w")
 
 entry = ctk.CTkEntry(frame3)
@@ -53,4 +54,4 @@ def update():
         button = ctk.CTkButton(frame2, text='Delete')
         button.grid(row=i + 1, column=1, padx=10, pady=5)
 
-root.mainloop()
+app.mainloop()
