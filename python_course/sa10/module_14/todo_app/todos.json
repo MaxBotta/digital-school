@@ -1,1 +1,29 @@
-{"todos": [{"id": 2, "title": "Buy bread", "completed": false}, {"id": 4, "title": "Do homework", "completed": false}, {"id": 5, "title": "Learn Python", "completed": false}]}
+{
+    "todos": [
+        {
+            "id": 2,
+            "title": "Buy bread",
+            "completed": true
+        },
+        {
+            "id": 4,
+            "title": "Do homework",
+            "completed": true
+        },
+        {
+            "id": 5,
+            "title": "Learn Python",
+            "completed": true
+        },
+        {
+            "id": 6,
+            "title": "Test",
+            "completed": true
+        },
+        {
+            "id": 7,
+            "title": "Test",
+            "completed": false
+        }
+    ]
+}

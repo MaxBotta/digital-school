@@ -32,8 +32,19 @@ def create(new_todo_text):
         
         json.dump(data, file)
 
-def update():
-    pass
+def update(todo):
+    todos = read()
+    
+    #replace old todo with new one
+    for i, t in enumerate(todos):
+        if t['id'] == todo['id']:
+            todos[i] = todo
+    
+    with open(path, 'w') as file:    
+        data = {
+            "todos": todos
+        }
+        json.dump(data, file)
 
 def delete(id):
     todos = read()

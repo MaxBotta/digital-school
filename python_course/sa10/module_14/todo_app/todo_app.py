@@ -1,4 +1,4 @@
-from crud_todos import read, create, delete
+from crud_todos import read, create, delete, update
 import customtkinter as ctk
 
 app = ctk.CTk()
@@ -38,24 +38,37 @@ def clear_todos():
 def show_todos():
     todos = read()
     for i, todo in enumerate(todos):
-        label = ctk.CTkLabel(frame2, text=todo['title'])
+        label = ctk.CTkLabel(frame2, text=todo['title'], text_color='black', font=('Helvetica', 16))
         label.grid(row=i, column=0, padx=10, pady=5, sticky="w")
-        checkbox = ctk.CTkCheckBox(frame2, text='', width=20, height=20, fg_color='green')
+        checkbox = ctk.CTkCheckBox(frame2, text='', width=20, height=20, fg_color='green', command=lambda t=todo: toggle_completed(t))
         checkbox.grid(row=i, column=1, padx=10, pady=5, sticky='e')
+        
+        if todo['completed'] is True:
+            checkbox.select()
+        
         delete_button = ctk.CTkButton(frame2, text='X', command=lambda id=todo['id']: delete_todo(id), fg_color='red', width=20, height=20)
         delete_button.grid(row=i, column=2, padx=10, pady=5, sticky='e')
         
-def update_todos():
+def rerender_todos():
     clear_todos()
     show_todos()
 
 def create_todo(text):
     create(text)
-    update_todos()
+    rerender_todos()
     
 def delete_todo(todo_id):
     delete(todo_id)
-    update_todos()
+    rerender_todos()
+    
+def toggle_completed(todo):
+    if todo['completed'] is True:
+        todo['completed'] = False
+    else:
+       todo['completed'] = True
+       
+    update(todo)
+    rerender_todos()
 
 show_todos()
 
