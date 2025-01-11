@@ -1,6 +1,6 @@
 import json
 
-path = "/Users/maxbotta/Desktop/Berlitz/DigitalSchool/python_course/sa10/module_12/todo_app/todos.json"
+path = "/Users/maxbotta/Desktop/Berlitz/DigitalSchool/python_course/sa10/module_14/todo_app/todos.json"
 
 def read():
     with open(path, 'r') as file:
