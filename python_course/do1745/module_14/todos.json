@@ -9,6 +9,11 @@
             "id": 2,
             "task": "Do homework",
             "completed": false
+        },
+        {
+            "id": 3,
+            "task": "Grocery shopping",
+            "completed": false
         }
     ]
 }
