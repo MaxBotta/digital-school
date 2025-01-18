@@ -7,7 +7,7 @@ def read():
         data = json.load(file)
         return data["todos"]
     
-def create(new_todo_text):
+def create(new_todo_text, date):
     todos = read()
     
     # Find the highest id
@@ -21,7 +21,8 @@ def create(new_todo_text):
         new_todo = {
             'id': highest_id + 1,
             'title': new_todo_text, 
-            'completed': False
+            'completed': False,
+            'date': str(date)
         }
         
         todos.append(new_todo)
