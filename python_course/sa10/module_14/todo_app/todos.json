@@ -3,38 +3,26 @@
         {
             "id": 2,
             "title": "Buy bread",
-            "completed": false,
+            "completed": true,
             "date": "2025-01-20"
         },
         {
             "id": 5,
             "title": "Learn Python",
-            "completed": false,
+            "completed": true,
             "date": "2025-01-18"
         },
         {
             "id": 6,
             "title": "Hausaufgaben",
-            "completed": false,
+            "completed": true,
             "date": "2025-01-18"
         },
         {
             "id": 7,
-            "title": "Test 2",
+            "title": "Einkaufen",
             "completed": false,
             "date": "2025-01-18"
-        },
-        {
-            "id": 8,
-            "title": "Test 3",
-            "completed": false,
-            "date": "2025-01-18"
-        },
-        {
-            "id": 9,
-            "title": "Test 4",
-            "completed": false,
-            "date": "2025-01-19"
         }
     ]
 }
