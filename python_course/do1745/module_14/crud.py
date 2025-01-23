@@ -21,3 +21,29 @@ def delete(id):
             "todos": todos
         }
         json.dump(new_data, file)
+        
+def create(task):
+    todos = read()
+    
+    #finde nächshöhere id
+    new_id = 0
+    for todo in todos:
+        if todo['id'] > new_id:
+            new_id = todo['id'] + 1
+              
+    new_todo = {
+        "id": new_id,
+        "task": task,
+        "completed": False,
+        "date": "2025-10-10"
+    }
+    
+    todos.append(new_todo)
+    
+    with open(path, 'w') as file:
+        new_data= {
+            "todos": todos
+        }
+        json.dump(new_data, file)
+            
+    

@@ -1,6 +1,6 @@
 from venv import create
 import customtkinter as ctk
-from crud import read, delete
+from crud import read, delete, create
 
 app = ctk.CTk()
 # app.geometry('400x600')
@@ -16,10 +16,10 @@ todos_frame.grid(row=1, column=0, padx=10, pady=10, sticky="w")
 input_frame = ctk.CTkFrame(app)
 input_frame.grid(row=2, column=0, padx=10, pady=10, sticky="w")
 
+#Einagbefeld und hinzufügen Button
 entry = ctk.CTkEntry(input_frame)
 entry.grid(row=0, column=0, padx=10, pady=10, sticky="w")
-
-add_button = ctk.CTkButton(input_frame, text="Add todo")
+add_button = ctk.CTkButton(input_frame, text="Add todo", command=lambda: add_todo())
 add_button.grid(row=0, column=1, padx=10, pady=10, sticky="w")
 
 def create_todos():
@@ -41,6 +41,11 @@ def update_ui():
     
 def delete_todo(todo_id):
     delete(todo_id)
+    update_ui()
+    
+def add_todo():
+    task = entry.get()
+    create(task)
     update_ui()
               
 create_todos()
