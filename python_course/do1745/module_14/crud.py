@@ -22,6 +22,22 @@ def delete(id):
         }
         json.dump(new_data, file)
         
+def update(updatedTodo):
+    todos = read()
+    
+    #finde das Todo mit der richtigen id und update es
+    for index, todo in enumerate(todos):
+        if todo['id'] is updatedTodo['id']:
+            todos[index] = updatedTodo
+            break
+        
+    with open(path, 'w') as file:
+        new_data = {
+            "todos": todos
+        }
+        json.dump(new_data, file)
+        
+        
 def create(task):
     todos = read()
     
@@ -45,5 +61,7 @@ def create(task):
             "todos": todos
         }
         json.dump(new_data, file)
+        
+
             
     
