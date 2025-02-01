@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Modul 1</title>
+</head>
+<body>
+    <h1>Modul 1</h1>
+    <h3>This is a subtitle</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+
+    <div class="img-row">
+        <img src="./assets/antarctic.jpg" alt="antarctica">
+        <img src="./assets/desert.jpg" alt="desert">
+        <img src="./assets/forest.jpg" alt="forest">
+    </div>
+
+    <div id="more-images" class="img-row hidden">
+        <img src="./assets/jungle.jpg" alt="jungle">
+        <img src="./assets/mountain.jpg" alt="mountain">
+        <img src="./assets/ocean.jpg" alt="ocean">
+    </div>
+
+    <button onclick="toggleMore('more-images')" class="show-more-button">Show More</button>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
