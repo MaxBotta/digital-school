@@ -4,26 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Modul 1</title>
+    <title>JS Advanced - About</title>
 </head>
 <body>
-    <h1>Modul 1</h1>
-    <h3>This is a subtitle</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+    <nav>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+    </nav>
+    <header>
+        <h1>Javascript Advanced</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Modul 1</h2>
+            <p><em>Lorem ipsum</em> dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+            <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</strong></p>
+            <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</b></p>
+        
+            <hr>
 
-    <div class="img-row">
-        <img src="./assets/antarctic.jpg" alt="antarctica">
-        <img src="./assets/desert.jpg" alt="desert">
-        <img src="./assets/forest.jpg" alt="forest">
-    </div>
+            <div class="img-row">
+                <img src="./assets/antarctic.jpg" alt="antarctica">
+                <img src="./assets/desert.jpg" alt="desert">
+                <img src="./assets/forest.jpg" alt="forest">
+            </div>
+        
+            <div id="more-images" class="img-row hidden">
+                <img src="./assets/jungle.jpg" alt="jungle">
+                <img src="./assets/mountain.jpg" alt="mountain">
+                <img src="./assets/ocean.jpg" alt="ocean">
+            </div>
+        
+            <button onclick="toggleMore('more-images')" class="show-more-button">Show More</button>
+        </article>
+        <article id="modul-2">
+            <h2>Modul 2</h2>
+            <p><em>Lorem ipsum</em> dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+            <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</strong></p>
+            <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</b></p>
+        
+            <hr>
 
-    <div id="more-images" class="img-row hidden">
-        <img src="./assets/jungle.jpg" alt="jungle">
-        <img src="./assets/mountain.jpg" alt="mountain">
-        <img src="./assets/ocean.jpg" alt="ocean">
-    </div>
+            <div class="img-row">
+                <img src="./assets/antarctic.jpg" alt="antarctica">
+                <img src="./assets/desert.jpg" alt="desert">
+                <img src="./assets/forest.jpg" alt="forest">
+            </div>
+        
+            <div id="more-images" class="img-row hidden">
+                <img src="./assets/jungle.jpg" alt="jungle">
+                <img src="./assets/mountain.jpg" alt="mountain">
+                <img src="./assets/ocean.jpg" alt="ocean">
+            </div>
+        
+            <button onclick="toggleMore('more-images')" class="show-more-button">Show More</button>
+        </article>
+        <article>
+            <h2>Modul 3</h2>
+            <p><em>Lorem ipsum</em> dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+            <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</strong></p>
+            <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</b></p>
+        
+            <hr>
 
-    <button onclick="toggleMore('more-images')" class="show-more-button">Show More</button>
+            <div class="img-row">
+                <img src="./assets/antarctic.jpg" alt="antarctica">
+                <img src="./assets/desert.jpg" alt="desert">
+                <img src="./assets/forest.jpg" alt="forest">
+            </div>
+        
+            <div id="more-images" class="img-row hidden">
+                <img src="./assets/jungle.jpg" alt="jungle">
+                <img src="./assets/mountain.jpg" alt="mountain">
+                <img src="./assets/ocean.jpg" alt="ocean">
+            </div>
+        
+            <button onclick="toggleMore('more-images')" class="show-more-button">Show More</button>
+        </article>
+    </main>
+    <footer></footer>
+
 
 
     <script src="./script.js"></script>
