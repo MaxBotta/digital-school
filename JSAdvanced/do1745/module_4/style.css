@@ -1,18 +1,25 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    padding: 10px 60px;
+}
 
 .image-container {
-    display: flex;
-    gap: 5px;
-    margin-block-end: 5px;
+  display: flex;
+  gap: 5px;
+  margin-block-end: 5px;
 }
 
 .image-container image {
-    inline-size: 100%;
-    min-inline-size: 0;
-    flex: 1;
-    flex-grow: 1;
+  inline-size: 100%;
+  min-inline-size: 0;
+  flex: 1;
+  flex-grow: 1;
 }
 
 img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
