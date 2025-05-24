@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+
+    <style>
+        rect {
+            transition: width 0.5s ease;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <a href="index.html">home</a>
+            <a href="contact.html">contact</a>
+            <a href="about.html">about</a>
+        </ul>
+    </nav>
+
+    <svg width="400" height="100">
+        <rect x="0" y="0" width="400" height="10" fill="green"></rect>
+        <rect x="0" y="20" width="400" height="10" fill="blue"></rect>
+        <rect x="0" y="40" width="400" height="10" fill="red"></rect>
+    </svg>
+
+    <script>
+        const rects = document.querySelectorAll("rect");
+
+        // Veraendere die Breite jedes Rechtecks
+        for(const rect of rects) {
+            setInterval(changeRandomWidth, 1000, rect);
+        }
+
+        // Veraendert die Breite eines rects zufaellig
+        function changeRandomWidth(rect) {
+            const newWidth = Math.floor(Math.random() * 400);
+            rect.setAttribute("width", newWidth);
+        }
+
+
+    </script>
+
+
+</body>
+</html>
