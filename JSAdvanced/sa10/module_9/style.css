@@ -2,7 +2,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0px 60px;
-  padding-top: 120px;
 }
 
 img {
@@ -11,8 +10,10 @@ img {
 }
 
 header {
-  background-color: rgb(44, 44, 44);
-  height: 80px;
+  background-color: rgba(44, 44, 44, 0.448);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 120px;
   padding: 20px;
   color: white;
   display: flex;
@@ -22,6 +23,7 @@ header {
   left: 0;
   top: 0;
   box-sizing: border-box;
+  transition: 0.3s;
 }
 
 .logo {
@@ -31,6 +33,15 @@ header {
 .logo img {
   height: 100%;
   width: auto;
+}
+
+main {
+  margin-top: 160px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
 }
 
 nav a {
@@ -46,29 +57,17 @@ nav ul {
 
 .row {
   display: flex;
+  gap: 60px;
+  margin-bottom: 40px;
 }
 
 .col {
   flex: 1;
-  padding: 20px;
-}
-
-main {
-  display: flex;
-}
-
-section {
-  flex: 1;
-}
-
-aside {
-  padding: 20px;
 }
 
 @media only screen and (max-width: 900px) {
   body {
     padding: 0px 10px;
-    padding-top: 100px;
   }
 
   .row {
