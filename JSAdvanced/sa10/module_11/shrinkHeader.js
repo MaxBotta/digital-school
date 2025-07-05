@@ -1,16 +1,14 @@
-const logo = document.querySelector("#logo");
-const header = document.querySelector("header");
 let isShrinked = false;
 
 function shrinkHeader() {
-  logo.style.height = "40px";
-  header.style.padding = "10px 20px";
+  const header = document.querySelector("header");
+  header.style.height = "80px";
   isShrinked = true;
 }
 
 function expandHeader() {
-  logo.style.height = "60px";
-  header.style.padding = "20px";
+  const header = document.querySelector("header");
+  header.style.height = "120px";
   isShrinked = false;
 }
 
