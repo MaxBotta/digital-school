@@ -1,0 +1,90 @@
+:root {
+  --dark-green: #0a400c;
+  --green: #819067;
+  --brown-green: #b1ab86;
+  --creme: #fefae0;
+
+  --border-radius: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--creme);
+}
+
+nav {
+  background-color: var(--green);
+  padding: 0px 80px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.pages {
+  margin-left: auto;
+  display: flex;
+  gap: 40px;
+}
+
+li {
+  padding: 10px 0px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(117, 117, 117);
+}
+
+a:hover {
+  color: black;
+}
+
+nav a {
+  color: var(--creme);
+}
+
+nav a:hover {
+  color: black;
+}
+
+.dropdown {
+  padding: 20px 0px;
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.dropdown ul {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  background-color: var(--green);
+  padding: 0px 20px;
+  list-style: none;
+  transition: 0.3s ease;
+}
+
+.dropdown:hover ul {
+  height: auto;
+  max-height: 600px;
+  padding: 20px 20px;
+  white-space: nowrap;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}

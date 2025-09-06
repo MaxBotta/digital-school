@@ -1,0 +1,28 @@
+
+.container {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 18px;
+    overflow-y: scroll;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.box {
+    height: auto;
+    width: 400px;
+}
+
+.hidden {
+    height: 0px;
+    overflow: hidden;
+}
+
+
