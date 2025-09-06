@@ -80,11 +80,23 @@ nav a:hover {
 }
 
 .slogan {
-    position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  animation: fade-in 2s ease;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    top: 30%;
+  }
+  100% {
+    opacity: 1;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 48px;
-    font-weight: bold;
-    text-align: center;
+  }
 }
