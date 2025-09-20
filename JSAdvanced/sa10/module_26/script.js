@@ -21,12 +21,42 @@ if (result === 10) {
   console.log("is equal");
 }
 
+// Template Literal
+let myName = "Max";
+let myAge = 31;
+let sentence = `My name is ${myName} and my age is ${myAge}`;
+
+// Funktionen
+function multiply(a, b) {
+  return a * b;
+}
+
+let result2 = multiply(4, 5);
+
+// Listen/Arrays
+let fruits = ["banana", "apple", "orange"];
+let numbers = [3, 5, 62, 4, 5, 4]
+
 // Schleifen
 for (let i = 0; i < 10; i++) {
   console.log(i);
 }
 
-// Template Literal
-let myName = "Max";
-let myAge = 31;
-let sentence = `My name is ${myName} and my age is ${myAge}`;
+for(let f of fruits) {
+  console.log(f)
+}
+
+let total = 0
+numbers.forEach(function(n) {
+  total = total + n;
+})
+console.log(total)
+
+// Objekte
+let user = {
+  username: "musteruser",
+  level: 10,
+  password: "nowfr#fwjkl3435"
+}
+
+console.log(`The username is: ${user.username}`)
