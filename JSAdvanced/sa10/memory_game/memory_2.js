@@ -59,7 +59,7 @@ function createMap(countX, countY) {
     for (let y = 0; y < countY; y++) {
       const card = document.createElement("div");
       card.className = "card";
-      // card.innerText = `x: ${x} y: ${y}`
+      card.innerText = `x: ${x} y: ${y}`
 
       card.addEventListener("click", () => {
         card.classList.add("flipped");

@@ -37,16 +37,21 @@ let result2 = multiply(4, 5);
 let fruits = ["banana", "apple", "orange"];
 let numbers = [3, 5, 62, 4, 5, 4]
 
+// finde apple in der Liste
+fruits[0] // banana
+fruits[1] // apple
+
 // Schleifen
-for (let i = 0; i < 10; i++) {
-  console.log(i);
-}
-
-for(let f of fruits) {
-  console.log(f)
-}
-
 let total = 0
+for (let i = 0; i < 10; i++) {
+  total = total + total[i]
+}
+
+for(let fruit of fruits) {
+  console.log(fruit)
+}
+
+total = 0
 numbers.forEach(function(n) {
   total = total + n;
 })

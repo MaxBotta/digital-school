@@ -19,7 +19,7 @@ function createMap(countX, countY) {
         game.appendChild(newCol)
         
         for(let y = 0; y < countY; y++) {
-            const card = document.createElement('div');
+            const card = document.createElement('div')
             card.className = "card"
             // card.innerText = `x: ${x} y: ${y}`
             const newImg = document.createElement('img')
