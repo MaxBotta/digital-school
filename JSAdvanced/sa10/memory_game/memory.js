@@ -9,6 +9,7 @@
 
 const game = document.querySelector("#game");
 
+// List aller Früche (list of string)
 const fruits = [
   "Acorn",
   "Apple",
@@ -36,7 +37,16 @@ const fruits = [
   "Watermelon",
 ];
 
-const doubleFruits = [...fruits, ...fruits];
+const doubleFruits = [];
+
+// Füge jedes Element zweimal ein
+for (let fruit of fruits) {
+  doubleFruits.push(fruit);
+  doubleFruits.push(fruit);
+}
+
+// Kurzschreibweise für zweimal einfügen
+// const doubleFruits = [...fruits, ...fruits];
 
 function createMap(countX, countY) {
   //Karten erstellen
@@ -47,14 +57,24 @@ function createMap(countX, countY) {
 
     // Erstelle Karten in der Spalte
     for (let y = 0; y < countY; y++) {
+      // Karte erstellen
       const card = document.createElement("div");
-      card.className = "card";
-      // card.innerText = `x: ${x} y: ${y}`
+      card.classList.add("card");
 
-      //Erstelle Bild
-      const source = doubleFruits.pop();
+      // Zeige Bild wenn auf die Karte geklickt wird
+      card.addEventListener("click", function() {
+        card.classList.add("viewed")
+      })
+
+      // Nehme letzten Bildnamen von der Liste
+      const fruitName = doubleFruits.pop();
+
+      // Erstelle neues Bild
+      // <img  src="./images/Acorn_96x96.png"/>
       const newImg = document.createElement("img");
-      newImg.src = `./images/${source}_96x96.png`;
+      newImg.src = `./images/${fruitName}_96x96.png`;
+
+      // Karten zu Spielfeld hinzufügen
       card.appendChild(newImg);
       newCol.appendChild(card);
     }
