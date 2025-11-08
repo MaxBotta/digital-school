@@ -29,7 +29,7 @@ function renderTodos() {
     const dateElmnt = document.createElement("div");
     const currentDate = new Date();
     dateElmnt.classList.add("date");
-    dateElmnt.innerText = currentDate.toLocaleDateString();
+      dateElmnt.innerText = currentDate.toLocaleDateString();
     liElmnt.appendChild(dateElmnt);
 
     // Erstelle löschen Button
