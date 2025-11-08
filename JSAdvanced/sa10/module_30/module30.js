@@ -17,3 +17,10 @@ if (weather === "sunny") console.log("Sports");
 function isSkiing() {
   return weather === "snowy";
 }
+
+// Date
+const now = new Date();
+const hour = now.getHours();
+const minutes = now.getMinutes();
+const seconds = now.getSeconds();
+

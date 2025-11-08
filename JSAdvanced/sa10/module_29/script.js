@@ -1,6 +1,13 @@
 // Eine Liste anlegen
 let names = ["Max", "Fynn", "Tom", "Hans"];
 
+const students = [
+  { name: "Ibraheem", kurs: "Samstag" },
+  { name: "Charlotte", kurs: "Samstag" },
+];
+
+const listInList = [3, 43, 4, [43.4, 3, 2]];
+
 // Neuen Eintrag ans Ende einfügen
 names.push("Tony");
 
@@ -59,9 +66,10 @@ console.log(job, hobbies);
 
 // Array destructuring
 let names2 = ["Fynn", "Tom", "Hans"];
+
 const [name1, name2] = names2;
 
 console.log(max, fynn);
 
 // Zufällige Zahl
-const randNumber = Math.floor(Math.random() * names2.length)
+const randNumber = Math.floor(Math.random() * names2.length);

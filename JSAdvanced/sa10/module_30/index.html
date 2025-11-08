@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <script src="./module30.js"></script>
-</body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="widget flex">
+      <div class="flex-col">
+        <div id="clock"></div>
+        <input
+          type="time"
+          class="alert-input"
+          onchange="setCurrentAlertTime(this.value)"
+        />
+        <button class="btn" onclick="setAlert()">Set Alert</button>
+      </div>
+      <ul id="alerts" class="alerts flex-col"></ul>
+    </div>
+    <script src="./clock.js"></script>
+  </body>
 </html>
