@@ -1,7 +1,7 @@
 const clock = document.getElementById("clock");
 const alertsList = document.getElementById("alerts");
-let currentAlertTime = null
-const alerts = []
+let currentAlertTime = null;
+const alerts = [];
 
 function setTime() {
   const now = new Date();
@@ -49,10 +49,7 @@ function deleteAlert(index) {
   renderAlerts();
 }
 
-// Checke jede Sekunde ob eine Alarmzeit erreicht ist
-setInterval(() => {
-  setTime();
-  
+function checkAlerts() {
   const now = new Date();
   alerts.forEach((alertTime, index) => {
     if (
@@ -60,7 +57,15 @@ setInterval(() => {
       now.getMinutes() === alertTime.getMinutes() &&
       now.getSeconds() === alertTime.getSeconds()
     ) {
-      alert("Alert! Time is " + alertTime.getHours() + ":" + alertTime.getMinutes());
+      alert(
+        "Alert! Time is " + alertTime.getHours() + ":" + alertTime.getMinutes()
+      );
     }
   });
+}
+
+// Checke jede Sekunde ob eine Alarmzeit erreicht ist
+setInterval(() => {
+  setTime();
+  checkAlerts();
 }, 1000);

@@ -1,0 +1,22 @@
+{
+  "persons": [
+    {
+      "firstname": "Max",
+      "lastname": "Mustermann",
+      "age": 20,
+      "city": "Berlin"
+    },
+    {
+      "firstname": "Max",
+      "lastname": "Mustermann",
+      "age": 20,
+      "city": "Berlin"
+    },
+    {
+      "firstname": "Max",
+      "lastname": "Mustermann",
+      "age": 20,
+      "city": "Berlin"
+    }
+  ]
+}
