@@ -38,7 +38,7 @@ function checkAlerts() {
     alert("ALARM!!!!");
   }
 }
-
+  
 setInterval(function () {
   setCurrentTime();
   checkAlerts();

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moduel 31</title>
+    <style>
+      body {
+        background-color: rgb(244, 244, 244);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      main {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+      }
+
+      li {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        border: 1px solid rgb(223, 223, 223);
+        min-width: 300px;
+      }
+
+      form {
+        display: flex;
+        height: fit-content;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 300px;
+        background-color: white;
+        border: 1px solid rgb(223, 223, 223);
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .form-item {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: rgb(68, 68, 68);
+        margin-bottom: 4px;
+      }
+
+      .users {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0px 20px;
+      }
+
+      input {
+        padding: 6px 8px;
+        border-radius: 10px;
+        outline: none;
+        border: 1px solid rgb(188, 188, 188);
+        background-color: rgba(255, 255, 255, 0.432);
+      }
+      button {
+        border-radius: 10px;
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgb(84, 84, 84);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form>
+        <div class="form-item">
+          <label>Name</label>
+          <input type=""text" name="name" id="name"/>
+        </div>
+
+        <div class="form-item">
+          <label>Email</label>
+          <input type=""email" name="email" id="email"/>
+        </div>
+
+        <button onclick="addUser(event)">Submit</button>
+      </form>
+      <div class="users">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="search"
+          oninput="searchUsers(event)"
+        />
+        <ul id="users"></ul>
+      </div>
+    </main>
+    <script src="./hardChallenge.js"></script>
+  </body>
+</html>
