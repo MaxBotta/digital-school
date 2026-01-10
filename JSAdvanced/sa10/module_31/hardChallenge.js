@@ -16,7 +16,7 @@ function addUser(event) {
   const name = nameInput.value.trim();
   const email = emailInput.value.trim();
 
-  if (name === "" || email === "") {
+  if (name === "" || email === "") {w
     alert("Please fill in both name and email fields.");
     return;
   }
