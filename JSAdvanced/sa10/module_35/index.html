@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        padding: 20px 120px;
+      }
+      .slideshow {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        /* overflow: hidden; */
+      }
+      .slideshow img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .slideshow-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.485);
+        color: black;
+        font-size: 30px;
+        border: none;
+        border-radius: 10px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding-bottom: 6px;
+        opacity: 0.8;
+        transition: 0.3s;
+      }
+      .slideshow-button:hover {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1);
+      }
+      .slideshow-button.right {
+        right: 20px;
+      }
+      .slideshow-button.left {
+        left: 20px;
+      }
+      #dots {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        display: flex;
+        gap: 6px;
+      }
+      .dot {
+        width: 6px;
+        height: 6px;
+        background-color: white;
+        border-radius: 3px;
+      }
+      .active-dot {
+        background-color: rgb(255, 162, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slideshow" id="slideshow">
+      <img src="./images/beach.jpg" />
+      <img src="./images/jellyfish.jpg" />
+      <img src="./images/thailand.jpg" />
+      <img src="./images/hills.jpg" />
+      <img src="./images/hills2.jpg" />
+
+      <button class="slideshow-button right" onclick="rightButtonClick()">
+        &rsaquo;
+      </button>
+      <button class="slideshow-button left" onclick="leftButtonClick()">
+        &lsaquo;
+      </button>
+
+      <div id="dots"></div>
+    </div>
+
+    <script src="./slideshow.js"></script>
+  </body>
+</html>

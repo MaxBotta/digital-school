@@ -8,17 +8,22 @@
 
 let score = 0;
 let timer = 0;
-let isStarted = false;
 
 const circle = document.createElement("div");
 circle.classList.add("circle");
 document.body.appendChild(circle);
 
 const scoreElmt = document.getElementById("score");
+const timerElmt = document.getElementById("timer");
 
 function updateScore() {
   score += 1;
   scoreElmt.innerHTML = score;
+}
+
+function updateTimer() {
+  timer += 1;
+  timerElmt.innerHTML = timer;
 }
 
 function newPosition() {
@@ -36,8 +41,8 @@ function newPosition() {
   }, 500);
 }
 
-circle.onclick = function() {
-  if(!isStarted) {
-    isStarted = true
-  }
-}
+setInterval(updateTimer, 1000);
+
+circle.onclick = function () {
+  newPosition();
+};
