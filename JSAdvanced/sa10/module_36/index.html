@@ -14,26 +14,33 @@
 
     <style>
       img {
-        width: 200px;
+        width: 100%;
         height: auto;
       }
 
       ul {
         padding: 0;
         margin: 0;
+        list-style: none;
       }
-
-
+      li {
+        padding: 0;
+      }
     </style>
   </head>
 
   <div class="container-lg">
-    <header>
+    <header class="py-4">
       <h1>Art Institute of Chicago</h1>
     </header>
-    <main></main>
-
-    <ul id="list"></ul>
+    <main>
+      <div class="mb-4">
+        <input class="border rounded p-2 w-50" placeholder="search.."/>
+      </div>
+      <section>
+        <ul id="list" class="row"></ul>
+      </section>
+    </main>
   </div>
 
   <body>
