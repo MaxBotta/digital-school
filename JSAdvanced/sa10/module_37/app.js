@@ -2,6 +2,8 @@
 
 import { fetchData } from "./fetchData.js";
 
+const weatherRow = document.getElementById("weather-row")
+
 const cities = {
   berlin: {
     latitude: 52.5244,
@@ -17,10 +19,11 @@ async function main() {
   const hourlyTimes = data.hourly.time;
 
   for (let i = 0; i < hourlyTimes.length; i++) {
-    const newDiv = document.createElement("p");
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("box")
     const date = new Date(hourlyTimes[i])
     newDiv.innerText = date.getDate() + ":" + date.getHours() + ": " + hourlyTemp[i] + "C";
-    document.body.appendChild(newDiv);
+    weatherRow.appendChild(newDiv);
   }
 }
 
