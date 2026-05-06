@@ -1,18 +1,25 @@
 body {
-  background-color: azure;
+  background-color: rgb(60, 60, 60);
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: white;
-  padding: 20px;
+  position: fixed;
+  top: 0px;
+  background-color: rgba(255, 255, 255, 0.713);
+  padding: 30px;
+  margin: 20px;
   display: flex;
   justify-content: space-between;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
 }
 
 .logo {
-  height: 60px;
+  height: 80px;
   width: auto;
 }
 
@@ -34,13 +41,63 @@ nav a:hover {
 .banner img {
   width: 100%;
   height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
 
-.banner h1 {
+h1 {
+  margin: 0;
+  margin-top: 20px;
+  color: white;
+  border-radius: 20px;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.welcome-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   font-size: 60px;
+  text-align: center;
+}
+
+.click-me {
+  background-color: orange;
+  color: white;
+  border-radius: 20px;
+  padding: 20px 40px;
+  font-size: 20px;
+  border: none;
+}
+
+ul {
+  margin: 20px 10px;
+}
+
+.prices {
+  background-color: rgb(250, 250, 250);
+  padding: 40px 300px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.card {
+  border: 2px solid blue;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.175);
+}
+
+.card button {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
 }
