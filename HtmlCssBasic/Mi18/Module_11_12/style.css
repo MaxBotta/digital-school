@@ -5,56 +5,96 @@ body {
 }
 
 header {
-  background-color: rgb(107, 159, 107);
-  color: white;
-  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+  color: black;
+}
+
+nav li {
+  list-style: none;
+  text-align: right;
+}
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0px;
+  margin: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+section {
+  padding: 20px;
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  padding: 10px;
+  flex: 1;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  color: white;
+  font-size: 20px;
+  align-items: center;
+}
+
+.logo-text {
+  display: none;
+  color: black;
+  font-weight: bold;
 }
 
 .logo-search {
   display: flex;
-  gap: 40px;
   justify-content: space-between;
-}
-
-ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  padding: 0;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-}
-
-.logo {
-  height: 40px;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+  width: 100%;
 }
 
 .search {
-  border: 1px solid rgb(210, 210, 210);
-  border-radius: 20px;
-  padding: 10px;
-  color: white;
-  background: none;
-  min-width: 200px;
+  padding: 10px 14px;
+  font-size: 16px;
+  height: fit-content;
+  border-radius: 14px;
+  border: none;
+  min-width: 150px;
+  border: 1px solid rgb(190, 190, 190);
 }
 
-section {
-  padding: 20px 20px;
-}
-
-.new-books {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-article {
-  background-color: white;
-  padding: 20px;
+.banner img {
+  width: 100%;
+  aspect-ratio: 21/9;
+  object-fit: cover;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -68,18 +108,45 @@ article {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   header {
-    display: flex;
+    flex-direction: row;
+    gap: 20px;
   }
+
+  nav {
+    width: fit-content;
+  }
+
+  nav ul {
+    justify-content: end;
+    gap: 20px;
+    width: fit-content;
+    margin-left: auto;
+  }
+
   .search {
+    min-width: 200px;
+    max-width: 300px;
+    width: 100%;
+  }
+
+  .logo-search {
+    flex: 1;
+  }
+
+  article {
     min-width: 300px;
   }
-  .new-books {
+
+  .flex-box {
     flex-direction: row;
   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .logo-text {
+    display: block;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */

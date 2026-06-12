@@ -1,0 +1,81 @@
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-color: rgb(249, 249, 249);
+  margin: 0;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1600px;
+}
+
+header {
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.09);
+  padding: 20px 80px;
+}
+
+a {
+  color: black;
+}
+
+img {
+  width: 100%;
+}
+
+.logo {
+  height: 60px;
+}
+
+nav {
+  padding: 20px 0px;
+  display: flex;
+  gap: 40px;
+}
+
+.audiobooks {
+  margin-left: auto;
+}
+
+header .top {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  border-radius: 14px;
+  padding: 10px 10px !important;
+  flex: 1;
+  max-width: 600px;
+  height: fit-content;
+}
+
+.cart {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(160, 160, 160);
+}
+
+section {
+  padding: 80px;
+}
+
+.banner {
+  display: flex;
+  gap: 40px;
+}
+
+.banner div {
+  flex: 1;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 14px;
+  border: none;
+}
