@@ -2,6 +2,11 @@
   max-width: 1600px;
 }
 
+:root {
+  --primary: #001d6c;
+  --accent: #0f62fe;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,6 +15,13 @@ body {
   font-size: 20px;
   display: flex;
   justify-content: center;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
 }
 
 header {
@@ -22,17 +34,15 @@ header {
 
 nav ul {
   display: flex;
-  gap: 20px;
+  gap: 40px;
   list-style: none;
-}
-
-img {
-  width: 100%;
 }
 
 .banner {
   display: flex;
   padding: 40px;
+  gap: 40px;
+  align-items: center;
 }
 
 .banner div {
@@ -40,8 +50,15 @@ img {
 }
 
 .banner img {
-  aspect-ratio: 16/9;
+  aspect-ratio: 12/9;
   object-fit: cover;
+  width: 100%;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .flex-row {
@@ -53,9 +70,89 @@ section {
   padding: 40px;
 }
 
-article {
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.small-caption {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+button.default {
+  background-color: var(--accent);
+  color: white;
+}
+button.outline {
+  border: 2px solid var(--accent);
+  background: none;
+  color: var(--accent);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 20px;
+}
+
+tr {
+  border-top: 1px solid rgb(227, 227, 227);
+  border-bottom: 1px solid rgb(227, 227, 227);
+}
+
+table img {
+  aspect-ratio: 16/9;
+  height: 120px;
+}
+
+.card {
   flex: 1;
-  height: 300px;
   background-color: white;
-  border: 1px solid gray;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 4px;
+  padding: 20px;
+  cursor: pointer;
+  animation: color-switch 2s linear infinite;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.095);
+  transform: translateY(-8px);
+  transition: 0.3s;
+}
+
+.card h2 {
+  font-size: 20px;
+}
+
+.card img {
+  width: 100%;
+  margin-bottom: 30px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+@keyframes color-switch {
+  0% {
+    color: red;
+  }
+  33.33% {
+    color: green;
+  }
+  66.66% {
+    color: blue;
+  }
+  100% {
+    color: red;
+  }
 }
