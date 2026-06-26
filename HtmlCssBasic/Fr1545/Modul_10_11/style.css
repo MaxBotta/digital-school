@@ -1,0 +1,64 @@
+body {
+  background-color: rgb(246, 246, 246);
+  margin: 0;
+}
+
+header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+main {
+  min-height: 100vh;
+  flex: 1;
+  padding: 40px;
+}
+
+footer {
+  background-color: gray;
+}
+
+aside {
+  background-color: blue;
+  width: 200px;
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  background-color: rgb(236, 236, 236);
+  border-radius: 20px;
+}
+
+/* Für mobile Endgeräte designen */
+@media only screen and (max-width: 768px) {
+  main {
+    padding: 20px;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+}
